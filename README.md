@@ -4,7 +4,20 @@ Double-click **Play Rally.cmd**, or use the **Rally Offline** shortcut on your D
 
 Play matches against the computer, practice, and enter tournaments. The original game menus, 3D stadium, characters, sounds, rules, and controls are preserved from the browser-delivered version of https://paddleup.ph/ captured on October 29, 2026. This is a locally adapted copy of the published game, not a newly authored game engine. Taplinc sponsor cards, links, credits, and court lettering have been removed in this local edition. Bundled notices remain with their respective authors.
 
-## Keyboard
+## Scenery (PC edition)
+
+Choose **Scenery** in **Play match** or **Settings**:
+
+- **Championship stadium:** the original packed arena.
+- **Palm Beach:** a seaside hard court, palms, sand, and turquoise water.
+- **Sunset Rooftop:** safety rails, a city skyline, and warm evening lighting.
+- **Neon Night Court:** floodlights, wire fencing, and cyan/violet accents.
+
+Your choice is saved on this device and applies when starting the next match, tournament game, or practice drill. All courts use the same playing dimensions and rules. These sceneries are also bundled in the Android 1.2.0 APK; install that APK to update your phone.
+
+## Match pace and controls
+
+Rally doubles now rotates court positions when the receiving team earns a point, so every new service turn after a side-out begins from the right court. Traditional doubles also starts new service turns on the right; a second server within the same turn may serve from either side. This correction is included on PC and in Android 1.2.2.
 
 In **Play match → Match pace**, choose **Classic** or **Blitz**. Blitz runs the simulation 20% faster for both sides and shortens the point-reset wait from 2.2 to 1.05 simulation seconds. Traditional and Rally scoring and the target score remain independent choices. Practice and tournaments use their original pace. The match pace selection is saved for your next quick match.
 
@@ -25,7 +38,9 @@ Under **Play match → AI opponent**, select a named rival or random character p
 - **Enzo — Net rusher:** third-shot drops, forward movement and more volleys.
 - **Maya — Mix-up master:** varied shot selection, avoiding consecutive repeats when safe alternatives exist.
 
-The four new rivals reuse existing character appearances. CPU partners and tournament opponents also follow their character styles; practice drills keep their teaching behavior. This feature has been applied to the PC edition only. The phone app and saved APK have not been updated with it.
+The four new rivals now have distinct 3D character variants based on the original rigs and proportions: Rafi has a navy/cyan cap and sports glasses; Nika wears teal/coral with a headband and braid; Enzo has a clean face, a shaped baseball cap, a blue jersey with white chevrons and number 7, and dark shorts with white stripes; Maya has a purple/mint outfit, twin buns and glasses. They are also available in the character picker. CPU partners and tournament opponents follow their character styles; practice drills keep their teaching behavior. These changes are also bundled in the Android 1.2.0 APK. Install the updated APK over the existing phone app to use them.
+
+The editable glTF model collection is `site/rally/rival-characters.gltf`, with `rival-characters.bin` and the original colormap alongside it. `tools/build-rival-models.cjs` regenerates the four variants from the unchanged original models. The generated collection contains the original six plus the four new models; the original `characters.gltf` and `characters.bin` remain available as references.
 
 - WASD or arrow keys: move and aim
 - J: dink; K: drop; L: drive/smash; I: lob

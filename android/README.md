@@ -1,12 +1,18 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It is installed as **Rally Offline** on the connected Samsung Galaxy A52 5G. A copy is also saved in the phone's **Downloads** folder.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.2.2 was built on the PC; the phone was disconnected, so it has not been installed or copied to the phone yet.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
 The phone can be held vertically or horizontally. Android Back offers to close the game. Switching away pauses an active match. Online menus remain unavailable.
 
 Version 1.1 adds Classic/Blitz match pace, with both Traditional and Rally scoring available, and saved touch shot-button position swaps in Settings. Keyboard remapping is also available when a physical keyboard is connected. Install this APK over the existing app to keep its saved progress.
+
+Version 1.2.0 bundles the current game: ten AI personalities, the four new rival models, Enzo's smaller head and light-brown skin, Maya's fitted glasses, and Palm Beach, Sunset Rooftop, and Neon Night Court. Choose Scenery in match setup or Settings. The original stadium remains available. This APK supersedes earlier PC-only feature notes in the main README.
+
+Version 1.2.1 fixes the new courts covering the landing guide, player marker, and ground shadows. The floor paint now sits beneath the game's existing ground effects.
+
+Version 1.2.2 fixes Rally doubles serving after a side-out: the receiving point rotates that team's court positions, and its new service turn starts from the right court with the correct receiver opposite. Traditional scoring and singles keep their existing serving sequence.
 
 ## Rebuilding
 

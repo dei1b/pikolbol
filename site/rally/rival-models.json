@@ -1,0 +1,38 @@
+[
+  {
+    "id": "rafi",
+    "name": "Rafi",
+    "base": 1,
+    "shirt": "#16374f",
+    "trim": "#67e8ef",
+    "hair": "#172535",
+    "width": 1.04
+  },
+  {
+    "id": "nika",
+    "name": "Nika",
+    "base": 4,
+    "shirt": "#178b82",
+    "trim": "#ff9b84",
+    "hair": "#392b40",
+    "width": 0.99
+  },
+  {
+    "id": "enzo",
+    "name": "Enzo",
+    "base": 3,
+    "shirt": "#2475df",
+    "trim": "#f0f5ff",
+    "hair": "#302e35",
+    "width": 0.96
+  },
+  {
+    "id": "maya",
+    "name": "Maya",
+    "base": 0,
+    "shirt": "#9655b4",
+    "trim": "#9cf2c2",
+    "hair": "#332041",
+    "width": 1
+  }
+]

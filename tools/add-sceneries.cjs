@@ -1,0 +1,9 @@
+const fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'..'),main=path.join(root,'site/_next/static/chunks/0axfra5kwz6z1.js');
+const backup=path.join(root,'backups/before-sceneries');fs.mkdirSync(backup,{recursive:true});if(!fs.existsSync(path.join(backup,path.basename(main))))fs.copyFileSync(main,path.join(backup,path.basename(main)));
+let s=fs.readFileSync(main,'utf8');function patch(from,to){if(s.includes(to))return;if(!s.includes(from))throw Error('Missing scenery anchor '+from.slice(0,80));s=s.replace(from,to);}
+patch('async function s9(t){if(void 0===t.court)', 'async function s9(t){if(void 0===t.court&&globalThis.RallyScenery&&RallyScenery.selected!=="stadium")return RallyScenery.makeVenue(t,{Group:rn.C9,Mesh:rn.kE,Geometry:rn.ld,Attribute:rn.f5,Material:rn.ht,Basic:rn.p$,Hemi:rn.VF,Light:rn.ya,Texture:rn.Nk,sRGB:rn.nj});if(void 0===t.court)');
+patch('this.stadium=e.stadium,this.scene.add(e.stadium.group);','this.stadium=e.stadium,this.scene.add(e.stadium.group),globalThis.RallyScenery?.onView(this,e.stadium);');
+patch('ref:e=>globalThis.RallyMods?.mountMode(e)}),','ref:e=>globalThis.RallyMods?.mountMode(e)}),(0,n.jsx)("div",{"data-scenery-picker":true,ref:e=>globalThis.RallyScenery?.mount(e)}),');
+fs.writeFileSync(main,s);
+const mods=path.join(root,'site/game-mods.js');s=fs.readFileSync(mods,'utf8');const old='mountControls(host){if(!host||host.childElementCount)return;';if(!s.includes('const sceneryHost='))s=s.replace(old,old+"const sceneryHost=document.createElement('div');globalThis.RallyScenery?.mount(sceneryHost);host.append(sceneryHost);");fs.writeFileSync(mods,s);
+const index=path.join(root,'site/index.html');s=fs.readFileSync(index,'utf8');if(!s.includes('/sceneries.js'))s=s.replace('<script src="/ai-personalities.js"></script>','<script src="/ai-personalities.js"></script><script src="/sceneries.js"></script>');fs.writeFileSync(index,s);console.log('Installed scenery selector and venue factory');

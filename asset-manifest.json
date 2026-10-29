@@ -1,8 +1,8 @@
 [
   {
     "path": "ai-personalities.js",
-    "bytes": 11326,
-    "sha256": "d8b5037df6684cf30434ba903d84469c1e187833643208f177761e30253362ae"
+    "bytes": 11407,
+    "sha256": "5466d80f47981d910fd1475c028ecff266cde22c9c31f7d3255367deaede452a"
   },
   {
     "path": "apple-icon.png",
@@ -16,8 +16,8 @@
   },
   {
     "path": "game-mods.js",
-    "bytes": 8420,
-    "sha256": "83726c3da41130444302480498c70c8a68a80f15727e7e6818ab8f3a79bc5df5"
+    "bytes": 8537,
+    "sha256": "209f838e2c96a848d18ddca65514423f7442cff6249a13ee1ac320637bc0ffa0"
   },
   {
     "path": "icon.svg",
@@ -41,8 +41,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 11284,
-    "sha256": "98fcc44a5f83061aea136dd2ec506d014ced3ca059a21d371cd146d3844c31a6"
+    "bytes": 11321,
+    "sha256": "0b6c0abf244c08cdff45669993b5ef369decfd3030dfe021b199a6f651a2f105"
   },
   {
     "path": "manifest.webmanifest",
@@ -70,9 +70,54 @@
     "sha256": "3ba9ea8e6d5da359e3f5b1c324bcffc053ba33170ae9f67835cb0eea5a5b2566"
   },
   {
+    "path": "rally/enzo.glb",
+    "bytes": 445072,
+    "sha256": "4ba6fd9c3bcd8732fb5b86121e1c4d396ab69bf906de46f777cdeb0c2a7bffb7"
+  },
+  {
+    "path": "rally/maya.glb",
+    "bytes": 445072,
+    "sha256": "ebf7ef10fbdec52c5a606b869ec7e5965a0a7666f2d6280eb9135a603b88836d"
+  },
+  {
+    "path": "rally/nika.glb",
+    "bytes": 445040,
+    "sha256": "ec73d5d433928a471590052974e397cc3d609bb1e6682c26c1e0a6c8639982fa"
+  },
+  {
+    "path": "rally/rafi.glb",
+    "bytes": 445040,
+    "sha256": "eb7f17079e6e0f729a9ffce2ec8422370c67df708521fd7d5d4d50739455f2d7"
+  },
+  {
+    "path": "rally/rival-characters.bin",
+    "bytes": 366864,
+    "sha256": "cbb2bc38994525b2ba170feadd012f45a8b1188feb2693b5bcfb111297b55d26"
+  },
+  {
+    "path": "rally/rival-characters.glb",
+    "bytes": 445052,
+    "sha256": "5a4b7029c5db9883b5960981689c5da1b9f760b2efd130240ba72354d191fd2d"
+  },
+  {
+    "path": "rally/rival-characters.gltf",
+    "bytes": 64341,
+    "sha256": "c86663c19be9bd4c92f34d55d25b6bdda0f056d3a9fd20e9d076ac2f1670bef1"
+  },
+  {
+    "path": "rally/rival-models.json",
+    "bytes": 599,
+    "sha256": "f9602f67697fe5dd767faffc5a3c07b3b456688726a45ed35d3e24c2dce100ae"
+  },
+  {
+    "path": "sceneries.js",
+    "bytes": 11564,
+    "sha256": "10ed8e5d9fe6bf6553b0494cb77ef217991f74a3ed2a7243c3ad47eb40c0270a"
+  },
+  {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 862194,
-    "sha256": "9f62ce0e1c243aa10fdffc87176e0ded1996295a7ad6756980383902d7ce182a"
+    "bytes": 862890,
+    "sha256": "82933e9701f7f5a521b5525ee843650647798b58564041e4aae23164c15e4813"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",
@@ -161,8 +206,8 @@
   },
   {
     "path": "_next/static/chunks/3t2nbery9uokx.js",
-    "bytes": 30263,
-    "sha256": "ab35b53918ab4f488e295d7077479801523f0b2b76d7983fdf8db2294a5dc6b4"
+    "bytes": 30720,
+    "sha256": "c01147958e58bd767e0b0af6025076b5256a45e5c388111f294db116e5dfbf3b"
   },
   {
     "path": "_next/static/chunks/turbopack-3-ry682tkyiqk.js",

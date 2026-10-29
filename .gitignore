@@ -39,6 +39,7 @@ blob-report/
 coverage/
 *-report.json
 *-check.json
+/landing-guide-before.json
 /INVESTIGATION.md
 /android/DEVICE-CHECK.md
 test-documents/

@@ -14,25 +14,26 @@
       description:'Makes fewer timing and placement errors, using safe drops and measured drives. Her drives are slower; take the initiative.'},
     {id:'jojo',name:'Jojo',title:'Smash happy',character:5,partner:'isay',style:'smash',net:2.45,singles:2.95,speed:1.02,accuracy:1.08,pace:.96,
       description:'Moves forward and prioritizes overhead smashes on high balls. Keep the ball low or lob over him.'},
-    {id:'rafi',name:'Rafi',title:'Baseline sniper',character:1,partner:'isay',style:'sniper',net:5.4,singles:5.6,speed:.96,accuracy:.78,pace:.92,isNew:true,
+    {id:'rafi',name:'Rafi',title:'Baseline sniper',character:6,partner:'isay',style:'sniper',net:5.4,singles:5.6,speed:.96,accuracy:.78,pace:.92,isNew:true,
       description:'Stays deep and drives toward the open corner. Short drops force him to cover the long run to the net.'},
-    {id:'nika',name:'Nika',title:'Counterpuncher',character:4,partner:'paco',style:'counter',net:4.6,singles:5,speed:1.06,accuracy:.8,pace:1.1,isNew:true,
+    {id:'nika',name:'Nika',title:'Counterpuncher',character:7,partner:'paco',style:'counter',net:4.6,singles:5,speed:1.06,accuracy:.8,pace:1.1,isNew:true,
       description:'Defends from deep court and returns toward open space with controlled drives. Use a drop to draw her forward.'},
-    {id:'enzo',name:'Enzo',title:'Net rusher',character:3,partner:'tala',style:'rusher',net:2.28,singles:2.7,speed:1.07,accuracy:1.06,pace:.98,isNew:true,
+    {id:'enzo',name:'Enzo',title:'Net rusher',character:8,partner:'tala',style:'rusher',net:2.28,singles:2.7,speed:1.07,accuracy:1.06,pace:.98,isNew:true,
       description:'Uses third-shot drops to approach the kitchen, then looks for early volleys and drives. A deep lob can pass him.'},
-    {id:'maya',name:'Maya',title:'Mix-up master',character:2,partner:'bea',style:'mix',net:3,singles:3.9,speed:1,accuracy:1.05,pace:1,isNew:true,
+    {id:'maya',name:'Maya',title:'Mix-up master',character:9,partner:'bea',style:'mix',net:3,singles:3.9,speed:1,accuracy:1.05,pace:1,isNew:true,
       description:'Alternates drives, drops and lobs during regular exchanges, while still attacking high balls. Her variety costs some accuracy.'}
   ];
   const profiles=Object.fromEntries(roster.map(p=>[p.id,Object.freeze(p)]));
   const originals=roster.slice(0,6);
+  const characterProfiles=Object.fromEntries(roster.map(p=>[p.character,p]));
   let selected='auto';
   try{const saved=localStorage.getItem('rally.offline.opponent.v1');if(saved==='auto'||profiles[saved])selected=saved;}catch{}
-  const profileFor=(engine,player)=>profiles[engine.config.aiProfiles?.[player.id]]||originals[engine.config.characters?.[player.id]]||originals[0];
+  const profileFor=(engine,player)=>profiles[engine.config.aiProfiles?.[player.id]]||characterProfiles[engine.config.characters?.[player.id]]||originals[0];
   function preparePlan(plan){
     if(plan.mode!=='quick')return plan;
     const config={...plan.config,characters:[...plan.config.characters]};
     const chosen=profiles[selected];
-    config.aiProfiles=config.characters.map(c=>(originals[c]||originals[0]).id);
+    config.aiProfiles=config.characters.map(c=>(characterProfiles[c]||originals[0]).id);
     if(chosen){
       const partner=profiles[chosen.partner];
       config.characters[2]=chosen.character;config.characters[3]=config.format==='singles'?chosen.character:partner.character;
@@ -118,7 +119,7 @@
     const description=document.createElement('p');description.className='rally-ai-description';description.setAttribute('aria-live','polite');
     const partner=document.createElement('p');partner.className='rally-ai-partner';
     const note=document.createElement('p');note.textContent='Difficulty below controls reactions and accuracy. Every CPU, including your partner, follows its own character style.';
-    const update=()=>{const p=profiles[selected];name.textContent=p?`${p.name} · ${p.title}`:'A random pairing each match';description.textContent=p?p.description:'The six original characters now play to their titles: kitchen control, power, lobs, speed, consistency, or overhead attacks.';partner.textContent=p?`In doubles: teams up with ${profiles[p.partner].name} (${profiles[p.partner].title}).`:'';};
+    const update=()=>{const p=profiles[selected];name.textContent=p?`${p.name} · ${p.title}`:'A random pairing each match';description.textContent=p?p.description:'All ten characters play to their titles: kitchen control, power, lobs, speed, consistency, or overhead attacks.';partner.textContent=p?`In doubles: teams up with ${profiles[p.partner].name} (${profiles[p.partner].title}).`:'';};
     select.onchange=()=>{selected=select.value;try{localStorage.setItem('rally.offline.opponent.v1',selected);}catch{}update();};update();panel.append(title,select,name,description,partner,note);host.append(panel);
   }
   function refreshMatchInfo(){
