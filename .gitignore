@@ -1,0 +1,53 @@
+# Dependencies and generated build output
+node_modules/
+/android/build/
+*.apk
+*.apk.idsig
+*.aab
+
+# Local signing keys
+*.keystore
+*.jks
+
+# Logs, temporary files, and local backups
+*.log
+*.tmp
+*.temp
+/backups/
+
+# Screenshots produced by the desktop and phone verification scripts.
+# App images under site/ and android/res/ remain versioned.
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/android/*.png
+/android/*.jpg
+/android/*.jpeg
+/android/*.webp
+screenshots/
+test-screenshots/
+*-screenshot.*
+screenshot-*
+
+# Test reports and generated testing documents (keep test source files).
+test-results/
+test-output/
+test-artifacts/
+playwright-report/
+blob-report/
+coverage/
+*-report.json
+*-check.json
+/INVESTIGATION.md
+/android/DEVICE-CHECK.md
+test-documents/
+test-docs/
+test-*.md
+test-*.txt
+test-*.pdf
+test-*.docx
+*-test.md
+*-test.txt
+*-test.pdf
+*-test.docx

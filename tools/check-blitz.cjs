@@ -1,0 +1,23 @@
+const {chromium}=require('C:/Users/Dave/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');const assert=require('assert/strict');const fs=require('fs');
+(async()=>{const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});try{
+ const page=await browser.newPage({viewport:{width:1280,height:850}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ const home=async()=>{await page.goto('http://127.0.0.1:8787');await page.waitForSelector('[data-screen="title"]');};
+ await home();await page.getByRole('button',{name:'Settings',exact:true}).click();
+ await page.getByRole('button',{name:'Rebind Dink',exact:true}).click();await page.keyboard.press('z');
+ assert.equal(await page.evaluate(()=>RallyMods.codeFor('KeyZ')),'KeyJ');assert.equal(await page.evaluate(()=>RallyMods.codeFor('KeyJ')),'Unbound');
+ await page.getByRole('button',{name:'Rebind Drop',exact:true}).click();await page.keyboard.press('z');assert.match(await page.locator('.rally-mod-status').innerText(),/already assigned/);await page.keyboard.press('Escape');
+ await page.getByLabel('Drive position',{exact:true}).selectOption('dink');
+ await home();assert.equal(await page.evaluate(()=>RallyMods.codeFor('KeyZ')),'KeyJ');
+ await page.getByRole('button',{name:'Play match',exact:true}).click();await page.getByRole('button',{name:'⚡ Blitz',exact:true}).click();
+ await page.getByText('Traditional',{exact:true}).click();await page.getByRole('button',{name:'Play match',exact:true}).click();await page.waitForSelector('[data-controls]');
+ let engine=await page.evaluate(()=>({blitz:RallyMods.engine.blitz,scoring:RallyMods.engine.score.scoring}));assert.equal(engine.blitz,true);assert.equal(engine.scoring,'traditional');
+ const timing=await page.evaluate(()=>{const active=RallyMods.engine,C=active.constructor,cfg={...active.config,seed:123};RallyMods.activeBlitz=false;const classic=new C(cfg);RallyMods.activeBlitz=true;const blitz=new C(cfg);classic.stepPlayers(.1,{});blitz.stepPlayers(.1,{});const result={classic:classic.t,blitz:blitz.t};classic.phase='point';classic.phaseT=0;blitz.phase='point';blitz.phaseT=0;classic.stepPlayers(.25,{});classic.stepPlayers(.25,{});classic.stepPlayers(.25,{});classic.stepPlayers(.25,{});blitz.stepPlayers(.25,{});blitz.stepPlayers(.25,{});blitz.stepPlayers(.25,{});blitz.stepPlayers(.25,{});result.classicPhase=classic.phase;result.blitzPhase=blitz.phase;RallyMods.engine=active;return result;});
+ assert(timing.blitz>timing.classic);assert.equal(timing.classicPhase,'point');assert.equal(timing.blitzPhase,'serve');console.log('Simulation timing',timing);
+ await page.evaluate(()=>{const eng=RallyMods.engine,original=eng.takeInput.bind(eng);globalThis.keyInputs=[];eng.takeInput=(p,input)=>{keyInputs.push(JSON.stringify(input));return original(p,input);};});await page.keyboard.press('z');await page.waitForTimeout(400);assert(await page.evaluate(()=>keyInputs.some(s=>s.includes('dink'))),'Rebound key must reach the simulation');
+ console.log('Blitz traditional',engine);console.log('SHOT DOM',await page.locator('[data-shot]').evaluateAll(els=>els.map(e=>({tag:e.tagName,shot:e.dataset.shot,text:e.innerText,html:e.innerHTML.slice(-500),transform:e.style.transform}))));
+ await page.screenshot({path:'paddleup-offline/blitz-preview.png'});
+ await home();await page.getByRole('button',{name:'Play match',exact:true}).click();assert.equal(await page.getByRole('button',{name:'⚡ Blitz',exact:true}).getAttribute('aria-pressed'),'true');
+ await page.getByText('Rally',{exact:true}).click();await page.getByRole('button',{name:'Play match',exact:true}).click();await page.waitForSelector('[data-controls]');assert.equal(await page.evaluate(()=>RallyMods.engine.score.scoring),'rally');
+ await home();await page.getByRole('button',{name:'Play match',exact:true}).click();await page.getByRole('button',{name:'Classic',exact:true}).click();await page.getByRole('button',{name:'Play match',exact:true}).click();await page.waitForSelector('[data-controls]');assert.equal(await page.evaluate(()=>RallyMods.engine.blitz),false);
+ assert.deepEqual(errors,[]);fs.writeFileSync('paddleup-offline/blitz-check.json',JSON.stringify({checks:['Saved keyboard rebind','Unbound old key','Rebound shot reaches simulation','Duplicate conflict and cancel','Touch slot swap','Blitz Traditional scoring','Blitz Rally scoring','Saved pace selection','Classic pace','Simulation faster and point reset shorter','No page errors'],timing,errors},null,2));console.log('PASS all checks');
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1});
