@@ -10,6 +10,23 @@ In **Play match → Match pace**, choose **Classic** or **Blitz**. Blitz runs th
 
 In **Settings → Keyboard controls**, select an action and press a replacement key. Duplicate assignments are rejected; Escape cancels capture. Reset keyboard defaults restores the original mappings. The shot buttons display your saved keys. Under **Touch shot positions**, swap the four shots between their existing button positions, or restore the defaults. Keyboard and touch preferences are stored separately on each device.
 
+## AI opponents (PC edition)
+
+Under **Play match → AI opponent**, select a named rival or random character personalities. The description changes with your choice. Easy, Normal, and Hard control reaction time and accuracy independently of personality. The opponent choice is saved, and a rematch retains that opponent. Both scoring options and Classic/Blitz work with all rivals.
+
+- **Bea — Kitchen queen:** soft dinks and drops, close positioning.
+- **Migo — Big hitter:** fast drives and deep serves, wider placement errors.
+- **Tala — Lob artist:** high, deep lobs, particularly against opponents at the net.
+- **Paco — Speedster:** faster court coverage, less precise placement.
+- **Isay — Steady hands:** fewer timing/placement errors, slower drives.
+- **Jojo — Smash happy:** forward positioning and overhead attacks on high contacts.
+- **Rafi — Baseline sniper:** deep positioning and drives toward open corners.
+- **Nika — Counterpuncher:** deep defense and controlled returns into space.
+- **Enzo — Net rusher:** third-shot drops, forward movement and more volleys.
+- **Maya — Mix-up master:** varied shot selection, avoiding consecutive repeats when safe alternatives exist.
+
+The four new rivals reuse existing character appearances. CPU partners and tournament opponents also follow their character styles; practice drills keep their teaching behavior. This feature has been applied to the PC edition only. The phone app and saved APK have not been updated with it.
+
 - WASD or arrow keys: move and aim
 - J: dink; K: drop; L: drive/smash; I: lob
 - Space: serve

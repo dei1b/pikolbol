@@ -42,6 +42,7 @@
   },true);
   // React owns the host elements; this module owns their contents and the touch transforms.
   function refresh(){
+    globalThis.RallyAI?.refreshMatchInfo();
     const overlay=document.querySelector('[data-match-overlay]');
     let badge=document.getElementById('rally-blitz-badge');
     if(overlay&&mods.engine?.blitz){if(!badge){badge=el('div','⚡ BLITZ','rally-blitz-badge');badge.id='rally-blitz-badge';overlay.append(badge);}}else badge?.remove();

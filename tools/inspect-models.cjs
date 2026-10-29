@@ -1,0 +1,3 @@
+const fs=require('fs'),g=JSON.parse(fs.readFileSync('paddleup-offline/site/rally/characters.gltf'));
+console.log(JSON.stringify({scenes:g.scenes,nodes:g.nodes.map((n,i)=>({i,...n})),meshes:g.meshes.map((m,i)=>({i,name:m.name,primitives:m.primitives})),materials:g.materials,skins:g.skins,animations:g.animations?.map(a=>({name:a.name,channels:a.channels.length}))},null,2));
+const s=fs.readFileSync('paddleup-offline/site/_next/static/chunks/0axfra5kwz6z1.js','utf8');for(const k of ['async function sS','characters.get','characters[','clone(!0)','getCharacter','function s8','class s']){const i=s.indexOf(k);console.log(k,i,s.slice(i,i+3000));}

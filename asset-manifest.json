@@ -1,18 +1,23 @@
 [
   {
+    "path": "ai-personalities.js",
+    "bytes": 11326,
+    "sha256": "d8b5037df6684cf30434ba903d84469c1e187833643208f177761e30253362ae"
+  },
+  {
     "path": "apple-icon.png",
     "bytes": 4221,
     "sha256": "50ce15458bd14a37addd0b2130ea6a71237f46da98f441090d6e840d98c73222"
   },
   {
     "path": "game-mods.css",
-    "bytes": 1172,
-    "sha256": "0db71c642b0a53b7b76009cfed1d9f06d57374469a543a993c890b1a95c71286"
+    "bytes": 1642,
+    "sha256": "4f1e169a3de536f4e75cd42edde80699bf73a748dcc588fc8c9e74d1a2a89ca2"
   },
   {
     "path": "game-mods.js",
-    "bytes": 8085,
-    "sha256": "f6148e1f68ae38555504f684c39f4be4a64c3de6763219335480df326a04fa6d"
+    "bytes": 8420,
+    "sha256": "83726c3da41130444302480498c70c8a68a80f15727e7e6818ab8f3a79bc5df5"
   },
   {
     "path": "icon.svg",
@@ -36,8 +41,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 11240,
-    "sha256": "b83c31111d32911ff6ff23e553ce2fd9c04c8e55f2fedb4e0e75e5e6a3c7870a"
+    "bytes": 11284,
+    "sha256": "98fcc44a5f83061aea136dd2ec506d014ced3ca059a21d371cd146d3844c31a6"
   },
   {
     "path": "manifest.webmanifest",
@@ -66,8 +71,8 @@
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 861887,
-    "sha256": "ce8275d7ec7aa848307a2856e4356a63a302325cf7572c7bfc62c0b50ed64cc4"
+    "bytes": 862194,
+    "sha256": "9f62ce0e1c243aa10fdffc87176e0ded1996295a7ad6756980383902d7ce182a"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",
