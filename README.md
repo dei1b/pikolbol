@@ -11,7 +11,7 @@ Choose **Scenery** in **Play match** or **Settings**:
 - **Championship stadium:** the original packed arena.
 - **Palm Beach:** a seaside hard court, palms, sand, and turquoise water.
 - **Sunset Rooftop:** safety rails, a city skyline, and warm evening lighting.
-- **Neon Night Court:** floodlights, wire fencing, and cyan/violet accents.
+- **Moonlit Grove:** a blue court with green borders, warm floodlights, a full moon, woodland and distant mountains.
 
 Your choice is saved on this device and applies when starting the next match, tournament game, or practice drill. All courts use the same playing dimensions and rules. These sceneries are also bundled in the Android 1.2.0 APK; install that APK to update your phone.
 

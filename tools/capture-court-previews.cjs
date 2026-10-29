@@ -13,11 +13,11 @@ const fs=require('node:fs'),path=require('node:path');
    await page.getByRole('button',{name:'Play match',exact:true}).click();
    await page.waitForSelector('[data-controls]');
    await page.waitForFunction(()=>!!globalThis.RallyScenery?.view);
-   await page.evaluate(()=>{
+   await page.evaluate(id=>{
     const v=RallyScenery.view;v.frame=()=>{};
-    v.camera.position.set(9,13,17);v.camera.lookAt(0,0,0);v.camera.updateMatrixWorld();v.camera.updateProjectionMatrix();
+    if(id==='night'||id==='rooftop'){v.camera.position.set(10,8,17);v.camera.lookAt(0,2,-3);}else{v.camera.position.set(9,13,17);v.camera.lookAt(0,0,0);}v.camera.updateMatrixWorld();v.camera.updateProjectionMatrix();
     v.renderer.render(v.scene,v.camera);
-   });
+   },id);
    await page.addStyleTag({content:'[data-match-overlay]{visibility:hidden!important}'});
    await page.screenshot({path:path.join(out,id+'.jpg'),type:'jpeg',quality:85});
    console.log('Captured',id);

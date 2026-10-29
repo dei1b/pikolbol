@@ -25,3 +25,19 @@ The app intercepts its HTTPS asset origin and serves every file from the APK. It
 Version 1.2.5 replaces live HUD details with flat sideline court lettering: opponent names/titles on one side and pace, format and scoring on the other. Shared by all four venues.
 
 Version 1.2.8 adds bundled court preview images to the quick-match scenery picker. Images update with court selection and require no internet connection.
+
+Version 1.2.9 replaces Neon Night Court with Moonlit Grove: blue court, green borders, warm left-side LED lighting, moonlight, woodland, chain-link fencing, mountain silhouettes and valley lights. Includes a refreshed offline preview.
+
+Version 1.3.0 bundles the supplied ElevenLabs umpire recordings: zero through ninety-nine, score calls and seven match calls. No API key, online speech service or device TTS is used when the recordings are ready.
+
+Version 1.3.1 fixes silent recorded score announcements. Live matches now pass numeric scores to the recorded umpire instead of formatting them for device text-to-speech.
+
+Version 1.3.2 uses the supplied All recording for positive tied scores: One all, one / Two all, two; Rally and singles omit the server number. The opening zero-zero call stays unchanged.
+
+Version 1.3.3 replaces Rafi's inherited head and duplicate eyewear with a clean head, fitted sports shades and a rounded baseball cap with a curved bill. No GLB export was generated.
+
+Version 1.3.4 replaces Nika's oversized square headband frame with a thin chamfered band fitted to the head.
+
+Version 1.3.5 fits Maya's frames to the measured face surface and eye height, with connected hinges and arms reaching the temples.
+
+Version 1.3.6 replaces illustrated avatars with portraits rendered from all ten current game models. Includes Maya's fitted glasses from 1.3.5. Regenerate portraits using tools/build-character-portraits.cjs after model changes.

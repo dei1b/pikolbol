@@ -21,8 +21,8 @@
   },
   {
     "path": "game-mods.js",
-    "bytes": 8511,
-    "sha256": "43f14cd042ac837e58526442262ccade82b3a3e21176ca7feb59fa3b244c5a6c"
+    "bytes": 8676,
+    "sha256": "912f311a6711defb1c26101704747cabe1c892ff79d2a742da9366969f03c04e"
   },
   {
     "path": "icon.svg",
@@ -46,8 +46,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 11361,
-    "sha256": "2fb13bf00777f9b044b0356a79dd9402e0c285ccbdf7c8b9b05604654a7d92a6"
+    "bytes": 11432,
+    "sha256": "358c9806fe9b04c9285dee483fa7c97b6c5b14ed1cd9e7e5643a8eec1afe3951"
   },
   {
     "path": "manifest.webmanifest",
@@ -76,23 +76,23 @@
   },
   {
     "path": "rally/court-previews/beach.jpg",
-    "bytes": 52121,
-    "sha256": "30af4b1ea5c0ecc6420997f5b2428893038a2ae9660bd79dfe65b1286d0cde71"
+    "bytes": 51967,
+    "sha256": "ac023055a0b4da861de1357ff32314e3f1ca5d5fa4b94e7e2044ea992b6bc079"
   },
   {
     "path": "rally/court-previews/night.jpg",
-    "bytes": 53623,
-    "sha256": "5dfcf76b36c8cea9750ec176f444056a58ac7be0613355b40999176cbc09d689"
+    "bytes": 48963,
+    "sha256": "d2ecbe71359fb283d24eec7ae73d4c5a06d44bc58080117a8ac75c81f678e188"
   },
   {
     "path": "rally/court-previews/rooftop.jpg",
-    "bytes": 48450,
-    "sha256": "ff72e0c7f51453f2cb4b63f7c64259d4f6a9fb6a7b7784dc69589a0521a06188"
+    "bytes": 48523,
+    "sha256": "f3291ba8f1e82a613306ef04545a9ed57cd46b3206d142db2158e959a0a1e4db"
   },
   {
     "path": "rally/court-previews/stadium.jpg",
-    "bytes": 170573,
-    "sha256": "0b6b8c69d93d42c68c420423ecd649a9fff39c3ff90dab085f8af3eef6512c35"
+    "bytes": 170395,
+    "sha256": "11611fe5dc6a4ca95465f7b1f8bb81356b86cca54a38df2d5716a0e5e12f09b4"
   },
   {
     "path": "rally/enzo.glb",
@@ -110,14 +110,69 @@
     "sha256": "ec73d5d433928a471590052974e397cc3d609bb1e6682c26c1e0a6c8639982fa"
   },
   {
+    "path": "rally/portraits/0.png",
+    "bytes": 33659,
+    "sha256": "8bb6a3e25b3d11523fbf5b858332502efb6de650f65253b349c2a35177999df8"
+  },
+  {
+    "path": "rally/portraits/1.png",
+    "bytes": 29809,
+    "sha256": "4faf1b42d541f7884c87677c5d3eaba305577e26c5d15d1615645f64a22305a6"
+  },
+  {
+    "path": "rally/portraits/2.png",
+    "bytes": 35185,
+    "sha256": "e4ae5cc51f81ab92a827f6e7d965a7bc7f23b7371af717855c46aaa00789a030"
+  },
+  {
+    "path": "rally/portraits/3.png",
+    "bytes": 37656,
+    "sha256": "388aa5c07ee85549e8c2595d521cf0ff1dad83d90ef8b004923cc208f5f57d1f"
+  },
+  {
+    "path": "rally/portraits/4.png",
+    "bytes": 38594,
+    "sha256": "44bac81815b6017295f2d199b9e15d4b91678b0242258dc2c4c34ac68ece9365"
+  },
+  {
+    "path": "rally/portraits/5.png",
+    "bytes": 30555,
+    "sha256": "31a936292edcbe94b7e35f1b92b870286a3a40657d8e24a52e9672433b034a2a"
+  },
+  {
+    "path": "rally/portraits/6.png",
+    "bytes": 13661,
+    "sha256": "7a055850d0f97495d1adb6200a76c7ff8f5f15deaeec69cf8b1349d08e89fe75"
+  },
+  {
+    "path": "rally/portraits/7.png",
+    "bytes": 18879,
+    "sha256": "1c4715529fd310b97eec1dcff580e84279ca0c9d6a9f52e072dc9aabf15d54c6"
+  },
+  {
+    "path": "rally/portraits/8.png",
+    "bytes": 15332,
+    "sha256": "160c0dd8240ec5c5d98af9b7f99aca79a7ec377f193d97577bccccd0ddaaa1ad"
+  },
+  {
+    "path": "rally/portraits/9.png",
+    "bytes": 19714,
+    "sha256": "fe957acf05de7ce626fd4f742f4d7e1d4fe5ad4063f3b66198c57246488d3a79"
+  },
+  {
+    "path": "rally/portraits/source.json",
+    "bytes": 179,
+    "sha256": "1b0745d0f963cf857e8729350571781b2f96485af5d7d478e31890f30245cec3"
+  },
+  {
     "path": "rally/rafi.glb",
     "bytes": 445040,
     "sha256": "eb7f17079e6e0f729a9ffce2ec8422370c67df708521fd7d5d4d50739455f2d7"
   },
   {
     "path": "rally/rival-characters.bin",
-    "bytes": 366864,
-    "sha256": "cbb2bc38994525b2ba170feadd012f45a8b1188feb2693b5bcfb111297b55d26"
+    "bytes": 393996,
+    "sha256": "18b46291c0484dba7ac3c377ec05d0317b6623f9d584bedf00ce0bf32a1dc4c0"
   },
   {
     "path": "rally/rival-characters.glb",
@@ -126,8 +181,8 @@
   },
   {
     "path": "rally/rival-characters.gltf",
-    "bytes": 64341,
-    "sha256": "c86663c19be9bd4c92f34d55d25b6bdda0f056d3a9fd20e9d076ac2f1670bef1"
+    "bytes": 73230,
+    "sha256": "307ee53c932e09a5b5d0f42f4db42eb510e78116afab8b541812da61fd17f52e"
   },
   {
     "path": "rally/rival-models.json",
@@ -135,14 +190,589 @@
     "sha256": "f9602f67697fe5dd767faffc5a3c07b3b456688726a45ed35d3e24c2dce100ae"
   },
   {
+    "path": "rally/umpire-voice/call-0-0-2.mp3",
+    "bytes": 14150,
+    "sha256": "1e321c85e01c9161a58408bfdc32bcc4c4ff24f04857203d45cb81af477ff31b"
+  },
+  {
+    "path": "rally/umpire-voice/call-0.mp3",
+    "bytes": 8194,
+    "sha256": "cb6482683c962d1c5ba2bb3475a1b5ca0d49412c2ab9d8ef6f28f4a33b71a0c1"
+  },
+  {
+    "path": "rally/umpire-voice/call-1-0-2.mp3",
+    "bytes": 13209,
+    "sha256": "d81bfa2a454ac002b7469ff1880981e5d6aeefab4be0c0b34d1f556e42801951"
+  },
+  {
+    "path": "rally/umpire-voice/call-1.mp3",
+    "bytes": 6626,
+    "sha256": "11a613fc045a74a3fd6b21143839342cdc0de1478798d3c3720da7d030b8feef"
+  },
+  {
+    "path": "rally/umpire-voice/call-10-9-2.mp3",
+    "bytes": 13523,
+    "sha256": "cec97b9ae438edcd8c199562d01f114062df1785721ebe271822a6b309c9f830"
+  },
+  {
+    "path": "rally/umpire-voice/call-10.mp3",
+    "bytes": 6626,
+    "sha256": "0e2de22f91a321747819f031aa84a4a0172a6a09af71460da7035695e1c2b73a"
+  },
+  {
+    "path": "rally/umpire-voice/call-11.mp3",
+    "bytes": 7880,
+    "sha256": "07fd3a0ae2b16f3b4385dd76f037033f098145c2c9a62784c699c0b252811563"
+  },
+  {
+    "path": "rally/umpire-voice/call-12.mp3",
+    "bytes": 8194,
+    "sha256": "6a5cfeea025b0637db1e68940b49278e808adc57da9159b4972739fb3162c7c7"
+  },
+  {
+    "path": "rally/umpire-voice/call-13.mp3",
+    "bytes": 9761,
+    "sha256": "c64a3085e94539405f025cdb8f918bbde00211c904c4c6a0da5398e85791b817"
+  },
+  {
+    "path": "rally/umpire-voice/call-14.mp3",
+    "bytes": 9761,
+    "sha256": "2f0dd06805ef44388edc285a06e4c6dc5b890fa3e138b758654f8d446ea1f9ef"
+  },
+  {
+    "path": "rally/umpire-voice/call-15.mp3",
+    "bytes": 9448,
+    "sha256": "e87ae8bacefecadd81d4e0cdcca75853192ad76f2486241ddbf2918890c01499"
+  },
+  {
+    "path": "rally/umpire-voice/call-16.mp3",
+    "bytes": 9761,
+    "sha256": "21dd4f23e3c9acba3d620316fb8d52b304865e70891a65a231124177a1e6057e"
+  },
+  {
+    "path": "rally/umpire-voice/call-17.mp3",
+    "bytes": 10388,
+    "sha256": "02d2a3d289905b25e319f6fa7a86508f317e372dfdc61c5b132dd24d8fcf12be"
+  },
+  {
+    "path": "rally/umpire-voice/call-18.mp3",
+    "bytes": 8194,
+    "sha256": "9cf2f3d126d5c094314318ebaef8588ceb5a678f540b21fac4211e162c4818d7"
+  },
+  {
+    "path": "rally/umpire-voice/call-19.mp3",
+    "bytes": 9761,
+    "sha256": "35bd180cb5cdd72fac91150ec59333de575773046e9e59246e3f10d2fe6790a1"
+  },
+  {
+    "path": "rally/umpire-voice/call-2.mp3",
+    "bytes": 6313,
+    "sha256": "7f812c0a9119192b49f526ac72dcce69cd15f2af100887f675661f3785e012a0"
+  },
+  {
+    "path": "rally/umpire-voice/call-20.mp3",
+    "bytes": 7880,
+    "sha256": "b7404969b4974894d2994e46174e943b35dd84570bc5c6990d30c601c8dfd0cd"
+  },
+  {
+    "path": "rally/umpire-voice/call-21.mp3",
+    "bytes": 10075,
+    "sha256": "7f24dc8d3f3aa038d53f015a9189cd706e851652d0a1232e3ecc6d2f4b41bd96"
+  },
+  {
+    "path": "rally/umpire-voice/call-22.mp3",
+    "bytes": 10075,
+    "sha256": "edaac8100023c3f523b4f5469a1c1a505f0100888625d9423ff78a739ee8fae6"
+  },
+  {
+    "path": "rally/umpire-voice/call-23.mp3",
+    "bytes": 10388,
+    "sha256": "c691a4a33e5cc43b132d4d79ac4205828e429bda2269247e2d14674b508bd9dc"
+  },
+  {
+    "path": "rally/umpire-voice/call-24.mp3",
+    "bytes": 10702,
+    "sha256": "67673e6f007d9f39b16a74c2786732375bfdfa5a781b3c240b46961eb70bd07c"
+  },
+  {
+    "path": "rally/umpire-voice/call-25.mp3",
+    "bytes": 11328,
+    "sha256": "c3a2a8a6db18d6259abb17f3020b0e71ae8893eb3cc7ef2c135a896c500acbbd"
+  },
+  {
+    "path": "rally/umpire-voice/call-26.mp3",
+    "bytes": 11642,
+    "sha256": "638954dda787803ed1fbaa6e1a4e756526a5d0689624e097b92a3ba11bb0f9c6"
+  },
+  {
+    "path": "rally/umpire-voice/call-27.mp3",
+    "bytes": 10702,
+    "sha256": "e378c9164fb6390982e05c4e21fd98f9c4237e9690e1c3543e1a00b14c041a22"
+  },
+  {
+    "path": "rally/umpire-voice/call-28.mp3",
+    "bytes": 10388,
+    "sha256": "5650d48e1944756bb34e8452489234fefd159ebc985ee9defa6d50aa9783557a"
+  },
+  {
+    "path": "rally/umpire-voice/call-29.mp3",
+    "bytes": 10388,
+    "sha256": "b00c61af5cead84ecf491995d7e1fe92fb0bbf990197f147eeb700d476114b5f"
+  },
+  {
+    "path": "rally/umpire-voice/call-3.mp3",
+    "bytes": 7567,
+    "sha256": "f9686857888202bfe3de761123767381b12c448d98b1d7e382d6ef36cbd50bd6"
+  },
+  {
+    "path": "rally/umpire-voice/call-30.mp3",
+    "bytes": 8194,
+    "sha256": "c0d5709342f6721db66646eaccfb6ef9f0083c1100db0708aa2f0ec1e6f3f612"
+  },
+  {
+    "path": "rally/umpire-voice/call-31.mp3",
+    "bytes": 10388,
+    "sha256": "a8d3f4ab57a091451cd57b7bbea6ada14a1589f7776ad703e147c106c23f4172"
+  },
+  {
+    "path": "rally/umpire-voice/call-32.mp3",
+    "bytes": 10702,
+    "sha256": "6e2d81f249b41e444f81f4ae5d18a80a91ee9ad4f808893b2c7588c33800800a"
+  },
+  {
+    "path": "rally/umpire-voice/call-33.mp3",
+    "bytes": 10702,
+    "sha256": "d4589309232fc7c6a882076be4d68fc8e07fb4beabad11c37adafe77f824b2ed"
+  },
+  {
+    "path": "rally/umpire-voice/call-34.mp3",
+    "bytes": 11015,
+    "sha256": "548e7119f9930c08e6c021fee606e535117cc3130c3ba130066c03ca515486f1"
+  },
+  {
+    "path": "rally/umpire-voice/call-35.mp3",
+    "bytes": 11955,
+    "sha256": "c6be5bc29f5b97a35967555c2a6f7b166879e3e0af575fb34d1b151dd373c94a"
+  },
+  {
+    "path": "rally/umpire-voice/call-36.mp3",
+    "bytes": 12269,
+    "sha256": "6ad6f2bcd0a3f2158ca1a823cb97c8c2bd83f2b18ae338bfccb9a895f549fe84"
+  },
+  {
+    "path": "rally/umpire-voice/call-37.mp3",
+    "bytes": 10702,
+    "sha256": "736b996d0f6911f74ae632afb7e447d2974c42060e4249916605675e4bd6d179"
+  },
+  {
+    "path": "rally/umpire-voice/call-38.mp3",
+    "bytes": 11015,
+    "sha256": "890cff9fe6b1f46361b99d82b04ba4c965ffe0fabedb3371fade9e1c71c3db13"
+  },
+  {
+    "path": "rally/umpire-voice/call-39.mp3",
+    "bytes": 11015,
+    "sha256": "afe7783ebeaa6a36071ddd1f02a215a7512b72e1e3d923018c58a2a9e6294738"
+  },
+  {
+    "path": "rally/umpire-voice/call-4.mp3",
+    "bytes": 7253,
+    "sha256": "15b499ee40441aaf6fca0d41baa0d9ed5fc3a71d217f3d27cbfdfac8def4e22e"
+  },
+  {
+    "path": "rally/umpire-voice/call-40.mp3",
+    "bytes": 8507,
+    "sha256": "f3a0ac65f4c70612aa8315a4f9b54b6f4a81b8ea27ecf973f238e543febceecb"
+  },
+  {
+    "path": "rally/umpire-voice/call-41.mp3",
+    "bytes": 10388,
+    "sha256": "435620d8c5e5f8c4f998d7a51653a160b40f34cda5ac01d751605bd24621efbf"
+  },
+  {
+    "path": "rally/umpire-voice/call-42.mp3",
+    "bytes": 10702,
+    "sha256": "8ebb533c917ebd702f9c5ac2b22e5e6da9a98936945e336f6b6051a09f5e9b07"
+  },
+  {
+    "path": "rally/umpire-voice/call-43.mp3",
+    "bytes": 11015,
+    "sha256": "fd35ba7fc8274a35aeae19ff9bdf1012e839d1ffc51320a824fb4ac3c738d22b"
+  },
+  {
+    "path": "rally/umpire-voice/call-44.mp3",
+    "bytes": 11015,
+    "sha256": "848664facdf77dac9c69a16dc7156d5ef3cbc7ceb55fc3d5383e3366187ae299"
+  },
+  {
+    "path": "rally/umpire-voice/call-45.mp3",
+    "bytes": 11955,
+    "sha256": "731db88eb9779dc921ab44a1ec1256dafd78b4db68c4c199d30a3320ee075706"
+  },
+  {
+    "path": "rally/umpire-voice/call-46.mp3",
+    "bytes": 12269,
+    "sha256": "9fd83db9fb8acf74c2baab9e052bc4f5b81640e12c9918269d5acd83ae0b950f"
+  },
+  {
+    "path": "rally/umpire-voice/call-47.mp3",
+    "bytes": 11328,
+    "sha256": "173c8a900fa2aa44ddc33c6dd21f08542b7cc5751c13c10318084a2624da3ad9"
+  },
+  {
+    "path": "rally/umpire-voice/call-48.mp3",
+    "bytes": 10702,
+    "sha256": "e47bd002ee84e8d6d8456b1ceec81c660fbd3412850d1d4e9af2e9df8ce00f88"
+  },
+  {
+    "path": "rally/umpire-voice/call-49.mp3",
+    "bytes": 11015,
+    "sha256": "3a032d5b0072cdb5b4630c896d06ffba3e09064d2194fb44b88c31037d2dfcfc"
+  },
+  {
+    "path": "rally/umpire-voice/call-5.mp3",
+    "bytes": 8194,
+    "sha256": "3e75e72e63bfcd56788b497ce114314d3d9732b7329644cd39fcd90a858ad7d2"
+  },
+  {
+    "path": "rally/umpire-voice/call-50.mp3",
+    "bytes": 8194,
+    "sha256": "d3ec8e0c75b12d4f680fac7d750af3f1ab20ff0667715a811dac286300ab9aa1"
+  },
+  {
+    "path": "rally/umpire-voice/call-51.mp3",
+    "bytes": 10388,
+    "sha256": "020f63b7477cedcdebedd294782d2bef1cdfac44c1db2653465e9f6d67a9fcf2"
+  },
+  {
+    "path": "rally/umpire-voice/call-52.mp3",
+    "bytes": 10702,
+    "sha256": "730b1dd7e500374bdc6ec05da848d30b11a306a5cb9b516851c8d09c1efb254c"
+  },
+  {
+    "path": "rally/umpire-voice/call-53.mp3",
+    "bytes": 11015,
+    "sha256": "191938b6c5903695da3e66c2bcc3367f33eceb16cfdd65900a8a7085ee773dfb"
+  },
+  {
+    "path": "rally/umpire-voice/call-54.mp3",
+    "bytes": 11015,
+    "sha256": "4c9eb8e5385fb24b9b05621b8bd09d930861c150bf7f133a9c358287f32e0b9a"
+  },
+  {
+    "path": "rally/umpire-voice/call-55.mp3",
+    "bytes": 12269,
+    "sha256": "1ad4f8eeef6c65558e3e2724d27413817fc60ab9c09c664204963b303b0ac426"
+  },
+  {
+    "path": "rally/umpire-voice/call-56.mp3",
+    "bytes": 11955,
+    "sha256": "78a9027c2a6c58b4c5099328cf2824081b87bdcd4520ca579afef8da7db989ef"
+  },
+  {
+    "path": "rally/umpire-voice/call-57.mp3",
+    "bytes": 11015,
+    "sha256": "97fa911546351a15509a95faba2c400e6dfc57913e72dfe3a7653c84f9aa131e"
+  },
+  {
+    "path": "rally/umpire-voice/call-58.mp3",
+    "bytes": 11015,
+    "sha256": "96d230998e2fa90c30b37ac9de4c2625ea85ef37ce1407d55a962cf0626bd1b8"
+  },
+  {
+    "path": "rally/umpire-voice/call-59.mp3",
+    "bytes": 11015,
+    "sha256": "654170d5115fcd59f87aedf8fe94ff54aa6d151c6f801bc4cd2f3592bd312546"
+  },
+  {
+    "path": "rally/umpire-voice/call-6.mp3",
+    "bytes": 8821,
+    "sha256": "e8de72af64baa225d961508fca1b0a4060b35426c7b6e3155301357e81a077d2"
+  },
+  {
+    "path": "rally/umpire-voice/call-60.mp3",
+    "bytes": 9134,
+    "sha256": "994cb7af0d442e989a63c3e96bc090bf071cbb8e88b1bfb68e79e2edbce626de"
+  },
+  {
+    "path": "rally/umpire-voice/call-61.mp3",
+    "bytes": 11015,
+    "sha256": "c0e55d8ba839cf14b82c17f78e4000b40f2a178cd150ec4664fe95354520ccba"
+  },
+  {
+    "path": "rally/umpire-voice/call-62.mp3",
+    "bytes": 11328,
+    "sha256": "8642432b188d8e0acb775ee2d9c3ed92b8845fc4d608e868277c18fdb44986a2"
+  },
+  {
+    "path": "rally/umpire-voice/call-63.mp3",
+    "bytes": 11642,
+    "sha256": "8b8b0a1dfb7bcb6d9ca0fb7d922acc5f8c9869401c8ee6c73420448175d97dac"
+  },
+  {
+    "path": "rally/umpire-voice/call-64.mp3",
+    "bytes": 11642,
+    "sha256": "1b664d32d3f994ac440c288c3c71f7bb28ec5a31f82d23118953e5da8a14b9b3"
+  },
+  {
+    "path": "rally/umpire-voice/call-65.mp3",
+    "bytes": 12582,
+    "sha256": "7f6b6cda0e9c6fc9f4b6b5c9d3209092fad85864e8b96a8884a279682c75778f"
+  },
+  {
+    "path": "rally/umpire-voice/call-66.mp3",
+    "bytes": 12896,
+    "sha256": "cfbd4460b95149ed074220ada2f2c00f4bf9122925253d64e8c9f2df4e74db1a"
+  },
+  {
+    "path": "rally/umpire-voice/call-67.mp3",
+    "bytes": 11642,
+    "sha256": "9ec36ffb4524058f03933464c6dd6be16fa40ca53d8bb6161469d09645c7bd80"
+  },
+  {
+    "path": "rally/umpire-voice/call-68.mp3",
+    "bytes": 11328,
+    "sha256": "f1bd527070678e97dd8144029d946a0b601d9f12b8f0aacee3175454935b333c"
+  },
+  {
+    "path": "rally/umpire-voice/call-69.mp3",
+    "bytes": 11328,
+    "sha256": "4ee1afe0226146c438c335f24c44806b897a4c8a5b139a0ea586051454611395"
+  },
+  {
+    "path": "rally/umpire-voice/call-7-5-1.mp3",
+    "bytes": 15090,
+    "sha256": "925155a2d5a5ec7a88868b4490fdfb6c82d5e6caed318d2065296c125febb570"
+  },
+  {
+    "path": "rally/umpire-voice/call-7.mp3",
+    "bytes": 7880,
+    "sha256": "18329a6332119c2573056ae12946019ceeeee9c671930405af79a019334b7a9a"
+  },
+  {
+    "path": "rally/umpire-voice/call-70.mp3",
+    "bytes": 9448,
+    "sha256": "016ba6690e20195ccee2d3044503672d2e6f52c4f38ae323c9a5dd2f5cc7b705"
+  },
+  {
+    "path": "rally/umpire-voice/call-71.mp3",
+    "bytes": 11328,
+    "sha256": "125375b17dc24933003e07ee29027c490131dcb7871357dea4f9ee99c42210d4"
+  },
+  {
+    "path": "rally/umpire-voice/call-72.mp3",
+    "bytes": 11642,
+    "sha256": "654ec610afa17d4f65d3ce90f4248f3288b81a67e94ee297685c45fdc44b9ce4"
+  },
+  {
+    "path": "rally/umpire-voice/call-73.mp3",
+    "bytes": 11955,
+    "sha256": "ca7e73378ab39437c48edb2f9e5fb2de98af93c64c863f82fe2c94b67272fe5c"
+  },
+  {
+    "path": "rally/umpire-voice/call-74.mp3",
+    "bytes": 11955,
+    "sha256": "b1053283fba83b19ff7ec14a7a6c356a80ad425183d41ec8098c5c612f6196d0"
+  },
+  {
+    "path": "rally/umpire-voice/call-75.mp3",
+    "bytes": 12896,
+    "sha256": "4be7268fb7dcc27569da46ae35d46b6c7f6e154d52cddbe22d17b7460a8476fb"
+  },
+  {
+    "path": "rally/umpire-voice/call-76.mp3",
+    "bytes": 13209,
+    "sha256": "1792f982c683d75e0cafed3749b0c3b8b478639a7e27d2abc630c4981c41a3cd"
+  },
+  {
+    "path": "rally/umpire-voice/call-77.mp3",
+    "bytes": 11955,
+    "sha256": "ad5cc92776709ce2f8b51dd8eef81deb57c89ff051e3295275038491a024e7d7"
+  },
+  {
+    "path": "rally/umpire-voice/call-78.mp3",
+    "bytes": 11955,
+    "sha256": "4149f25ff040a0028edc8c3c504fdcd098ef860798283136f856529023ad578f"
+  },
+  {
+    "path": "rally/umpire-voice/call-79.mp3",
+    "bytes": 11955,
+    "sha256": "adfb35a0451e011abcd78b07338545121830bd199bcb2ff63f4b8abe01d46a6b"
+  },
+  {
+    "path": "rally/umpire-voice/call-8.mp3",
+    "bytes": 6313,
+    "sha256": "b778f8e0264f2c977b4d35767386337427e0f2282bee6fe6d0de2442e13bc895"
+  },
+  {
+    "path": "rally/umpire-voice/call-80.mp3",
+    "bytes": 6940,
+    "sha256": "86af12889ee12779f3bacba35f15863c4dba5cc338bb898f13d65e0f72319d9f"
+  },
+  {
+    "path": "rally/umpire-voice/call-81.mp3",
+    "bytes": 9761,
+    "sha256": "bbd5220406b503d17ab48f085a8bc6fa4b50e8c80b5f6c0c84c4f5ce19b4a6f8"
+  },
+  {
+    "path": "rally/umpire-voice/call-82.mp3",
+    "bytes": 9761,
+    "sha256": "34922fd8a505bc2f797ba3140be3724eb74a03bc5efaea93dffd7c53ba491093"
+  },
+  {
+    "path": "rally/umpire-voice/call-83.mp3",
+    "bytes": 10075,
+    "sha256": "096adc1a4917e7404792bbbfaf918e4ee1f6ec504b43441d90156be9d05e2020"
+  },
+  {
+    "path": "rally/umpire-voice/call-84.mp3",
+    "bytes": 10075,
+    "sha256": "790945704369324bcf625e12d87857cac4f7d5c81584ec1642f761f2229ccf4a"
+  },
+  {
+    "path": "rally/umpire-voice/call-85.mp3",
+    "bytes": 11015,
+    "sha256": "a18f28aa66c8351baf76d9c7321f6f854bbf78bcc1f3568d2d3740c40e2efc58"
+  },
+  {
+    "path": "rally/umpire-voice/call-86.mp3",
+    "bytes": 11328,
+    "sha256": "b417e2858ee30baaf63a8b92c6412e7437641398e90d69b75a82b6a487be02e3"
+  },
+  {
+    "path": "rally/umpire-voice/call-87.mp3",
+    "bytes": 10388,
+    "sha256": "996d384ad3399269b3568b38d60661883c2e68a957725e2b3d594037fda9b437"
+  },
+  {
+    "path": "rally/umpire-voice/call-88.mp3",
+    "bytes": 9761,
+    "sha256": "56397baf34e79ef444661493e18f312d8c0775b8c9dfec759ada0bac12210514"
+  },
+  {
+    "path": "rally/umpire-voice/call-89.mp3",
+    "bytes": 10075,
+    "sha256": "7cbbd8afbfc8f8667997a22ba38dcf81add345ec7dc557e0092ae66ecfc2c7b8"
+  },
+  {
+    "path": "rally/umpire-voice/call-9.mp3",
+    "bytes": 7880,
+    "sha256": "16796fd1c4b5bad7b38e810a8c2c1202d3d933240134af4dacd8a30843b0838f"
+  },
+  {
+    "path": "rally/umpire-voice/call-90.mp3",
+    "bytes": 8821,
+    "sha256": "ec55483cd38967b5eeea30dd22616c78662eec85771e9cb43e9744fb9be761b2"
+  },
+  {
+    "path": "rally/umpire-voice/call-91.mp3",
+    "bytes": 10702,
+    "sha256": "e320e3f095eb5a0b25fb260de3ed729346f80d052f98f1c197e85875aace9d94"
+  },
+  {
+    "path": "rally/umpire-voice/call-92.mp3",
+    "bytes": 11015,
+    "sha256": "0d57d63ed2d74f09b97d721b53ec713a77d03adced2a2dee968dd22e19489159"
+  },
+  {
+    "path": "rally/umpire-voice/call-93.mp3",
+    "bytes": 11015,
+    "sha256": "6e61c48b00115fc3dbc5e09738e2fc08000bc42e809831d535a42dbef9a39290"
+  },
+  {
+    "path": "rally/umpire-voice/call-94.mp3",
+    "bytes": 11015,
+    "sha256": "2bad9faea06f40449f37ca384971d1ac4282d1a6a2fb2b3eb9c52daf30642ea4"
+  },
+  {
+    "path": "rally/umpire-voice/call-95.mp3",
+    "bytes": 11955,
+    "sha256": "dc93a32ac0a05e8dac95242de33f63a3f29a4f1d316066b18b7d5fc6f237aa00"
+  },
+  {
+    "path": "rally/umpire-voice/call-96.mp3",
+    "bytes": 12582,
+    "sha256": "c752c20bf4fb347918d650167b691e19d60a047f4803cad45e08cc96ad5eebd6"
+  },
+  {
+    "path": "rally/umpire-voice/call-97.mp3",
+    "bytes": 11642,
+    "sha256": "c110a60e8f697aea0c9491521234ffebf4b0c8df3a02f8116eef00d93b3f4d79"
+  },
+  {
+    "path": "rally/umpire-voice/call-98.mp3",
+    "bytes": 11015,
+    "sha256": "8f8b3c3dc30694938dbe70face358346377c42dfc32f1aedf110c29ccf359d06"
+  },
+  {
+    "path": "rally/umpire-voice/call-99.mp3",
+    "bytes": 11015,
+    "sha256": "433a544c9dda8f1444028c337d6d54aa6d79672916113c0150abca89d851873a"
+  },
+  {
+    "path": "rally/umpire-voice/call-all.mp3",
+    "bytes": 7567,
+    "sha256": "cbd9eef97172e8416e3e57f9aa011055d16e45b9b5424699a7438363f4c28388"
+  },
+  {
+    "path": "rally/umpire-voice/call-fault.mp3",
+    "bytes": 7253,
+    "sha256": "5eaf63568ae0ef9c234ef47dce3963a56e5e0e5fe48a1c7faff8ace7107b0b60"
+  },
+  {
+    "path": "rally/umpire-voice/call-game-point.mp3",
+    "bytes": 9134,
+    "sha256": "3f0fea73678b6ebbebd7f3266d13b1bd53b8f76efb02c2603da7ea2023aea626"
+  },
+  {
+    "path": "rally/umpire-voice/call-game.mp3",
+    "bytes": 5999,
+    "sha256": "82b50764599b3073006cbeb7d3e8b72a7001297a276b19ef7c569a6c44113963"
+  },
+  {
+    "path": "rally/umpire-voice/call-net.mp3",
+    "bytes": 6626,
+    "sha256": "57d8594625f631eeb921ff4d06863ee551540e27a4df40fd9898957ae503a5c2"
+  },
+  {
+    "path": "rally/umpire-voice/call-out.mp3",
+    "bytes": 5999,
+    "sha256": "5ab193f1ef15b4fc018b9aa7b289568430de7ad0a0e4c107ba385957481eae83"
+  },
+  {
+    "path": "rally/umpire-voice/call-second-server.mp3",
+    "bytes": 11328,
+    "sha256": "7f0d1876a2f3bb21810718be9fac9df122c36d8c7b12d55edb6a879a9bd015a3"
+  },
+  {
+    "path": "rally/umpire-voice/call-side-out.mp3",
+    "bytes": 8821,
+    "sha256": "d16285220791e3741b8fd1085a9087bdc6c6cdfb0a390b164c369937274011ae"
+  },
+  {
+    "path": "rally/umpire-voice/manifest.json",
+    "bytes": 3092,
+    "sha256": "9134c796bd42fd1142aa28ff35ec52f5fab557123079a546021639cdb524f548"
+  },
+  {
     "path": "sceneries.js",
-    "bytes": 11801,
-    "sha256": "bd25d554fed138f54c52df4fbc8112cc50b9cd14a6b411a9e927c51964f13dcd"
+    "bytes": 14187,
+    "sha256": "5027561da0ca19fe0aedaafd697eac9e3ef2fb91d448c00442e78b41548a27a6"
+  },
+  {
+    "path": "umpire-cedar.js",
+    "bytes": 1189,
+    "sha256": "7618069da47828079bb98775718044e13dd585d2ee7688cb3dd1bd0f286bb14a"
+  },
+  {
+    "path": "umpire-recorded.js",
+    "bytes": 1664,
+    "sha256": "247c00e5d68d1c97608fc35757aa198dd25193b8d24f4580f47aa4847f7a0d6a"
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 863018,
-    "sha256": "77c2f7594884f359f07b3da95e2c447a7886863b01af5f9f01b164051d8e4cf0"
+    "bytes": 863164,
+    "sha256": "8a1564683d4c72c94a44a566fd5727b44f58ea7aa9abf2f8223e3e3b5badf788"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",
@@ -231,8 +861,8 @@
   },
   {
     "path": "_next/static/chunks/3t2nbery9uokx.js",
-    "bytes": 30720,
-    "sha256": "c01147958e58bd767e0b0af6025076b5256a45e5c388111f294db116e5dfbf3b"
+    "bytes": 29187,
+    "sha256": "bf9e2a7b2558265c0a16bf32167f1670b61f31fb1369cffcdd3a93245331be75"
   },
   {
     "path": "_next/static/chunks/turbopack-3-ry682tkyiqk.js",
