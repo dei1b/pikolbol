@@ -13,13 +13,18 @@
   const codeFor=code=>{for(const a of Object.keys(defaults))if(bindings[a].includes(code))return canonical[a];return Object.values(defaults).flat().includes(code)?'Unbound':code;};
   const el=(tag,text,cls)=>{const e=document.createElement(tag);if(text)e.textContent=text;if(cls)e.className=cls;return e;};
   function panel(title,description){const p=el('section',null,'rally-mod-panel');p.append(el('h2',title),el('p',description));return p;}
+  function matchInfoHost(){
+    const resume=[...document.querySelectorAll('button')].find(e=>e.textContent.trim()==='Resume');
+    return resume?.parentElement??null;
+  }
   const mods=globalThis.RallyMods={activeBlitz:false,codeFor,
+    matchInfoHost,
     keyEvent(event){if(!event.isTrusted&&event.code==='Escape')return event;return new Proxy(event,{get(target,key){if(key==='code')return codeFor(target.code);const v=Reflect.get(target,key,target);return typeof v==='function'?v.bind(target):v;}});},
     startQuick(){mods.activeBlitz=mode==='blitz';},
     observeEngine(engine){mods.engine=engine;},
     mountMode(host){if(!host||host.childElementCount)return;const descriptions={classic:'Classic: standard game speed and point resets. Choose Traditional or Rally scoring below.',blitz:'Blitz: 20% faster play and quicker point resets. Choose Traditional or Rally scoring below.'};const p=panel('Match pace',descriptions[mode]||descriptions.classic),description=p.querySelector('p');description.setAttribute('aria-live','polite');const opts=el('div',null,'rally-mod-options');
       for(const value of ['classic','blitz']){const b=el('button',value==='classic'?'Classic':'⚡ Blitz');b.type='button';b.setAttribute('aria-pressed',String(mode===value));b.onclick=()=>{mode=value;save('rally.offline.pace.v1',mode);description.textContent=descriptions[mode];for(const x of opts.children)x.setAttribute('aria-pressed',String(x===b));};opts.append(b);}p.append(opts);host.append(p);},
-    mountControls(host){if(!host||host.childElementCount)return;const sceneryHost=document.createElement('div');globalThis.RallyScenery?.mount(sceneryHost);host.append(sceneryHost);
+    mountControls(host){if(!host||host.childElementCount)return;
       const p=panel('Keyboard controls','Select an action, then press a key. Assignments are saved on this device. Esc cancels key capture.');const status=el('div',null,'rally-mod-status');status.setAttribute('role','status');
       for(const a of Object.keys(defaults)){const row=el('div',null,'rally-mod-row'),b=el('button',bindings[a].map(label).join(' / '));b.type='button';b.setAttribute('aria-label','Rebind '+names[a]);b.onclick=()=>{if(capture){capture.button.textContent=bindings[capture.action].map(label).join(' / ');}capture={action:a,button:b,status};b.textContent='Press a key…';status.textContent='Press a key for '+names[a]+'.';};row.append(el('span',names[a]),b);p.append(row);}
       const reset=el('button','Reset keyboard defaults');reset.type='button';reset.onclick=()=>{capture=null;bindings=structuredClone(defaults);save('rally.offline.keys.v1',bindings);host.replaceChildren();mods.mountControls(host);revision++;refresh();};p.append(status,reset);host.append(p);
@@ -42,10 +47,10 @@
   },true);
   // React owns the host elements; this module owns their contents and the touch transforms.
   function refresh(){
-    globalThis.RallyAI?.refreshMatchInfo();
     const overlay=document.querySelector('[data-match-overlay]');
+    globalThis.RallyAI?.refreshMatchInfo();globalThis.RallyCourtLabels?.update(mods.engine);
     let badge=document.getElementById('rally-blitz-badge');
-    if(overlay&&mods.engine?.blitz){if(!badge){badge=el('div','⚡ BLITZ','rally-blitz-badge');badge.id='rally-blitz-badge';overlay.append(badge);}}else badge?.remove();
+    badge?.remove();
     const buttons=[...document.querySelectorAll('[data-shot]')].filter(b=>b.tagName==='BUTTON');
     if(buttons.length!==4)return;
     const version=revision+':'+innerWidth+':'+innerHeight+':'+(document.querySelector('[data-controls]')?.getAttribute('data-left-handed'));

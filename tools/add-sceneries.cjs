@@ -5,5 +5,4 @@ patch('async function s9(t){if(void 0===t.court)', 'async function s9(t){if(void
 patch('this.stadium=e.stadium,this.scene.add(e.stadium.group);','this.stadium=e.stadium,this.scene.add(e.stadium.group),globalThis.RallyScenery?.onView(this,e.stadium);');
 patch('ref:e=>globalThis.RallyMods?.mountMode(e)}),','ref:e=>globalThis.RallyMods?.mountMode(e)}),(0,n.jsx)("div",{"data-scenery-picker":true,ref:e=>globalThis.RallyScenery?.mount(e)}),');
 fs.writeFileSync(main,s);
-const mods=path.join(root,'site/game-mods.js');s=fs.readFileSync(mods,'utf8');const old='mountControls(host){if(!host||host.childElementCount)return;';if(!s.includes('const sceneryHost='))s=s.replace(old,old+"const sceneryHost=document.createElement('div');globalThis.RallyScenery?.mount(sceneryHost);host.append(sceneryHost);");fs.writeFileSync(mods,s);
 const index=path.join(root,'site/index.html');s=fs.readFileSync(index,'utf8');if(!s.includes('/sceneries.js'))s=s.replace('<script src="/ai-personalities.js"></script>','<script src="/ai-personalities.js"></script><script src="/sceneries.js"></script>');fs.writeFileSync(index,s);console.log('Installed scenery selector and venue factory');

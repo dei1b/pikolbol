@@ -113,7 +113,7 @@
     const title=document.createElement('h2');title.textContent='AI opponent';
     const select=document.createElement('select');select.setAttribute('aria-label','AI opponent');select.className='rally-ai-select';
     const auto=document.createElement('option');auto.value='auto';auto.textContent='Random character personalities';select.append(auto);
-    for(const p of roster){const o=document.createElement('option');o.value=p.id;o.textContent=`${p.isNew?'New · ':''}${p.name} — ${p.title}`;select.append(o);}
+    for(const p of roster){const o=document.createElement('option');o.value=p.id;o.textContent=`${p.name} — ${p.title}`;select.append(o);}
     select.value=selected;
     const name=document.createElement('div');name.className='rally-ai-name';
     const description=document.createElement('p');description.className='rally-ai-description';description.setAttribute('aria-live','polite');
@@ -123,15 +123,20 @@
     select.onchange=()=>{selected=select.value;try{localStorage.setItem('rally.offline.opponent.v1',selected);}catch{}update();};update();panel.append(title,select,name,description,partner,note);host.append(panel);
   }
   function refreshMatchInfo(){
-    const host=document.querySelector('[data-match-overlay]'),engine=globalThis.RallyMods?.engine;
+    const host=globalThis.RallyMods?.matchInfoHost(),engine=globalThis.RallyMods?.engine;
     let badge=document.getElementById('rally-ai-badge');
     if(!host||!engine?._rallyAIReady){badge?.remove();return;}
     const opponents=engine.players.filter(p=>p.team===1&&!p.human).map(p=>profiles[p.mind.personality]).filter(Boolean);
     if(!opponents.length){badge?.remove();return;}
     if(!badge){badge=document.createElement('div');badge.id='rally-ai-badge';badge.className='rally-ai-badge';host.append(badge);}
-    const text=opponents.map(p=>`${p.name} · ${p.title}`).join(' / ');
-    if(badge.textContent!==text)badge.textContent=text;
-    badge.style.top=engine.blitz?'115px':'88px';
+    const signature=opponents.map(p=>p.id).join('/');
+    if(badge.dataset.opponents!==signature){
+      badge.dataset.opponents=signature;
+      badge.replaceChildren(...opponents.map(p=>{
+        const row=document.createElement('div'),name=document.createElement('strong'),title=document.createElement('span');
+        row.className='rally-ai-rival';name.className='font-condensed';name.textContent=p.name;title.textContent=p.title;row.append(name,title);return row;
+      }));
+    }
   }
   globalThis.RallyAI={roster,profiles,preparePlan,configure,chooseShot,afterHit,mountPicker,refreshMatchInfo};
 })();

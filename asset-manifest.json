@@ -1,8 +1,8 @@
 [
   {
     "path": "ai-personalities.js",
-    "bytes": 11407,
-    "sha256": "5466d80f47981d910fd1475c028ecff266cde22c9c31f7d3255367deaede452a"
+    "bytes": 11685,
+    "sha256": "49784377c59062ba626733ff2eef16e08bdeef9b82db1be31a075ac4f8bf9b66"
   },
   {
     "path": "apple-icon.png",
@@ -10,14 +10,19 @@
     "sha256": "50ce15458bd14a37addd0b2130ea6a71237f46da98f441090d6e840d98c73222"
   },
   {
+    "path": "court-labels.js",
+    "bytes": 2429,
+    "sha256": "738169521525608f3fe612417e5a111bba05d33e98e9de8e8f64afa8fabf5af0"
+  },
+  {
     "path": "game-mods.css",
-    "bytes": 1642,
-    "sha256": "4f1e169a3de536f4e75cd42edde80699bf73a748dcc588fc8c9e74d1a2a89ca2"
+    "bytes": 2482,
+    "sha256": "453aad7d9144015e104dfb6d42e602eae29bc2aadfbec778017a876b1beaa68e"
   },
   {
     "path": "game-mods.js",
-    "bytes": 8537,
-    "sha256": "209f838e2c96a848d18ddca65514423f7442cff6249a13ee1ac320637bc0ffa0"
+    "bytes": 8511,
+    "sha256": "43f14cd042ac837e58526442262ccade82b3a3e21176ca7feb59fa3b244c5a6c"
   },
   {
     "path": "icon.svg",
@@ -41,8 +46,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 11321,
-    "sha256": "0b6c0abf244c08cdff45669993b5ef369decfd3030dfe021b199a6f651a2f105"
+    "bytes": 11361,
+    "sha256": "2fb13bf00777f9b044b0356a79dd9402e0c285ccbdf7c8b9b05604654a7d92a6"
   },
   {
     "path": "manifest.webmanifest",
@@ -68,6 +73,26 @@
     "path": "rally/characters.gltf",
     "bytes": 43714,
     "sha256": "3ba9ea8e6d5da359e3f5b1c324bcffc053ba33170ae9f67835cb0eea5a5b2566"
+  },
+  {
+    "path": "rally/court-previews/beach.jpg",
+    "bytes": 52121,
+    "sha256": "30af4b1ea5c0ecc6420997f5b2428893038a2ae9660bd79dfe65b1286d0cde71"
+  },
+  {
+    "path": "rally/court-previews/night.jpg",
+    "bytes": 53623,
+    "sha256": "5dfcf76b36c8cea9750ec176f444056a58ac7be0613355b40999176cbc09d689"
+  },
+  {
+    "path": "rally/court-previews/rooftop.jpg",
+    "bytes": 48450,
+    "sha256": "ff72e0c7f51453f2cb4b63f7c64259d4f6a9fb6a7b7784dc69589a0521a06188"
+  },
+  {
+    "path": "rally/court-previews/stadium.jpg",
+    "bytes": 170573,
+    "sha256": "0b6b8c69d93d42c68c420423ecd649a9fff39c3ff90dab085f8af3eef6512c35"
   },
   {
     "path": "rally/enzo.glb",
@@ -111,13 +136,13 @@
   },
   {
     "path": "sceneries.js",
-    "bytes": 11564,
-    "sha256": "10ed8e5d9fe6bf6553b0494cb77ef217991f74a3ed2a7243c3ad47eb40c0270a"
+    "bytes": 11801,
+    "sha256": "bd25d554fed138f54c52df4fbc8112cc50b9cd14a6b411a9e927c51964f13dcd"
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 862890,
-    "sha256": "82933e9701f7f5a521b5525ee843650647798b58564041e4aae23164c15e4813"
+    "bytes": 863018,
+    "sha256": "77c2f7594884f359f07b3da95e2c447a7886863b01af5f9f01b164051d8e4cf0"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",

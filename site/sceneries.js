@@ -14,8 +14,12 @@
     const select=document.createElement('select');select.className='rally-ai-select';select.setAttribute('aria-label','Scenery');
     for(const [id,theme]of Object.entries(themes)){const o=document.createElement('option');o.value=id;o.textContent=theme.name;select.append(o);}select.value=selected;
     const description=document.createElement('p');description.setAttribute('aria-live','polite');description.className='rally-scenery-description';
-    const update=()=>description.textContent=themes[selected].description+' Applied when you start a new match or drill.';
-    select.onchange=()=>{selected=select.value;try{localStorage.setItem('rally.offline.scenery.v1',selected);}catch{}update();};update();panel.append(title,select,description);host.append(panel);
+    const preview=document.createElement('img');preview.className='rally-court-preview';preview.width=960;preview.height=540;preview.decoding='async';
+    const update=()=>{
+      description.textContent=themes[selected].description;
+      preview.src='/rally/court-previews/'+selected+'.jpg';preview.alt=themes[selected].name+' court preview';
+    };
+    select.onchange=()=>{selected=select.value;try{localStorage.setItem('rally.offline.scenery.v1',selected);}catch{}update();};update();panel.append(title,select,preview,description);host.append(panel);
   }
   function makeVenue(options,K){
     const id=selected,theme=themes[id],group=new K.Group();group.name='scenery-'+id;group.userData.scenery=id;

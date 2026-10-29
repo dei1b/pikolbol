@@ -1,2 +1,18 @@
-.rally-mod-panel{margin:0 0 20px;padding:16px;border:1px solid #ffffff29;border-radius:18px;background:#10201be8;color:#fff;font:600 14px/1.5 system-ui}.rally-mod-panel h2{font-size:17px;margin:0 0 6px;color:#d4f25a}.rally-mod-panel p{margin:0 0 12px;color:#c2cfc8;font-size:12px}.rally-mod-panel button,.rally-mod-panel select{min-height:44px;border:1px solid #ffffff40;border-radius:10px;padding:8px 12px;background:#234439;color:white;font:700 14px system-ui;cursor:pointer}.rally-mod-panel button[aria-pressed=true]{background:#d4f25a;color:#10201b}.rally-mod-options{display:flex;gap:8px}.rally-mod-options>*{flex:1}.rally-mod-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0}.rally-mod-row button{min-width:100px}.rally-mod-row select{max-width:60%}.rally-mod-panel button:focus-visible,.rally-mod-panel select:focus-visible{outline:3px solid white;outline-offset:2px}.rally-mod-status{min-height:20px;color:#d4f25a;font-size:12px}.rally-blitz-badge{position:fixed;top:88px;left:12px;z-index:25;padding:3px 9px;border-radius:12px;background:#d4f25a;color:#10201b;font:900 11px system-ui;pointer-events:none;letter-spacing:1px}
-.rally-ai-select{width:100%;max-width:100%;margin:4px 0 12px}.rally-ai-name{font-size:16px;font-weight:800;margin-bottom:6px}.rally-ai-picker .rally-ai-partner{color:#d4f25a}.rally-ai-badge{position:fixed;left:12px;top:88px;z-index:24;max-width:min(330px,70vw);padding:6px 10px;border:1px solid #ffffff30;border-radius:10px;background:#10201be8;color:#fff;font:700 11px/1.5 system-ui;pointer-events:none}.rally-ai-badge small{display:block;color:#c2cfc8;font-size:10px}
+.rally-mod-panel{margin:0 0 20px;padding:16px;border:1px solid #ffffff29;border-radius:18px;background:#10201be8;color:#fff;font:600 14px/1.5 system-ui}.rally-mod-panel h2{font-size:17px;margin:0 0 6px;color:#d4f25a}.rally-mod-panel p{margin:0 0 12px;color:#c2cfc8;font-size:12px}.rally-mod-panel button,.rally-mod-panel select{min-height:44px;border:1px solid #ffffff40;border-radius:10px;padding:8px 12px;background:#234439;color:white;font:700 14px system-ui;cursor:pointer}.rally-mod-panel button[aria-pressed=true]{background:#d4f25a;color:#10201b}.rally-mod-options{display:flex;gap:8px}.rally-mod-options>*{flex:1}.rally-mod-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0}.rally-mod-row button{min-width:100px}.rally-mod-row select{max-width:60%}.rally-mod-panel button:focus-visible,.rally-mod-panel select:focus-visible{outline:3px solid white;outline-offset:2px}.rally-mod-status{min-height:20px;color:#d4f25a;font-size:12px}
+.rally-ai-select{width:100%;max-width:100%;margin:4px 0 12px}.rally-ai-name{font-size:16px;font-weight:800;margin-bottom:6px}.rally-ai-picker .rally-ai-partner{color:#d4f25a}
+
+/* Match details share one anchor beside the native score HUD. */
+.rally-match-info{position:absolute;z-index:19;box-sizing:border-box;width:208px;max-width:calc(100% - 20px);padding:7px 10px;border:1px solid #ffffff1f;border-radius:12px;background:#10201be6;color:#fff;pointer-events:none;font:600 11px/1.3 system-ui;box-shadow:0 4px 12px #0002}
+.rally-match-info[hidden]{display:none}
+.rally-match-info[data-obscured=true],[data-match-overlay][data-paused=true] .rally-match-info{visibility:hidden}
+.rally-blitz-badge{display:table;margin-bottom:4px;padding:2px 6px;border-radius:5px;background:#d4f25a;color:#10201b;font:800 11px/1.1 system-ui}
+.rally-ai-badge{display:grid;gap:3px}
+.rally-ai-rival{display:flex;align-items:baseline;gap:7px;white-space:nowrap}
+.rally-ai-rival strong{min-width:34px;font-size:15px;font-weight:800;line-height:1}
+.rally-ai-rival span{color:#c2cfc8;font-size:11px}
+
+/* Keep secondary details out of the live court. */
+.rally-court-preview{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid #ffffff26;margin:0 0 10px;background:#10201b}
+[data-scoreboard]>.rally-blitz-badge{margin:0;padding:2px 6px;font-size:9px;line-height:12px;border-radius:4px}
+.rally-ai-badge{order:0;padding:4px 0;color:#fff}
+.rally-ai-rival{justify-content:center}
