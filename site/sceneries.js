@@ -24,7 +24,7 @@
   function makeVenue(options,K){
     const id=selected,theme=themes[id],group=new K.Group();group.name='scenery-'+id;group.userData.scenery=id;
     const geometries=[],materials=[],textures=[],batches=new Map();let disposed=false;
-    const palettes={beach:{sky:'#9dd9e7',floor:'#d8be8b',outer:'#3d9db3',court:'#277b99',kitchen:'#5ebcc6',line:'#f9fbec',light:'#fff4dc'},rooftop:{sky:'#b47a88',floor:'#343d48',outer:'#344e63',court:'#164c79',kitchen:'#28618a',line:'#fff9ed',light:'#ffce8e'},night:{sky:'#080f23',floor:'#142a25',outer:'#244a3b',court:'#16426c',kitchen:'#28567a',line:'#f4f5ec',light:'#ffdda0'}};
+    const palettes={beach:{sky:'#9dd9e7',floor:'#d8be8b',outer:'#3d9db3',court:'#277b99',kitchen:'#5ebcc6',line:'#f9fbec',light:'#fff4dc'},rooftop:{sky:'#b47a88',floor:'#343d48',outer:'#46576b',court:'#225b98',kitchen:'#377ab0',line:'#fff9ed',light:'#ffce8e'},night:{sky:'#080f23',floor:'#142a25',outer:'#244a3b',court:'#16426c',kitchen:'#28567a',line:'#f4f5ec',light:'#ffdda0'}};
     const palette=palettes[id];if(!palette)throw new Error('Unknown scenery');
     const mat=(color,unlit=false)=>{const m=new (unlit?K.Basic:K.Material)({color,flatShading:!unlit});materials.push(m);return m;};
     const batch=(color,target=group,unlit=false)=>{let key=target.uuid+':'+color+':'+unlit;if(!batches.has(key))batches.set(key,{points:[],color,target,unlit});return batches.get(key).points;};
@@ -50,7 +50,7 @@
     box(0,.9,0,6.5,.045,.025,'#fbf8e9',net);
     // Fixtures stay beyond the run-off area.
     for(const x of [-7.5,7.5]){box(x,.52,3,2.2,.12,.6,'#b89971');for(const dx of [-.7,.7])box(x+dx,.25,3,.12,.5,.4,'#3c4b4e');}
-    const hemi=new K.Hemi(palette.light,id==='night'?'#243448':'#648776',id==='night'?.85:2);group.add(hemi);const sun=new K.Light(palette.light,id==='night'?1.8:2.1);sun.position.set(-6,13,8);group.add(sun);
+    const hemi=new K.Hemi(id==='rooftop'?'#d3dcf1':palette.light,id==='night'?'#243448':id==='rooftop'?'#596779':'#648776',id==='night'?.85:2);group.add(hemi);const sun=new K.Light(palette.light,id==='night'?1.8:2.1);sun.position.set(-6,13,8);group.add(sun);
     if(id==='beach'){
       box(0,-.42,-15,200,.1,200,'#279eae');box(0,-.24,0,30,.15,32,'#e4ca93');
       for(let i=0;i<18;i++)box(-35+(i*13)%70,-.35,-25-i*3,5+i%3,.02,.07,i%2?'#7cd4d1':'#57bcbe',group,true);
@@ -60,6 +60,20 @@
       for(const x of [-7,7]){box(x,1.3,-5,.07,2.6,.07,'#d7ceb4');const top=[x,2.7,-5];for(let i=0;i<8;i++){const a=i*Math.PI/4,b=(i+1)*Math.PI/4;polygon([top,[x+Math.cos(a)*1.3,2.25,-5+Math.sin(a)*1.3],[x+Math.cos(b)*1.3,2.25,-5+Math.sin(b)*1.3]],i%2?'#fff2cc':'#ec8e6d');}}
       ellipsoid(-23,15,-53,4,4,1,'#fff0bc',group,true);
     }else if(id==='rooftop'){
+      // The intro orbit exposes the underside: the deck rests on a full tower.
+      const tower=new K.Group();tower.name='rooftop-building';group.add(tower);
+      box(0,-30.11,0,18.9,59.78,26.9,'#354352',tower);
+      box(0,-.30,0,19.16,.20,27.16,'#a4a6a3',tower);
+      for(let y=-3.2;y>-59;y-=3.2){
+        box(0,y,0,19.02,.13,27.02,'#566674',tower);
+        for(const x of [-9.46,9.46])for(let z=-12;z<=12;z+=1.65)
+          box(x,y+1.35,z,.025,1.65,.93,Math.round((y+z)*10)%4===0?'#e5ba83':'#6a8295',tower,true);
+        for(const z of [-13.46,13.46])for(let x=-8.4;x<=8.5;x+=1.65)
+          box(x,y+1.35,z,.93,1.65,.025,Math.round((y+x)*10)%4===0?'#e5ba83':'#6a8295',tower,true);
+      }
+      for(const x of [-9.48,9.48])for(const z of [-13.48,13.48])box(x,-30.1,z,.20,59.8,.20,'#9c9a90',tower);
+      box(0,-60.8,0,25,1.6,33,'#293541',tower);
+      box(0,-61.7,0,4000,.2,4000,'#28343b');
 
       sun.position.set(-12,15,-24);
       // Layered sunset backdrop, shared by the game and the court preview.
@@ -73,13 +87,13 @@
         sky.fillStyle='rgba(255,209,155,.19)';sky.beginPath();sky.ellipse(x+22,y+10,w*.9,3,0,0,Math.PI*2);sky.fill();
       }
       const skyTex=new K.Texture(skyCanvas);skyTex.colorSpace=K.sRGB;textures.push(skyTex);
-      const skyGeo=new K.Geometry();skyGeo.setAttribute('position',new K.Attribute(new Float32Array([-180,-40,-105,180,-40,-105,180,110,-105,-180,-40,-105,180,110,-105,-180,110,-105]),3));skyGeo.setAttribute('uv',new K.Attribute(new Float32Array([0,0,1,0,1,1,0,0,1,1,0,1]),2));skyGeo.computeVertexNormals();geometries.push(skyGeo);
+      const skyGeo=new K.Geometry();skyGeo.setAttribute('position',new K.Attribute(new Float32Array([-500,-40,-105,500,-40,-105,500,110,-105,-500,-40,-105,500,110,-105,-500,110,-105,-500,-300,-105,500,-300,-105,500,-40,-105,-500,-300,-105,500,-40,-105,-500,-40,-105]),3));skyGeo.setAttribute('uv',new K.Attribute(new Float32Array([0,0,1,0,1,1,0,0,1,1,0,1,0,0,1,0,1,0,0,0,1,0,0,0]),2));skyGeo.computeVertexNormals();geometries.push(skyGeo);
       const skyMat=new K.Basic({map:skyTex,toneMapped:false});materials.push(skyMat);const backdrop=new K.Mesh(skyGeo,skyMat);backdrop.name='sunset-sky';group.add(backdrop);
       ellipsoid(-9,9,-65,4.3,4.3,.6,'#ffe1a0',group,true);
       // A dense skyline with lit windows and sunset-facing glass strips.
       const facades=['#455367','#566077','#374657','#6e6878','#655967'];
       function building(x,z,w,d,h,color,landmark=false){
-        const base=-9;box(x,base+h/2,z,w,h,d,color);
+        const base=-9;box(x,-61.6+(h+52.6)/2,z,w,h+52.6,d,color);
         const front=z+d/2+.018;
         box(x-w*.39,base+h*.51,front,w*.12,h*.94,.025,landmark?'#a78368':'#b88c78',group,true);
         box(x+w*.41,base+h*.51,front,w*.035,h*.96,.025,'#f2ba83',group,true);

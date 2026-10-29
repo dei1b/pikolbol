@@ -76,23 +76,23 @@
   },
   {
     "path": "rally/court-previews/beach.jpg",
-    "bytes": 51967,
-    "sha256": "ac023055a0b4da861de1357ff32314e3f1ca5d5fa4b94e7e2044ea992b6bc079"
+    "bytes": 52029,
+    "sha256": "f2b2577fffe0accb739fd8d0da3667c86bed15328a1b44e934399790c11d2b7f"
   },
   {
     "path": "rally/court-previews/night.jpg",
-    "bytes": 48963,
-    "sha256": "d2ecbe71359fb283d24eec7ae73d4c5a06d44bc58080117a8ac75c81f678e188"
+    "bytes": 49102,
+    "sha256": "4d3310423dfe23ee5e2227524caabfc96d1068267fbbee3edb61d1c43d03cf5d"
   },
   {
     "path": "rally/court-previews/rooftop.jpg",
-    "bytes": 48523,
-    "sha256": "f3291ba8f1e82a613306ef04545a9ed57cd46b3206d142db2158e959a0a1e4db"
+    "bytes": 103856,
+    "sha256": "057794b79d56adda799a52c4e7a408bf3ec9abe9a1f93d586818c97a20090223"
   },
   {
     "path": "rally/court-previews/stadium.jpg",
-    "bytes": 170395,
-    "sha256": "11611fe5dc6a4ca95465f7b1f8bb81356b86cca54a38df2d5716a0e5e12f09b4"
+    "bytes": 170334,
+    "sha256": "1cc542d907031c22ffec903998d6a8ce3a212766e71baa5972708c0813f8a13a"
   },
   {
     "path": "rally/enzo.glb",
@@ -756,8 +756,8 @@
   },
   {
     "path": "sceneries.js",
-    "bytes": 14187,
-    "sha256": "5027561da0ca19fe0aedaafd697eac9e3ef2fb91d448c00442e78b41548a27a6"
+    "bytes": 19140,
+    "sha256": "84ca8104d63dac44b1032c96cc926039b102d3535d682e3fae18938023ac0c79"
   },
   {
     "path": "umpire-cedar.js",

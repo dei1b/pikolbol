@@ -15,7 +15,7 @@ const fs=require('node:fs'),path=require('node:path');
    await page.waitForFunction(()=>!!globalThis.RallyScenery?.view);
    await page.evaluate(id=>{
     const v=RallyScenery.view;v.frame=()=>{};
-    if(id==='night'||id==='rooftop'){v.camera.position.set(10,8,17);v.camera.lookAt(0,2,-3);}else{v.camera.position.set(9,13,17);v.camera.lookAt(0,0,0);}v.camera.updateMatrixWorld();v.camera.updateProjectionMatrix();
+    if(id==='rooftop'){v.camera.position.set(10,11,20);v.camera.lookAt(0,2,-3);}else if(id==='night'){v.camera.position.set(10,8,17);v.camera.lookAt(0,2,-3);}else{v.camera.position.set(9,13,17);v.camera.lookAt(0,0,0);}v.camera.updateMatrixWorld();v.camera.updateProjectionMatrix();
     v.renderer.render(v.scene,v.camera);
    },id);
    await page.addStyleTag({content:'[data-match-overlay]{visibility:hidden!important}'});

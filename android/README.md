@@ -41,3 +41,7 @@ Version 1.3.4 replaces Nika's oversized square headband frame with a thin chamfe
 Version 1.3.5 fits Maya's frames to the measured face surface and eye height, with connected hinges and arms reaching the temples.
 
 Version 1.3.6 replaces illustrated avatars with portraits rendered from all ten current game models. Includes Maya's fitted glasses from 1.3.5. Regenerate portraits using tools/build-character-portraits.cjs after model changes.
+
+Version 1.3.7 redesigns Sunset Rooftop with a blue court, glass railings, protective fencing, warm LEDs, planters, a dense lit skyline and a tall dark landmark tower against an orange-pink sunset. Includes the refreshed court preview.
+
+Version 1.3.8 adds the complete building beneath the rooftop deck, including facade windows, floor bands, corner columns and a base. Nearby skyline buildings extend to the same ground level, removing the floating platform appearance during the opening orbit.
