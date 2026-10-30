@@ -1,6 +1,6 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.6.4 is the current installer.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.8.0 is the current installer.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
@@ -59,3 +59,7 @@ Version 1.6.2 removes the redundant Call score across Traditional/Rally and Clas
 Version 1.6.3 adds shared preview/in-game patterns to all six cosmetic paddle finishes: lime diagonals, coral chevrons, gold sunburst, midnight stars, sunset bands and mint checks. Original retains the plain stock design. Pattern overlays are disposed when switching finishes or leaving a match.
 
 Version 1.6.4 adds the supplied Beach, Sunset Rooftop and Moonlit Grove ambience recordings as normalized, crossfaded AAC loops (3.6 MB combined). They follow master volume and the Crowd & ambience setting, pause with the game or backgrounding, and duck during recorded umpire calls. Stadium retains its original crowd.
+
+Version 1.7.0 adds position-aware rival tactics, open-space targeting and non-hitter doubles coverage. The ten Ladder stages have fixed interpolated opponent skill, with faster reactions, more reliable placement and fewer mistakes at later stages; the local AI partner stays consistent. Difficulty never changes based on score or win history. Existing ladder clears and rewards remain valid.
+
+Version 1.8.0 adds Flat / Topspin / Slice selection for paddle-contact serves, drives, drops and dinks. Topspin increases dip and forward bounce; slice/chop floats and stays lower. CPU rivals use spin according to personality and fixed skill. Shared physics keeps AI interception and the landing guide consistent. Select spin above the shot buttons or cycle with Q (remappable in Settings); existing key remaps are preserved. Flat remains the default, scripted practice stays unchanged, and sidespin is deferred.

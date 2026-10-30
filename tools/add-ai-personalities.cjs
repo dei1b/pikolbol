@@ -4,9 +4,11 @@ const backup=path.join(root,'backups/before-ai-personalities');fs.mkdirSync(back
 function patch(from,to){if(s.includes(to))return;if(!s.includes(from))throw new Error('Missing AI hook: '+from.slice(0,100));s=s.replace(from,to);}
 patch('(0,n.jsx)(eU.Z,{title:"Computer",children:', '(0,n.jsx)("div",{"data-ai-picker":true,ref:e=>globalThis.RallyAI?.mountPicker(e)}),(0,n.jsx)(eU.Z,{title:"Difficulty",children:');
 patch('onPlay:()=>F(ev(d,h,(0,ec.J)()))','onPlay:()=>{let p=ev(d,h,(0,ec.J)());F(globalThis.RallyAI?.preparePlan(p)??p)}');
-patch('}),this.setup=this.planServe()}step(e,t)', '}),globalThis.RallyAI?.configure(this),this.setup=this.planServe()}step(e,t)');
+patch('}),this.setup=this.planServe()}step(e,t)', '}),globalThis.RallyAI?.configure(this,u7.normal),this.setup=this.planServe()}step(e,t)');
+patch('globalThis.RallyAI?.configure(this),this.setup=this.planServe()', 'globalThis.RallyAI?.configure(this,u7.normal),this.setup=this.planServe()');
 patch('return this.practice&&1===e.team&&"dink"===pi(this.drill)?{...r,type:"dink"}:r}hit(', 'return this.practice&&1===e.team&&"dink"===pi(this.drill)?{...r,type:"dink"}:globalThis.RallyAI?.chooseShot(this,e,t,n,i,r)??r}hit(');
 patch('this.afterHit(e,u),c&&iP(', 'this.afterHit(e,u),globalThis.RallyAI?.afterHit(this,e),c&&iP(');
+patch('return{x:t,z:n*e.depth}}netDepth(e)', 'return globalThis.RallyAI?.coverHome(this,e,{x:t,z:n*e.depth})??{x:t,z:n*e.depth}}netDepth(e)');
 patch('sub:"A gentle hit."','sub:"Slower reactions, wider misses."');
 patch('sub:"An even match."','sub:"Balanced reactions and accuracy."');
 patch('sub:"Bring your best."','sub:"Quick reactions, precise placement."');

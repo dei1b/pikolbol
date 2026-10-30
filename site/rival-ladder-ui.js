@@ -3,7 +3,7 @@
   function open(format='singles'){
     const U=ui(),body=U.screen('Rival Ladder'),track=RallyLadder.getTrack(format),switches=U.el('div',null,'career-home');
     for(const f of ['singles','doubles'])switches.append(U.button(f==='singles'?'Singles':'Doubles',()=>open(f),f===format));body.append(switches,U.el('p','Traditional scoring to 11 · win by two. Choose Classic or Blitz pace before each match.'));
-    body.append(U.el('p',track.champion?'Champion! Replay any rival to sharpen your skills.':'Win each stage to unlock the next. Losses never remove progress.','career-muted'));
+    body.append(U.el('p',track.champion?'Champion! Replay any rival to sharpen your skills.':'Each stage brings quicker reactions, better placement and fewer mistakes. Retries keep the same difficulty. Losses never remove progress.','career-muted'));
     for(const stage of RallyLadder.stages){
       const profile=RallyAI.profiles[stage.rivalId],cleared=track.clearedIds.includes(stage.id),available=cleared||track.nextStageId===stage.id,p=U.panel(null);p.classList.add('career-stage');
       const image=U.el('img');image.src='/rally/portraits/'+profile.character+'.png';image.alt='';p.append(image);
