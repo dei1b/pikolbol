@@ -43,12 +43,19 @@
     const team={...plan.teams[1],characters:config.characters.slice(2),name:opponent.map(p=>p.name).join(' & '),short:opponent[0].name.toUpperCase()};
     return{...plan,config,teams:[plan.teams[0],team]};
   }
-  function configure(engine){
+  function configure(engine,normalPreset){
     if(engine.practice||engine._rallyAIReady)return;
     engine._rallyAIReady=true;
     for(const player of engine.players){
       if(player.human)continue;
-      const p=profileFor(engine,player),base=player.mind.tune;
+      const p=profileFor(engine,player);let base=player.mind.tune;
+      // Stage skill is fixed at construction. The local partner keeps its normal tuning.
+      const stage=engine.config.ladderStageId;
+      if(player.team===0&&engine.config.offlineMode==='ladder'&&normalPreset)base=normalPreset;
+      if(player.team===1&&engine.config.offlineMode==='ladder'&&Number.isInteger(stage)&&stage>=1&&stage<=10){
+        const progress=(stage-1)/9,lerp=(a,b)=>a+(b-a)*progress;
+        base={...base,reaction:lerp(.42,.16),speed:lerp(3.5,4.8),aimError:lerp(.34,.13),whiff:lerp(.06,.012),blunder:lerp(.04,.012),smart:lerp(.25,.9),netVolley:lerp(.45,.92),deepVolley:lerp(.05,.25),timing:[lerp(.6,.85),lerp(.94,1)],thirdDrop:lerp(.3,.72),speedUp:lerp(.25,.6),pace:lerp(1.18,1),serveError:lerp(.22,.12),deepServe:lerp(0,.45),highServe:lerp(0,.15)};
+      }
       // Never modify shared difficulty presets or another character's tuning.
       const tune={...base,timing:[...base.timing],netDepth:p.net,singlesNet:p.singles,aimError:base.aimError*p.accuracy,pace:base.pace*p.pace};
       tune.speed=clamp(base.speed*p.speed,2.8,5.5);
@@ -85,19 +92,21 @@
           case 'rusher':choices=near?[['drive',58],['dink',38],['lob',4]]:[['drop',78],['drive',18],['lob',4]];break;
           default:choices=near?[['dink',34],['drive',36],['lob',30]]:[['drop',36],['drive',34],['lob',30]];
         }
-        // A low contact is safer as a soft shot than as a flat drive.
-        if(contact.y<.55)choices=choices.map(([s,w])=>[s,s==='drive'?w*.35:w]);
+        // Read visible court positions while retaining each rival's preferred shots.
+        const allDeep=opponents.length>0&&opponents.every(o=>Math.abs(o.p.z)>4.4);
+        choices=choices.map(([s,w])=>[s,w*(s==='drop'&&allDeep?1.65:s==='drop'&&atNet?.75:s==='lob'&&atNet?1.35:s==='lob'&&allDeep?.45:1)*(s==='drive'&&contact.y<.55?.2:1)]);
         if(p.style==='mix'&&player.mind.lastStyleShot){const alternatives=choices.filter(([s])=>s!==player.mind.lastStyleShot);if(alternatives.length)choices=alternatives;}
         type=weighted(choices,rnd);
       }
     }
     player.mind.lastStyleShot=type;
     let aim={...base.aim};
-    if((p.style==='sniper'||p.style==='counter')&&opponents.length&&rnd()<tune.smart){
-      const width=p.style==='sniper'?.9:.7;
-      const gap=x=>Math.min(...opponents.map(o=>Math.abs(o.p.x-x)));
-      aim.x=(gap(-2.1)>gap(2.1)?-1:1)*width;
-      aim.depth=type==='drive'?.65:base.aim.depth;
+    if(engine.hits>=3&&opponents.length&&rnd()<tune.smart){
+      const width=type==='dink'?2:type==='lob'||type==='drop'?2.1:2.3;
+      const targetDepth=type==='dink'?1.45:type==='drop'?1.8:type==='smash'?3.1:5.8;
+      const gap=x=>Math.min(...opponents.map(o=>Math.hypot(o.p.x-x*width,Math.abs(o.p.z)-targetDepth)));
+      const candidates=[-.85,0,.85],best=candidates.reduce((a,b)=>gap(b)>gap(a)?b:a);
+      aim.x=best;aim.depth=type==='drive'?.4:base.aim.depth;
     }
     if(type==='lob')aim.depth=.3+.25*rnd();
     const pace=type==='drive'&&contact.y<.65?Math.max(base.pace,1.12):base.pace;
@@ -106,6 +115,16 @@
   function afterHit(engine,hitter){
     if(engine.practice||engine.hits<3)return;
     for(const p of engine.players){if(p.human||p.team!==hitter.team||!p.mind.personality)continue;p.depth=engine.config.format==='singles'?p.mind.tune.singlesNet:p.mind.tune.netDepth;}
+  }
+  function coverHome(engine,player,home){
+    const incoming=engine.incoming;
+    if(engine.practice||player.human||!player.mind.personality||engine.config.format!=='doubles'||engine.hits<3||engine.phase!=='rally'||incoming?.team!==player.team||incoming.taker===player.id)return home;
+    const partner=engine.players.find(p=>p.team===player.team&&p.id===incoming.taker);
+    if(!partner)return home;
+    const contact=partner.mind?.plan?.contact?.stand??partner.ctl?.plan?.stand??partner.p;
+    if(Math.abs(contact.x)<.55)return home;
+    const openX=contact.x>0?-1.25:1.25,skill=player.mind.tune.smart;
+    return{...home,x:home.x+(openX-home.x)*(.4+.45*skill)};
   }
   function mountPicker(host){
     if(!host||host.childElementCount)return;
@@ -138,5 +157,5 @@
       }));
     }
   }
-  globalThis.RallyAI={roster,profiles,preparePlan,configure,chooseShot,afterHit,mountPicker,refreshMatchInfo};
+  globalThis.RallyAI={roster,profiles,preparePlan,configure,chooseShot,afterHit,coverHome,mountPicker,refreshMatchInfo};
 })();
