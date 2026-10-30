@@ -1,0 +1,9 @@
+const fs=require('node:fs'),path=require('node:path'),root=path.resolve(__dirname,'..');
+let f=path.join(root,'site/ai-personalities.js'),s=fs.readFileSync(f,'utf8');
+s=s.replace('function preparePlan(plan){','function preparePlan(plan,opponentId){').replace("if(plan.mode!=='quick')return plan;","if(!['quick','ladder','rush'].includes(plan.mode))return plan;").replace('const chosen=profiles[selected];','const chosen=profiles[opponentId??selected];');fs.writeFileSync(f,s);
+f=path.join(root,'site/sceneries.js');s=fs.readFileSync(f,'utf8');if(!s.includes('let sessionSelection='))s=s.replace("  let selected='stadium';","  let sessionSelection=null;\n  let selected='stadium';").replace('const id=selected,theme=themes[id]','const id=sessionSelection??selected,theme=themes[id]').replace('get selected(){return selected;},','get selected(){return sessionSelection??selected;},setSession(id){sessionSelection=themes[id]?id:null;},');fs.writeFileSync(f,s);
+f=path.join(root,'site/_next/static/chunks/0axfra5kwz6z1.js');s=fs.readFileSync(f,'utf8');function patch(a,b){if(s.includes(b))return;if(s.split(a).length!==2)throw Error('Missing/ambiguous ladder hook '+a);s=s.replace(a,b);}
+patch('F=e=>x({name:"match",plan:e,id:++nD})','F=e=>(globalThis.RallyScenery?.setSession(e.config.offlineCourt??null),x({name:"match",plan:e,id:++nD}))');
+patch('autoSwing:s.autoSwing,drill:e.practice?','autoSwing:e.offlineMode?false:s.autoSwing,drill:e.practice?');
+fs.writeFileSync(f,s);
+f=path.join(root,'site/index.html');s=fs.readFileSync(f,'utf8');if(!s.includes('src="/rival-ladder.js"'))s=s.replace('<script src="/career-ui.js"></script>','<script src="/career-ui.js"></script><script src="/rival-ladder.js"></script><script src="/rival-ladder-ui.js"></script>');fs.writeFileSync(f,s);console.log('Installed Ladder catalog/UI and per-match court override');

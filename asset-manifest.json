@@ -1,8 +1,8 @@
 [
   {
     "path": "ai-personalities.js",
-    "bytes": 11685,
-    "sha256": "49784377c59062ba626733ff2eef16e08bdeef9b82db1be31a075ac4f8bf9b66"
+    "bytes": 11735,
+    "sha256": "24c4885b99d32facae2f1ed6a52143ccf3e73be8b329b99fbdc1c7e420fb0b4c"
   },
   {
     "path": "apple-icon.png",
@@ -66,8 +66,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 11622,
-    "sha256": "efbec35db242a5a644d7a34e8f0c91cb597a7239f078f7f9ae7e69843059904b"
+    "bytes": 11705,
+    "sha256": "62c7ed440d2fccd975edb351d6b74d3f6b6c7704ae8a52f07377a0115b171a12"
   },
   {
     "path": "manifest.webmanifest",
@@ -780,9 +780,19 @@
     "sha256": "9134c796bd42fd1142aa28ff35ec52f5fab557123079a546021639cdb524f548"
   },
   {
+    "path": "rival-ladder-ui.js",
+    "bytes": 5378,
+    "sha256": "e334a712f8841d42dbeac9976f8812262fbeb7c0d641c418fae496c45e0b161d"
+  },
+  {
+    "path": "rival-ladder.js",
+    "bytes": 2455,
+    "sha256": "3d62227168ef97bb5d2827a3a39ca5a3f9cf70df5077f4e942731571e9b94ee7"
+  },
+  {
     "path": "sceneries.js",
-    "bytes": 19140,
-    "sha256": "84ca8104d63dac44b1032c96cc926039b102d3535d682e3fae18938023ac0c79"
+    "bytes": 19258,
+    "sha256": "c33633c6666f0a6566b4d017ff2be6e35fbda21107b16e24e1a610ec18388350"
   },
   {
     "path": "umpire-cedar.js",
@@ -796,8 +806,8 @@
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 863843,
-    "sha256": "283449c5f76ef911422d1a6e17898afb108b81858e0f890ede680e12fb950202"
+    "bytes": 863930,
+    "sha256": "e365402c3141506c9bc9a81f9d077b612b437be79c45bb52abcebb3c50a93e32"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",

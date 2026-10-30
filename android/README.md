@@ -47,3 +47,5 @@ Version 1.3.7 redesigns Sunset Rooftop with a blue court, glass railings, protec
 Version 1.3.8 adds the complete building beneath the rooftop deck, including facade windows, floor bands, corner columns and a base. Nearby skyline buildings extend to the same ground level, removing the floating platform appearance during the opening orbit.
 
 Version 1.4.0 adds offline Career medals, unlockable paddle finishes, badges and results rewards.
+
+Version 1.5.0 adds ten-stage Rival Ladders in singles and doubles using Traditional scoring to 11. Each stage has a rival, difficulty and tactical description, with independent saved progress and milestone badges.
