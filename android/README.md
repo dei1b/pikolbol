@@ -45,3 +45,5 @@ Version 1.3.6 replaces illustrated avatars with portraits rendered from all ten 
 Version 1.3.7 redesigns Sunset Rooftop with a blue court, glass railings, protective fencing, warm LEDs, planters, a dense lit skyline and a tall dark landmark tower against an orange-pink sunset. Includes the refreshed court preview.
 
 Version 1.3.8 adds the complete building beneath the rooftop deck, including facade windows, floor bands, corner columns and a base. Nearby skyline buildings extend to the same ground level, removing the floating platform appearance during the opening orbit.
+
+Version 1.4.0 adds offline Career medals, unlockable paddle finishes, badges and results rewards.

@@ -56,9 +56,9 @@
     }
     function equip(slot,id){const s=load();if(!['paddle','badge'].includes(slot)||!s.unlocked.includes(id)||!knownItem(id)||(slot==='paddle')!==id.startsWith('paddle-'))return{saved:false,error:'Earn this item before equipping it.'};s.equipped[slot]=id;return commit(s);}
     function clearBadge(){const s=load();s.equipped.badge=null;return commit(s);}
-    return{load,finalizeMatch,equip,clearBadge,get error(){return lastError;}};
+    return{load,finalizeMatch,equip,clearBadge,equipment(){if(!state)load();return{...state.equipped};},get error(){return lastError;}};
   }
   let storage;try{storage=globalThis.localStorage;}catch{}
-  const api={...createStore(storage??{getItem:()=>null,setItem:()=>{throw Error('Unavailable');}}),createStore,medals,items,key:KEY};
+  const api=Object.assign(createStore(storage??{getItem:()=>null,setItem:()=>{throw Error('Unavailable');}}),{createStore,medals,items,key:KEY});
   globalThis.RallyCareer=api;if(typeof module!=='undefined')module.exports=api;
 })();

@@ -10,9 +10,29 @@
     "sha256": "50ce15458bd14a37addd0b2130ea6a71237f46da98f441090d6e840d98c73222"
   },
   {
+    "path": "career-ui.js",
+    "bytes": 5596,
+    "sha256": "99dc74ce8f050251fbeebca0a87297f3b23f212ddbda3878d8ea442ef0a36fce"
+  },
+  {
+    "path": "career.css",
+    "bytes": 2986,
+    "sha256": "d28da255794c384a446510bba03adfb733b7c080fb627ba9d351de53412a47b5"
+  },
+  {
+    "path": "career.js",
+    "bytes": 6392,
+    "sha256": "ff2355f50d5b532e147ecb25cc6c466b1a63bcd158cbda3b304f117493bcb6df"
+  },
+  {
     "path": "court-labels.js",
     "bytes": 2429,
     "sha256": "738169521525608f3fe612417e5a111bba05d33e98e9de8e8f64afa8fabf5af0"
+  },
+  {
+    "path": "equipment.js",
+    "bytes": 1607,
+    "sha256": "9054af9165be969b6093b0bfb449b411e54b773076106dc215b222e9c37172dc"
   },
   {
     "path": "game-mods.css",
@@ -46,13 +66,18 @@
   },
   {
     "path": "index.html",
-    "bytes": 11432,
-    "sha256": "358c9806fe9b04c9285dee483fa7c97b6c5b14ed1cd9e7e5643a8eec1afe3951"
+    "bytes": 11622,
+    "sha256": "efbec35db242a5a644d7a34e8f0c91cb597a7239f078f7f9ae7e69843059904b"
   },
   {
     "path": "manifest.webmanifest",
     "bytes": 508,
     "sha256": "9bd037162881ae619ce3c0eef15498205d4f46b8da68b29776985408dc37d610"
+  },
+  {
+    "path": "match-medals.js",
+    "bytes": 2957,
+    "sha256": "dac3f02ffaff6387c5c21b4739a69ae45b51c528c48ffa88a30d616b09b744a7"
   },
   {
     "path": "offline.js",
@@ -771,8 +796,8 @@
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 863164,
-    "sha256": "8a1564683d4c72c94a44a566fd5727b44f58ea7aa9abf2f8223e3e3b5badf788"
+    "bytes": 863843,
+    "sha256": "283449c5f76ef911422d1a6e17898afb108b81858e0f890ede680e12fb950202"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",

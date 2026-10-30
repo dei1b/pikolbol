@@ -7,3 +7,5 @@
 - Status: milestone 1, storage and metrics underway. No feature changes before the tests below are written.
 
 - Task 1: career storage tests observed missing-module failure, then passed. Receipt deduplication, safe writes, old-save preservation and unlock persistence covered.
+
+- Milestone 1: storage/medals and mobile UI/equipment tests passed. Serving (32768 transitions), 112 audio clips, four rigs and four court guide checks passed. APK 1.4.0 built and signed. Phone USB available; installing checkpoint in place. Starting Ladder next.
