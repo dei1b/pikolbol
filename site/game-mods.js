@@ -1,10 +1,11 @@
 (() => {
-  const defaults={up:['KeyW','ArrowUp'],down:['KeyS','ArrowDown'],left:['KeyA','ArrowLeft'],right:['KeyD','ArrowRight'],dink:['KeyJ'],drop:['KeyK'],drive:['KeyL'],lob:['KeyI'],serve:['Space'],dash:['ShiftLeft','ShiftRight'],power:['KeyE'],pause:['Escape','KeyP']};
-  const names={up:'Move up',down:'Move down',left:'Move left',right:'Move right',dink:'Dink',drop:'Drop',drive:'Drive / smash',lob:'Lob',serve:'Serve',dash:'Dash',power:'Power / partner tag',pause:'Pause'};
+  const defaults={up:['KeyW','ArrowUp'],down:['KeyS','ArrowDown'],left:['KeyA','ArrowLeft'],right:['KeyD','ArrowRight'],dink:['KeyJ'],drop:['KeyK'],drive:['KeyL'],lob:['KeyI'],serve:['Space'],dash:['ShiftLeft','ShiftRight'],power:['KeyE'],pause:['Escape','KeyP'],spin:['KeyQ']};
+  const names={up:'Move up',down:'Move down',left:'Move left',right:'Move right',dink:'Dink',drop:'Drop',drive:'Drive / smash',lob:'Lob',serve:'Serve',dash:'Dash',power:'Power / partner tag',pause:'Pause',spin:'Cycle spin'};
   const canonical=Object.fromEntries(Object.entries(defaults).map(([a,keys])=>[a,keys[0]]));
   const shots=['drive','dink','drop','lob'];
   const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback;}catch{return fallback;}};
   let bindings=read('rally.offline.keys.v1',structuredClone(defaults)),touch=read('rally.offline.touch.v1',shots);
+  if(bindings&&typeof bindings==='object'&&!Array.isArray(bindings)){bindings.spin??=[['KeyQ','KeyR','KeyF','KeyC','KeyV','KeyB','KeyN','KeyU','KeyO'].find(k=>!Object.values(bindings).some(keys=>Array.isArray(keys)&&keys.includes(k)))??'F8'];}
   if(!bindings||Object.keys(defaults).some(a=>!Array.isArray(bindings[a])||!bindings[a].length||bindings[a].some(k=>typeof k!=='string')))bindings=structuredClone(defaults);
   if(!Array.isArray(touch)||touch.length!==4||new Set(touch).size!==4||touch.some(s=>!shots.includes(s)))touch=[...shots];
   let mode=read('rally.offline.pace.v1','classic'),capture=null,revision=0;
@@ -26,6 +27,7 @@
       for(const value of ['classic','blitz']){const b=el('button',value==='classic'?'Classic':'⚡ Blitz');b.type='button';b.setAttribute('aria-pressed',String(mode===value));b.onclick=()=>{mode=value;save('rally.offline.pace.v1',mode);description.textContent=descriptions[mode];for(const x of opts.children)x.setAttribute('aria-pressed',String(x===b));};opts.append(b);}p.append(opts);host.append(p);},
     mountControls(host){if(!host||host.childElementCount)return;
       if(globalThis.RallyUmpire){const voice=el('p','Umpire: ElevenLabs custom voice · AI-generated audio.');voice.className='rally-mod-panel';host.append(voice);}
+      host.append(panel('Shot spin','Use the Flat / Topspin / Slice selector before hitting. Topspin dips and kicks forward; slice/chop floats and bounces low. Applies to serves, drives, drops and dinks. Lobs and smashes stay flat. Cycle spin with your saved keyboard binding below.'));
       const p=panel('Keyboard controls','Select an action, then press a key. Assignments are saved on this device. Esc cancels key capture.');const status=el('div',null,'rally-mod-status');status.setAttribute('role','status');
       for(const a of Object.keys(defaults)){const row=el('div',null,'rally-mod-row'),b=el('button',bindings[a].map(label).join(' / '));b.type='button';b.setAttribute('aria-label','Rebind '+names[a]);b.onclick=()=>{if(capture){capture.button.textContent=bindings[capture.action].map(label).join(' / ');}capture={action:a,button:b,status};b.textContent='Press a key…';status.textContent='Press a key for '+names[a]+'.';};row.append(el('span',names[a]),b);p.append(row);}
       const reset=el('button','Reset keyboard defaults');reset.type='button';reset.onclick=()=>{capture=null;bindings=structuredClone(defaults);save('rally.offline.keys.v1',bindings);host.replaceChildren();mods.mountControls(host);revision++;refresh();};p.append(status,reset);host.append(p);
@@ -50,6 +52,7 @@
   function refresh(){
     const overlay=document.querySelector('[data-match-overlay]');
     globalThis.RallyAI?.refreshMatchInfo();globalThis.RallyCourtLabels?.update(mods.engine);
+    globalThis.RallySpin?.refresh();
     let badge=document.getElementById('rally-blitz-badge');
     badge?.remove();
     const buttons=[...document.querySelectorAll('[data-shot]')].filter(b=>b.tagName==='BUTTON');
