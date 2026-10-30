@@ -5,6 +5,11 @@
     "sha256": "24c4885b99d32facae2f1ed6a52143ccf3e73be8b329b99fbdc1c7e420fb0b4c"
   },
   {
+    "path": "ambience.js",
+    "bytes": 1540,
+    "sha256": "38e1e4bf81c08226ffdfab3f21be98c2812db364fa905c784f5e153a648a8544"
+  },
+  {
     "path": "apple-icon.png",
     "bytes": 4221,
     "sha256": "50ce15458bd14a37addd0b2130ea6a71237f46da98f441090d6e840d98c73222"
@@ -21,8 +26,8 @@
   },
   {
     "path": "career-ui.js",
-    "bytes": 5596,
-    "sha256": "99dc74ce8f050251fbeebca0a87297f3b23f212ddbda3878d8ea442ef0a36fce"
+    "bytes": 5856,
+    "sha256": "c35b5a0e964ab3acdef9313baf55c6bdbb8caef9f4dfb2986dfb9783f1410241"
   },
   {
     "path": "career.css",
@@ -41,8 +46,8 @@
   },
   {
     "path": "equipment.js",
-    "bytes": 1607,
-    "sha256": "9054af9165be969b6093b0bfb449b411e54b773076106dc215b222e9c37172dc"
+    "bytes": 2850,
+    "sha256": "fc81e8949b06f436531984d139cbeee1c4b5368cdfa88cb41285b3f74f36c89b"
   },
   {
     "path": "game-mods.css",
@@ -76,8 +81,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 11784,
-    "sha256": "0031eee6451426fdf87b48c4c71e32732a8969045b5a788c820041e652f9cb32"
+    "bytes": 11863,
+    "sha256": "60bba87d62a6a6c2827428474241942b005bed59e15c4d6205eecdba0cef223b"
   },
   {
     "path": "manifest.webmanifest",
@@ -93,6 +98,31 @@
     "path": "offline.js",
     "bytes": 3356,
     "sha256": "836832500c5f5d5d6b11717dee261380c41da02bfc51659a786e7d4fec879bf5"
+  },
+  {
+    "path": "paddle-patterns.js",
+    "bytes": 2332,
+    "sha256": "3de5c1220bdb61866a127f17c0ec754006a9aa3dca4da2bf4211a199ce229c8c"
+  },
+  {
+    "path": "rally/ambience/beach.m4a",
+    "bytes": 291200,
+    "sha256": "6fc462fd0c18fc8bb9db15f4b2c39c0d2b0da0369187a319f903e725b8af755e"
+  },
+  {
+    "path": "rally/ambience/night.m4a",
+    "bytes": 1463751,
+    "sha256": "2a9cd73c158a6a5d5a1751b4d31c0ac1aec694d79897fc07612c00fefa39c306"
+  },
+  {
+    "path": "rally/ambience/rooftop.m4a",
+    "bytes": 1864147,
+    "sha256": "ac482cd45fd840672722605146b62a946ef958b8de111ee267bbfe79ba7cd839"
+  },
+  {
+    "path": "rally/ambience/sources.json",
+    "bytes": 683,
+    "sha256": "f956cc313e49c8aa8400c50713f4946e306356615245dad60df91249bd8dca35"
   },
   {
     "path": "rally/characters-colormap.png",
@@ -811,13 +841,13 @@
   },
   {
     "path": "umpire-recorded.js",
-    "bytes": 1664,
-    "sha256": "247c00e5d68d1c97608fc35757aa198dd25193b8d24f4580f47aa4847f7a0d6a"
+    "bytes": 1697,
+    "sha256": "d9457833a80fbd6983812b87ead4fc88a2eb6cd5e00e9998ffeb9c7e1abafd8f"
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 864594,
-    "sha256": "2904b1a257c091162d57102ebdfbf3070d69fdcf23313a8866472db41ab52346"
+    "bytes": 864890,
+    "sha256": "4851652304baf1fc32d781a0c76fff000370ffa03a452bae983b533ffa4bbdca"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",

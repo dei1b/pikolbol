@@ -20,7 +20,7 @@
     const medalList=el('div',null,'career-grid');for(const m of RallyCareer.medals){const p=panel(m.name,m.description);p.dataset.medal=m.id;p.append(el('strong',medalProgress(m,s),s.medals[m.id]?'career-earned':'career-muted'),el('p','Reward: '+itemName(m.reward)));medalList.append(p);}body.append(medalList);
     body.append(el('h2','Paddle collection'));const collection=el('div',null,'career-grid');
     for(const item of RallyCareer.items.filter(i=>i.id.startsWith('paddle-'))){
-      const p=panel(item.name),swatch=el('div',null,'career-paddle');swatch.style.background=item.color??'#d4f25a';swatch.setAttribute('aria-hidden','true');p.append(swatch);
+      const p=panel(item.name),swatch=el('div',null,'career-paddle');swatch.style.backgroundColor=item.color??'#d4f25a';swatch.dataset.finish=item.id;if(item.color){swatch.style.backgroundImage=globalThis.RallyPaddlePatterns?.image(item.id)??'none';swatch.style.backgroundSize='70% 65%';swatch.style.backgroundPosition='center 40%';swatch.style.backgroundRepeat='no-repeat';}swatch.setAttribute('aria-hidden','true');p.append(swatch);
       const unlocked=s.unlocked.includes(item.id),equipped=s.equipped.paddle===item.id,b=button(equipped?'Equipped':unlocked?'Equip':'Locked',()=>{const r=RallyCareer.equip('paddle',item.id);if(r.saved)openCareer();else p.append(el('p',r.error,'career-error'));},unlocked&&!equipped);b.disabled=!unlocked||equipped;b.setAttribute('aria-label',`${equipped?'Equipped':unlocked?'Equip':'Locked'} ${item.name} paddle`);p.append(b);
       if(!unlocked)p.append(el('p',RallyCareer.medals.find(m=>m.reward===item.id)?.description??'Earn this reward.'));collection.append(p);
     }body.append(collection,el('h2','Badges'));

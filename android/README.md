@@ -1,6 +1,6 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.6.2 is the current installer.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.6.4 is the current installer.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
@@ -55,3 +55,7 @@ Version 1.6.0 adds Blitz Rush: three minutes of unscaled active time, Blitz pace
 Version 1.6.1 replaces Rush's redundant score-call display with the large countdown clock. Includes malformed-save recovery and precise pre-serve deadline handling.
 
 Version 1.6.2 removes the redundant Call score across Traditional/Rally and Classic/Blitz. The serving indicator stays; the right column displays pace, target and scoring, or the large Rush timer.
+
+Version 1.6.3 adds shared preview/in-game patterns to all six cosmetic paddle finishes: lime diagonals, coral chevrons, gold sunburst, midnight stars, sunset bands and mint checks. Original retains the plain stock design. Pattern overlays are disposed when switching finishes or leaving a match.
+
+Version 1.6.4 adds the supplied Beach, Sunset Rooftop and Moonlit Grove ambience recordings as normalized, crossfaded AAC loops (3.6 MB combined). They follow master volume and the Crowd & ambience setting, pause with the game or backgrounding, and duck during recorded umpire calls. Stadium retains its original crowd.
