@@ -23,7 +23,7 @@
       const {parts,volume}=queue.shift();
       for(const part of parts){
         if(token!==version)return;
-        const audio=current=new Audio(root+files[part]);audio.volume=Math.max(0,Math.min(1,volume));
+        globalThis.RallyAmbience?.duck();const audio=current=new Audio(root+files[part]);audio.volume=Math.max(0,Math.min(1,volume));
         audio.playbackRate=globalThis.RallyMods?.engine?.blitz?1.08:1;
         await new Promise(resolve=>{audio.onended=resolve;audio.onerror=resolve;audio.onpause=resolve;audio.play().catch(resolve);});
       }

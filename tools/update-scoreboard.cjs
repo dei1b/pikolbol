@@ -1,0 +1,11 @@
+const fs=require('node:fs'),path=require('node:path'),f=path.resolve(__dirname,'../site/_next/static/chunks/0axfra5kwz6z1.js');
+let s=fs.readFileSync(f,'utf8');const a=s.indexOf('function a3('),b=s.indexOf('function a5(',a);if(a<0||b<0)throw Error('Missing scoreboard renderer');
+let part=s.slice(a,b);
+const heading='children:i.offlineMode==="rush"?"Time":(i.offlinePace==="blitz"||globalThis.RallyMods?.engine?.blitz)?"Blitz":"Classic"';
+part=part.replace('children:i.offlineMode==="rush"?"Time":o?"Call":"Final"',heading);
+part=part.replace('children:o?"Call":"Final"',heading);
+part=part.replace('(globalThis.RallyRush?.label(globalThis.RallyMods?.engine)??"3:00"):d}', '(globalThis.RallyRush?.label(globalThis.RallyMods?.engine)??"3:00"):"To "+i.toScore}');
+part=part.replace('children:i.offlineMode==="rush"?"Rush":["to ",i.toScore]','children:i.offlineMode==="rush"?"Rush":i.scoring==="traditional"?"Side-out":"Rally"');
+part=part.replace('text-[12px] leading-none font-extrabold tracking-[.1em] text-fog uppercase','text-[10px] leading-none font-extrabold tracking-[.02em] text-fog uppercase');
+part=part.replace('mt-1 text-[12px] leading-none font-extrabold tracking-[.06em] text-fog uppercase','mt-1 text-[10px] leading-none font-extrabold tracking-[.02em] text-fog uppercase');
+s=s.slice(0,a)+part+s.slice(b);fs.writeFileSync(f,s);console.log('Scoreboard: team points once, mode/target or Rush timer in right column');

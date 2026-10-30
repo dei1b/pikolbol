@@ -29,10 +29,10 @@
   let selected='auto';
   try{const saved=localStorage.getItem('rally.offline.opponent.v1');if(saved==='auto'||profiles[saved])selected=saved;}catch{}
   const profileFor=(engine,player)=>profiles[engine.config.aiProfiles?.[player.id]]||characterProfiles[engine.config.characters?.[player.id]]||originals[0];
-  function preparePlan(plan){
-    if(plan.mode!=='quick')return plan;
+  function preparePlan(plan,opponentId){
+    if(!['quick','ladder','rush'].includes(plan.mode))return plan;
     const config={...plan.config,characters:[...plan.config.characters]};
-    const chosen=profiles[selected];
+    const chosen=profiles[opponentId??selected];
     config.aiProfiles=config.characters.map(c=>(characterProfiles[c]||originals[0]).id);
     if(chosen){
       const partner=profiles[chosen.partner];

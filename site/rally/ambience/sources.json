@@ -1,0 +1,29 @@
+[
+  {
+    "court": "rooftop",
+    "source": "sunsetrooftop.mp3",
+    "sourceBytes": 7361280,
+    "bytes": 1864147,
+    "loudnessTargetLUFS": -25,
+    "codec": "AAC stereo 64kbps 32kHz",
+    "loopCrossfadeSeconds": 1.5
+  },
+  {
+    "court": "night",
+    "source": "nightforestrural.mp3",
+    "sourceBytes": 3601440,
+    "bytes": 1463751,
+    "loudnessTargetLUFS": -25,
+    "codec": "AAC stereo 64kbps 32kHz",
+    "loopCrossfadeSeconds": 1.5
+  },
+  {
+    "court": "beach",
+    "source": "beach.mp3",
+    "sourceBytes": 1190400,
+    "bytes": 291200,
+    "loudnessTargetLUFS": -25,
+    "codec": "AAC stereo 64kbps 32kHz",
+    "loopCrossfadeSeconds": 1.5
+  }
+]

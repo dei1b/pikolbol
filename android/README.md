@@ -1,6 +1,6 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.2.3 was built on the PC; it has not been installed or copied to the phone yet.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.6.4 is the current installer.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
@@ -45,3 +45,17 @@ Version 1.3.6 replaces illustrated avatars with portraits rendered from all ten 
 Version 1.3.7 redesigns Sunset Rooftop with a blue court, glass railings, protective fencing, warm LEDs, planters, a dense lit skyline and a tall dark landmark tower against an orange-pink sunset. Includes the refreshed court preview.
 
 Version 1.3.8 adds the complete building beneath the rooftop deck, including facade windows, floor bands, corner columns and a base. Nearby skyline buildings extend to the same ground level, removing the floating platform appearance during the opening orbit.
+
+Version 1.4.0 adds offline Career medals, unlockable paddle finishes, badges and results rewards.
+
+Version 1.5.0 adds ten-stage Rival Ladders in singles and doubles using Traditional scoring to 11. Each stage has a rival, difficulty and tactical description, with independent saved progress and milestone badges.
+
+Version 1.6.0 adds Blitz Rush: three minutes of unscaled active time, Blitz pace, Rally scoring, a final rally at expiry, golden rally for ties and five-second automatic serving. The clock occupies the scoreboard target area. Career tracks bests by format/difficulty.
+
+Version 1.6.1 replaces Rush's redundant score-call display with the large countdown clock. Includes malformed-save recovery and precise pre-serve deadline handling.
+
+Version 1.6.2 removes the redundant Call score across Traditional/Rally and Classic/Blitz. The serving indicator stays; the right column displays pace, target and scoring, or the large Rush timer.
+
+Version 1.6.3 adds shared preview/in-game patterns to all six cosmetic paddle finishes: lime diagonals, coral chevrons, gold sunburst, midnight stars, sunset bands and mint checks. Original retains the plain stock design. Pattern overlays are disposed when switching finishes or leaving a match.
+
+Version 1.6.4 adds the supplied Beach, Sunset Rooftop and Moonlit Grove ambience recordings as normalized, crossfaded AAC loops (3.6 MB combined). They follow master volume and the Crowd & ambience setting, pause with the game or backgrounding, and duck during recorded umpire calls. Stadium retains its original crowd.

@@ -1,0 +1,16 @@
+const assert=require('node:assert/strict'),career=require('../site/career.js'),ladder=require('../site/rival-ladder.js');
+let value=null;const c=career.createStore({getItem:()=>value,setItem:(k,v)=>value=v});
+const rec=(id,stage,extra={})=>{const row=ladder.stages[stage-1];return{id,mode:'ladder',eligible:true,format:'singles',scoring:'traditional',target:11,difficulty:row.level,pace:'classic',rivalId:row.rivalId,ladderStageId:stage,winner:0,points:[11,5],metrics:{},...extra};};
+assert.equal(ladder.getTrack('singles',c.load()).nextStageId,1);
+assert.equal(c.finalizeMatch(rec('locked',2)).ignored,true);
+c.finalizeMatch(rec('first',1));assert.equal(ladder.getTrack('singles',c.load()).nextStageId,2);assert.equal(ladder.getTrack('doubles',c.load()).nextStageId,1);
+assert.equal(c.finalizeMatch(rec('first',1)).duplicate,true);
+c.finalizeMatch(rec('loss',2,{winner:1,points:[5,11]}));assert.equal(ladder.getTrack('singles',c.load()).nextStageId,2);
+assert.equal(c.finalizeMatch(rec('bad',2,{scoring:'rally'})).ignored,true);
+for(let i=2;i<=10;i++)c.finalizeMatch(rec('stage'+i,i));
+assert.equal(ladder.getTrack('singles',c.load()).champion,true);
+for(const id of ['ladder-singles-stage-3','ladder-singles-stage-6','ladder-singles-champion'])assert(c.load().unlocked.includes(id));
+const before=c.load().unlocked.length;c.finalizeMatch(rec('replay',10));assert.equal(c.load().unlocked.length,before);
+const original=globalThis.RallyAI;globalThis.RallyAI={roster:Array.from({length:10},(_,i)=>({id:['bea','migo','tala','paco','isay','jojo','rafi','nika','enzo','maya'][i],name:'Rival'+i,character:i,partner:'isay'})),preparePlan:p=>p};
+const p=ladder.createPlan({stageId:1,format:'singles',pace:'blitz',court:'beach',character:0,partner:1,seed:123});assert.equal(p.config.scoring,'traditional');assert.equal(p.config.toScore,11);assert.equal(p.config.offlineMode,'ladder');assert.equal(p.config.autoSwing,false);globalThis.RallyAI=original;
+console.log('PASS Ladder locks, clears, losses, independent tracks, replay badges, configuration checks and Traditional-to-11 plans');

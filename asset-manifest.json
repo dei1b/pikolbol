@@ -1,8 +1,13 @@
 [
   {
     "path": "ai-personalities.js",
-    "bytes": 11685,
-    "sha256": "49784377c59062ba626733ff2eef16e08bdeef9b82db1be31a075ac4f8bf9b66"
+    "bytes": 11735,
+    "sha256": "24c4885b99d32facae2f1ed6a52143ccf3e73be8b329b99fbdc1c7e420fb0b4c"
+  },
+  {
+    "path": "ambience.js",
+    "bytes": 1540,
+    "sha256": "38e1e4bf81c08226ffdfab3f21be98c2812db364fa905c784f5e153a648a8544"
   },
   {
     "path": "apple-icon.png",
@@ -10,9 +15,39 @@
     "sha256": "50ce15458bd14a37addd0b2130ea6a71237f46da98f441090d6e840d98c73222"
   },
   {
+    "path": "blitz-rush-ui.js",
+    "bytes": 1401,
+    "sha256": "7e4c0b9f55b3028eb5c3ee9aad0565869ac37c26333f0efc94c7d25631664332"
+  },
+  {
+    "path": "blitz-rush.js",
+    "bytes": 3548,
+    "sha256": "ca5f2a520d19da6b8288c8748a6fa3dc2e906838dd48022324aacb94a139e8f6"
+  },
+  {
+    "path": "career-ui.js",
+    "bytes": 5856,
+    "sha256": "c35b5a0e964ab3acdef9313baf55c6bdbb8caef9f4dfb2986dfb9783f1410241"
+  },
+  {
+    "path": "career.css",
+    "bytes": 2986,
+    "sha256": "d28da255794c384a446510bba03adfb733b7c080fb627ba9d351de53412a47b5"
+  },
+  {
+    "path": "career.js",
+    "bytes": 7076,
+    "sha256": "3a61ab8bae4e302cd121794fee2cc1e6db16873f63b759a8434f9b062e049aed"
+  },
+  {
     "path": "court-labels.js",
-    "bytes": 2429,
-    "sha256": "738169521525608f3fe612417e5a111bba05d33e98e9de8e8f64afa8fabf5af0"
+    "bytes": 2621,
+    "sha256": "1249d6e1f21fc7a542b16a24b43e2911120963330a9914bd09123609fe3eb7bf"
+  },
+  {
+    "path": "equipment.js",
+    "bytes": 2850,
+    "sha256": "fc81e8949b06f436531984d139cbeee1c4b5368cdfa88cb41285b3f74f36c89b"
   },
   {
     "path": "game-mods.css",
@@ -46,8 +81,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 11432,
-    "sha256": "358c9806fe9b04c9285dee483fa7c97b6c5b14ed1cd9e7e5643a8eec1afe3951"
+    "bytes": 11863,
+    "sha256": "60bba87d62a6a6c2827428474241942b005bed59e15c4d6205eecdba0cef223b"
   },
   {
     "path": "manifest.webmanifest",
@@ -55,9 +90,39 @@
     "sha256": "9bd037162881ae619ce3c0eef15498205d4f46b8da68b29776985408dc37d610"
   },
   {
+    "path": "match-medals.js",
+    "bytes": 3037,
+    "sha256": "9cba39d110f8d468069acb0ce3abefa62e6eedfb274990d7e616f26820f6f0d4"
+  },
+  {
     "path": "offline.js",
     "bytes": 3356,
     "sha256": "836832500c5f5d5d6b11717dee261380c41da02bfc51659a786e7d4fec879bf5"
+  },
+  {
+    "path": "paddle-patterns.js",
+    "bytes": 2332,
+    "sha256": "3de5c1220bdb61866a127f17c0ec754006a9aa3dca4da2bf4211a199ce229c8c"
+  },
+  {
+    "path": "rally/ambience/beach.m4a",
+    "bytes": 291200,
+    "sha256": "6fc462fd0c18fc8bb9db15f4b2c39c0d2b0da0369187a319f903e725b8af755e"
+  },
+  {
+    "path": "rally/ambience/night.m4a",
+    "bytes": 1463751,
+    "sha256": "2a9cd73c158a6a5d5a1751b4d31c0ac1aec694d79897fc07612c00fefa39c306"
+  },
+  {
+    "path": "rally/ambience/rooftop.m4a",
+    "bytes": 1864147,
+    "sha256": "ac482cd45fd840672722605146b62a946ef958b8de111ee267bbfe79ba7cd839"
+  },
+  {
+    "path": "rally/ambience/sources.json",
+    "bytes": 683,
+    "sha256": "f956cc313e49c8aa8400c50713f4946e306356615245dad60df91249bd8dca35"
   },
   {
     "path": "rally/characters-colormap.png",
@@ -755,9 +820,19 @@
     "sha256": "9134c796bd42fd1142aa28ff35ec52f5fab557123079a546021639cdb524f548"
   },
   {
+    "path": "rival-ladder-ui.js",
+    "bytes": 5679,
+    "sha256": "a8930427dffd18b043b92cd58637f7de250dd3633bb1ff0d37644ddbe52aa05f"
+  },
+  {
+    "path": "rival-ladder.js",
+    "bytes": 2455,
+    "sha256": "3d62227168ef97bb5d2827a3a39ca5a3f9cf70df5077f4e942731571e9b94ee7"
+  },
+  {
     "path": "sceneries.js",
-    "bytes": 19140,
-    "sha256": "84ca8104d63dac44b1032c96cc926039b102d3535d682e3fae18938023ac0c79"
+    "bytes": 19258,
+    "sha256": "c33633c6666f0a6566b4d017ff2be6e35fbda21107b16e24e1a610ec18388350"
   },
   {
     "path": "umpire-cedar.js",
@@ -766,13 +841,13 @@
   },
   {
     "path": "umpire-recorded.js",
-    "bytes": 1664,
-    "sha256": "247c00e5d68d1c97608fc35757aa198dd25193b8d24f4580f47aa4847f7a0d6a"
+    "bytes": 1697,
+    "sha256": "d9457833a80fbd6983812b87ead4fc88a2eb6cd5e00e9998ffeb9c7e1abafd8f"
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 863164,
-    "sha256": "8a1564683d4c72c94a44a566fd5727b44f58ea7aa9abf2f8223e3e3b5badf788"
+    "bytes": 864890,
+    "sha256": "4851652304baf1fc32d781a0c76fff000370ffa03a452bae983b533ffa4bbdca"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",

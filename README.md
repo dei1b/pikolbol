@@ -4,9 +4,17 @@ Double-click **Play Rally.cmd**, or use the **Rally Offline** shortcut on your D
 
 Play matches against the computer, practice, and enter tournaments. The original game menus, 3D stadium, characters, sounds, rules, and controls are preserved from the browser-delivered version of https://paddleup.ph/ captured on October 29, 2026. This is a locally adapted copy of the published game, not a newly authored game engine. Taplinc sponsor cards, links, credits, and court lettering have been removed in this local edition. Bundled notices remain with their respective authors.
 
-## Scenery (PC edition)
+## Career, Rival Ladder and Blitz Rush
 
-Choose **Scenery** in **Play match** or **Settings**:
+**Career & rewards** tracks eight medals and unlocks six paddle finishes plus badges. Rewards are cosmetic. Completed CPU matches count with target 7 or higher, power-ups off and auto-swing off; movement assist is allowed. Practice, abandoned games and restarts do not earn rewards. Career progress saves locally on each device.
+
+**Rival Ladder** has separate singles and doubles tracks with ten opponents. Matches use Traditional scoring to 11, win by two. Select your character, court and Classic/Blitz pace for each stage. Wins unlock the next rival; losses never remove progress. Cleared stages remain replayable.
+
+**Blitz Rush** is a three-minute Rally-scoring match at Blitz pace. Pause and background time do not count. The current rally finishes after expiry; a tie triggers one golden rally. A positioned server automatically makes a normal drive serve after five seconds. The scoreboard shows team points once, with a Rush timer or the ordinary pace/target/scoring format alongside.
+
+## Scenery
+
+Choose **Scenery** in **Play match**. Ladder and Rush provide their own court selection and offline previews:
 
 - **Championship stadium:** the original packed arena.
 - **Palm Beach:** a seaside hard court, palms, sand, and turquoise water.
@@ -23,7 +31,7 @@ In **Play match → Match pace**, choose **Classic** or **Blitz**. Blitz runs th
 
 In **Settings → Keyboard controls**, select an action and press a replacement key. Duplicate assignments are rejected; Escape cancels capture. Reset keyboard defaults restores the original mappings. The shot buttons display your saved keys. Under **Touch shot positions**, swap the four shots between their existing button positions, or restore the defaults. Keyboard and touch preferences are stored separately on each device.
 
-## AI opponents (PC edition)
+## AI opponents
 
 Under **Play match → AI opponent**, select a named rival or random character personalities. The description changes with your choice. Easy, Normal, and Hard control reaction time and accuracy independently of personality. The opponent choice is saved, and a rematch retains that opponent. Both scoring options and Classic/Blitz work with all rivals.
 

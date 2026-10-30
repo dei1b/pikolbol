@@ -6,6 +6,7 @@
     rooftop:{name:'Sunset Rooftop',description:'A blue rooftop court with glass railings, warm LEDs and a golden city skyline beneath an orange-pink sunset.'},
     night:{name:'Moonlit Grove',description:'A deep-blue court beneath warm floodlights and a silver full moon, with forest greenery, mountains and distant valley lights.'}
   };
+  let sessionSelection=null;
   let selected='stadium';try{const saved=localStorage.getItem('rally.offline.scenery.v1');if(themes[saved])selected=saved;}catch{}
   function mount(host){
     if(!host||host.childElementCount)return;
@@ -22,7 +23,7 @@
     select.onchange=()=>{selected=select.value;try{localStorage.setItem('rally.offline.scenery.v1',selected);}catch{}update();};update();panel.append(title,select,preview,description);host.append(panel);
   }
   function makeVenue(options,K){
-    const id=selected,theme=themes[id],group=new K.Group();group.name='scenery-'+id;group.userData.scenery=id;
+    const id=sessionSelection??selected,theme=themes[id],group=new K.Group();group.name='scenery-'+id;group.userData.scenery=id;
     const geometries=[],materials=[],textures=[],batches=new Map();let disposed=false;
     const palettes={beach:{sky:'#9dd9e7',floor:'#d8be8b',outer:'#3d9db3',court:'#277b99',kitchen:'#5ebcc6',line:'#f9fbec',light:'#fff4dc'},rooftop:{sky:'#b47a88',floor:'#343d48',outer:'#46576b',court:'#225b98',kitchen:'#377ab0',line:'#fff9ed',light:'#ffce8e'},night:{sky:'#080f23',floor:'#142a25',outer:'#244a3b',court:'#16426c',kitchen:'#28567a',line:'#f4f5ec',light:'#ffdda0'}};
     const palette=palettes[id];if(!palette)throw new Error('Unknown scenery');
@@ -189,5 +190,5 @@
     let lastScore='';
     return{id,sky:palette.sky,group,update(){},setMood(){},cheer(){},wave(){},confetti(){},setScoreboard(score){const key=JSON.stringify(score);if(key!==lastScore){lastScore=key;draw(score);}},dispose(){if(disposed)return;disposed=true;group.removeFromParent();for(const g of geometries)g.dispose();for(const m of materials)m.dispose();for(const t of textures)t.dispose();group.clear();canvas.width=canvas.height=0;batches.clear();geometries.length=materials.length=textures.length=0;if(globalThis.RallyScenery.venue===this){globalThis.RallyScenery.venue=null;globalThis.RallyScenery.view=null;}}};
   }
-  globalThis.RallyScenery={get selected(){return selected;},themes,mount,makeVenue,onView(view,venue){this.view=view;this.venue=venue;if(venue.sky)view.renderer.setClearColor(venue.sky);}};
+  globalThis.RallyScenery={get selected(){return sessionSelection??selected;},setSession(id){sessionSelection=themes[id]?id:null;},themes,mount,makeVenue,onView(view,venue){this.view=view;this.venue=venue;if(venue.sky)view.renderer.setClearColor(venue.sky);}};
 })();

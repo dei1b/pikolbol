@@ -1,0 +1,27 @@
+const assert=require('node:assert/strict'),career=require('../site/career.js'),medals=require('../site/match-medals.js');
+const storage=()=>{let v=null;return{getItem:()=>v,setItem:(k,s)=>v=s}};
+function award(metrics={},extra={}){const c=career.createStore(storage());return c.finalizeMatch({id:'x',mode:'quick',eligible:true,format:'doubles',winner:0,points:[11,4],difficulty:'normal',rivalId:'bea',metrics,...extra}).newMedalIds;}
+assert(!award({maxDeficit:3}).includes('comeback'));assert(award({maxDeficit:4}).includes('comeback'));
+assert(!award({longestRally:14}).includes('long-rally'));assert(award({longestRally:15}).includes('long-rally'));
+assert(!award({humanPerfectHits:4}).includes('sweet-spot'));assert(award({humanPerfectHits:5}).includes('sweet-spot'));
+assert(award({humanServes:5,humanServiceFaults:0}).includes('clean-server'));assert(!award({humanServes:5,humanServiceFaults:1}).includes('clean-server'));
+assert(!award({}, {difficulty:'normal'}).includes('hard-earned'));assert(award({}, {difficulty:'hard'}).includes('hard-earned'));
+const e={config:{format:'doubles',scoring:'traditional',toScore:11,level:'normal',autoSwing:false,aiProfiles:['bea','paco','rafi','isay']},players:[{id:0,team:0,human:true},{id:1,team:0,human:false},{id:2,team:1,human:false}],score:{points:[0,0]}};
+let t=medals.begin(e,{mode:'quick'});
+medals.observe(t,[{kind:'serve',player:0},{kind:'rally-end',winner:1,reason:'net',rallyLength:1}],{score:{points:[0,0]}});
+assert.equal(t.metrics.humanServiceFaults,1);
+medals.observe(t,[{kind:'serve',player:1},{kind:'hit',player:1,quality:1},{kind:'rally-end',winner:1,reason:'out',rallyLength:1}],{score:{points:[0,0]}});
+assert.equal(t.metrics.humanServiceFaults,1);assert.equal(t.metrics.humanPerfectHits,0);
+medals.observe(t,[{kind:'serve',player:0},{kind:'hit',player:2,quality:1},{kind:'rally-end',winner:1,reason:'out',rallyLength:3}],{score:{points:[0,4]}});
+assert.equal(t.metrics.humanServiceFaults,1);assert.equal(t.metrics.maxDeficit,4);
+assert.equal(medals.finish(t,{winner:0,points:[11,9]}).eligible,true);
+for(const change of [{practice:true},{powerUps:true},{autoSwing:true},{toScore:5}])assert.equal(medals.finish(medals.begin({...e,config:{...e.config,...change}},{mode:'quick'}),{winner:0,points:[11,9]}).eligible,false);
+medals.abandon(t);assert.equal(medals.finish(t,{winner:0,points:[11,9]}).eligible,false);
+assert.equal(medals.finish(medals.begin({...e,players:e.players.map(p=>({...p,human:false}))},{mode:'quick'}),{winner:0,points:[11,9]}).eligible,false);
+const switching={...e,players:e.players.map(p=>({...p}))},swap=medals.begin(switching,{mode:'quick'});
+medals.observe(swap,[{kind:'serve',player:0}],{score:{points:[0,0]}});switching.players[0].human=false;switching.players[1].human=true;
+medals.observe(swap,[{kind:'rally-end',winner:1,reason:'net',rallyLength:1}],{score:{points:[0,0]}});assert.equal(swap.metrics.humanServiceFaults,1);
+const cumulative=career.createStore(storage());
+for(let i=0;i<5;i++)cumulative.finalizeMatch({id:'win'+i,mode:'quick',eligible:true,format:'singles',winner:0,points:[11,4],difficulty:'normal',rivalId:['bea','migo','tala','bea','bea'][i],metrics:{}});
+assert(cumulative.load().medals['finding-form']);assert(cumulative.load().medals['rival-collector']);
+console.log('PASS medal thresholds, eligibility, serve-fault attribution, CPU partner exclusion and abandoned matches');
