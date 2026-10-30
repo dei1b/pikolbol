@@ -21,7 +21,11 @@
   function empty(){return{version:1,medals:{},totals:{matches:0,wins:0,rushBests:{}},rivalWins:{},unlocked:['paddle-default'],equipped:{paddle:'paddle-default',badge:null},ladder:{singles:{clearedIds:[]},doubles:{clearedIds:[]}},receipts:[]};}
   const knownItem=id=>items.some(i=>i.id===id)||/^ladder-(singles|doubles)-(stage-[36]|champion)$/.test(id);
   const validInt=n=>Number.isSafeInteger(n)&&n>=0;
+  const object=v=>v!==null&&typeof v==='object'&&!Array.isArray(v);
   function validate(s){
+    if(!object(s)||!object(s.medals)||!object(s.totals)||!object(s.rivalWins)||!object(s.equipped)||!object(s.ladder)||!object(s.totals.rushBests??{}))throw Error('Invalid career object');
+    if(Object.entries(s.medals).some(([id,v])=>!medals.some(m=>m.id===id)||v!==true)||Object.values(s.rivalWins).some(v=>!validInt(v)))throw Error('Invalid medal data');
+    for(const [key,best]of Object.entries(s.totals.rushBests??{}))if(!/^(singles|doubles):(easy|normal|hard)$/.test(key)||!object(best)||['wins','bestWinningMargin','longestRally','leadChanges'].some(k=>!validInt(best[k])))throw Error('Invalid Rush best');
     if(!s||s.version!==1||!s.medals||!s.totals||!validInt(s.totals.wins)||!validInt(s.totals.matches)||!s.rivalWins||!Array.isArray(s.unlocked)||s.unlocked.some(i=>!knownItem(i))||!s.equipped||!s.unlocked.includes(s.equipped.paddle)||!Array.isArray(s.receipts)||s.receipts.length>200||s.receipts.some(x=>typeof x!=='string')||!s.ladder)throw Error('Invalid career save');
     for(const format of ['singles','doubles'])if(!Array.isArray(s.ladder[format]?.clearedIds)||s.ladder[format].clearedIds.some(n=>!Number.isInteger(n)||n<1||n>10))throw Error('Invalid ladder save');
     if(s.equipped.badge&&!s.unlocked.includes(s.equipped.badge))throw Error('Invalid badge');

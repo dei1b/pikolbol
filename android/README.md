@@ -1,6 +1,6 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.2.3 was built on the PC; it has not been installed or copied to the phone yet.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.6.2 is the current installer.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
@@ -49,3 +49,9 @@ Version 1.3.8 adds the complete building beneath the rooftop deck, including fac
 Version 1.4.0 adds offline Career medals, unlockable paddle finishes, badges and results rewards.
 
 Version 1.5.0 adds ten-stage Rival Ladders in singles and doubles using Traditional scoring to 11. Each stage has a rival, difficulty and tactical description, with independent saved progress and milestone badges.
+
+Version 1.6.0 adds Blitz Rush: three minutes of unscaled active time, Blitz pace, Rally scoring, a final rally at expiry, golden rally for ties and five-second automatic serving. The clock occupies the scoreboard target area. Career tracks bests by format/difficulty.
+
+Version 1.6.1 replaces Rush's redundant score-call display with the large countdown clock. Includes malformed-save recovery and precise pre-serve deadline handling.
+
+Version 1.6.2 removes the redundant Call score across Traditional/Rally and Classic/Blitz. The serving indicator stays; the right column displays pace, target and scoring, or the large Rush timer.

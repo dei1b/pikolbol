@@ -1,6 +1,6 @@
 # Progression and competition design
 
-Status: proposed for user review. Planning only; no gameplay implementation authorized by this document alone.
+Status: approved by the user's "implement" instruction and implemented on branch `progression-and-competition`. Verification and execution decisions are recorded in `../execution-ledger.md`.
 
 ## Requested order
 
@@ -106,7 +106,7 @@ First-clear badges at stages 3 and 6, and a format-specific champion badge at st
 - If time expires between rallies, compare the current scores immediately.
 - A tie triggers one golden rally; its winner wins the match. No win-by-two requirement for the timed result.
 - Once the server is positioned and ready, give both human and CPU servers five seconds to serve. If no serve occurs, automatically launch the normal drive serve. Show a small countdown only during the final three seconds; no service-fault penalty.
-- A compact clock is integrated into the existing scoreboard. Place service countdown next to the existing serve hint. Keep them clear of controls, court and announcements in portrait and landscape.
+- A compact clock replaces the redundant Call score in the existing scoreboard (user feedback during implementation). Place service countdown next to the existing serve hint. Keep them clear of controls, court and announcements in portrait and landscape.
 - Use the actual unscaled frame delta supplied to the match runner, capped consistently with the engine's 0.25-second frame clamp. Never use the accelerated engine `t` as the Rush clock. Android backgrounding and return must not consume the clock or produce a catch-up jump.
 - Use a dedicated timed-mode match-over event compatible with the existing result and umpire flow. Do not fake a score-limit victory by inventing points.
 

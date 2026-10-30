@@ -8,11 +8,11 @@
     const human=id=>t.engine.players.some(p=>p.id===id&&p.human);
     if(t.engine.config.autoSwing)t.disqualified=true;
     for(const e of events){
-      if(e.kind==='serve'){t.server=t.engine.players.find(p=>p.id===e.player);t.returned=false;if(human(e.player))t.metrics.humanServes++;}
+      if(e.kind==='serve'){const player=t.engine.players.find(p=>p.id===e.player);t.server=player?{id:player.id,team:player.team,humanAtServe:human(e.player)}:null;t.returned=false;if(human(e.player))t.metrics.humanServes++;}
       if(e.kind==='hit'){const p=t.engine.players.find(p=>p.id===e.player);if(t.server&&p?.team!==t.server.team)t.returned=true;if(human(e.player)&&e.quality>=.9)t.metrics.humanPerfectHits++;}
       if(e.kind==='rally-end'){
         t.metrics.longestRally=Math.max(t.metrics.longestRally,e.rallyLength||0);
-        if(t.server&&human(t.server.id)&&!t.returned&&e.winner!==t.server.team&&e.reason!=='double-bounce')t.metrics.humanServiceFaults++;
+        if(t.server?.humanAtServe&&!t.returned&&e.winner!==t.server.team&&e.reason!=='double-bounce')t.metrics.humanServiceFaults++;
         t.server=null;
       }
     }

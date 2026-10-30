@@ -2,7 +2,7 @@ const fs=require('node:fs'),path=require('node:path'),root=path.resolve(__dirnam
 let s=fs.readFileSync(file,'utf8');
 function patch(from,to){if(s.includes(to))return;if(s.split(from).length!==2)throw Error('Missing/ambiguous career hook: '+from.slice(0,80));s=s.replace(from,to);}
 patch(',d=null,m=ie();m.setVolume(s.volume)',',d=null,m=ie();globalThis.RallyProgress?.begin(o,{mode:c?"tournament":e.offlineMode??"quick"});m.setVolume(s.volume)');
-patch('let i=o.step(n,f.take()),a=o.snapshot();_.frame(a,i,n);','let i=o.step(n,f.take());globalThis.RallyProgress?.frame(o,i,n);let a=o.snapshot();_.frame(a,i,n);');
+if(!s.includes('let i=globalThis.RallyRush?'))patch('let i=o.step(n,f.take()),a=o.snapshot();_.frame(a,i,n);','let i=o.step(n,f.take());globalThis.RallyProgress?.frame(o,i,n);let a=o.snapshot();_.frame(a,i,n);');
 patch('A.current({winner:a.winner,points:[a.score.points[0],a.score.points[1]],stats:o.stats()})','A.current(globalThis.RallyProgress?.complete(o,{winner:a.winner,points:[a.score.points[0],a.score.points[1]],stats:o.stats()})??{winner:a.winner,points:[a.score.points[0],a.score.points[1]],stats:o.stats()})');
 patch('a=!0,clearInterval(O),window.removeEventListener("pagehide",F)','a=!0,globalThis.RallyProgress?.abandon(o),clearInterval(O),window.removeEventListener("pagehide",F)');
 patch('H=(0,n.jsx)(tD,{wins:u','H=(globalThis.RallyCareerUI?.bind({launch:F,home:()=>U("title")}), (0,n.jsx)(tD,{wins:u');

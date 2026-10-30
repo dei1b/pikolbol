@@ -10,6 +10,16 @@
     "sha256": "50ce15458bd14a37addd0b2130ea6a71237f46da98f441090d6e840d98c73222"
   },
   {
+    "path": "blitz-rush-ui.js",
+    "bytes": 1401,
+    "sha256": "7e4c0b9f55b3028eb5c3ee9aad0565869ac37c26333f0efc94c7d25631664332"
+  },
+  {
+    "path": "blitz-rush.js",
+    "bytes": 3548,
+    "sha256": "ca5f2a520d19da6b8288c8748a6fa3dc2e906838dd48022324aacb94a139e8f6"
+  },
+  {
     "path": "career-ui.js",
     "bytes": 5596,
     "sha256": "99dc74ce8f050251fbeebca0a87297f3b23f212ddbda3878d8ea442ef0a36fce"
@@ -21,13 +31,13 @@
   },
   {
     "path": "career.js",
-    "bytes": 6392,
-    "sha256": "ff2355f50d5b532e147ecb25cc6c466b1a63bcd158cbda3b304f117493bcb6df"
+    "bytes": 7076,
+    "sha256": "3a61ab8bae4e302cd121794fee2cc1e6db16873f63b759a8434f9b062e049aed"
   },
   {
     "path": "court-labels.js",
-    "bytes": 2429,
-    "sha256": "738169521525608f3fe612417e5a111bba05d33e98e9de8e8f64afa8fabf5af0"
+    "bytes": 2621,
+    "sha256": "1249d6e1f21fc7a542b16a24b43e2911120963330a9914bd09123609fe3eb7bf"
   },
   {
     "path": "equipment.js",
@@ -66,8 +76,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 11705,
-    "sha256": "62c7ed440d2fccd975edb351d6b74d3f6b6c7704ae8a52f07377a0115b171a12"
+    "bytes": 11784,
+    "sha256": "0031eee6451426fdf87b48c4c71e32732a8969045b5a788c820041e652f9cb32"
   },
   {
     "path": "manifest.webmanifest",
@@ -76,8 +86,8 @@
   },
   {
     "path": "match-medals.js",
-    "bytes": 2957,
-    "sha256": "dac3f02ffaff6387c5c21b4739a69ae45b51c528c48ffa88a30d616b09b744a7"
+    "bytes": 3037,
+    "sha256": "9cba39d110f8d468069acb0ce3abefa62e6eedfb274990d7e616f26820f6f0d4"
   },
   {
     "path": "offline.js",
@@ -781,8 +791,8 @@
   },
   {
     "path": "rival-ladder-ui.js",
-    "bytes": 5378,
-    "sha256": "e334a712f8841d42dbeac9976f8812262fbeb7c0d641c418fae496c45e0b161d"
+    "bytes": 5679,
+    "sha256": "a8930427dffd18b043b92cd58637f7de250dd3633bb1ff0d37644ddbe52aa05f"
   },
   {
     "path": "rival-ladder.js",
@@ -806,8 +816,8 @@
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 863930,
-    "sha256": "e365402c3141506c9bc9a81f9d077b612b437be79c45bb52abcebb3c50a93e32"
+    "bytes": 864594,
+    "sha256": "2904b1a257c091162d57102ebdfbf3070d69fdcf23313a8866472db41ab52346"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",
