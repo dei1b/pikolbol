@@ -6,6 +6,8 @@ Play matches against the computer, practice, and enter tournaments. The original
 
 ## Career, Rival Ladder and Blitz Rush
 
+Android **2.0.0** also adds **LAN multiplayer**: one phone hosts and two to four phones play singles/doubles over shared Wi-Fi or a hotspot, without a PC or internet. See [Android setup](android/README.md) for the host address/room-code flow and current device-test coverage. The PC launcher retains its offline CPU modes.
+
 **Career & rewards** tracks eight medals and unlocks six paddle finishes plus badges. Rewards are cosmetic. Completed CPU matches count with target 7 or higher, power-ups off and auto-swing off; movement assist is allowed. Practice, abandoned games and restarts do not earn rewards. Career progress saves locally on each device.
 
 **Rival Ladder** has separate singles and doubles tracks with ten opponents. Matches use Traditional scoring to 11, win by two. Select your character, court and Classic/Blitz pace for each stage. Wins unlock the next rival; losses never remove progress. Cleared stages remain replayable.

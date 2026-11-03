@@ -9,7 +9,8 @@ New-Item -ItemType Directory -Force -Path $taskBuild,(Join-Path $taskBuild 'clas
 Copy-Item -LiteralPath (Join-Path $taskRoot '..\site\icons\icon-192.png') -Destination (Join-Path $taskRoot 'res\drawable\icon.png')
 function Invoke-BuildTool($taskExe,$taskArgs){ & $taskExe @taskArgs; if($LASTEXITCODE -ne 0){throw "Build tool failed: $taskExe"} }
 Invoke-BuildTool (Join-Path $taskTools 'aapt.exe') @('package','-f','--ignore-assets','!.git:!.svn:.*:*~','-M',(Join-Path $taskRoot 'AndroidManifest.xml'),'-S',(Join-Path $taskRoot 'res'),'-A',(Join-Path $taskRoot '..\site'),'-I',$taskPlatform,'-F',(Join-Path $taskBuild 'resources.apk'))
-Invoke-BuildTool (Join-Path $taskJava 'javac.exe') @('--release','8','-classpath',$taskPlatform,'-d',(Join-Path $taskBuild 'classes'),(Join-Path $taskRoot 'src\ph\paddleup\offline\MainActivity.java'))
+$taskSources=@(Get-ChildItem -LiteralPath (Join-Path $taskRoot 'src') -Filter '*.java' -Recurse | ForEach-Object {$_.FullName})
+Invoke-BuildTool (Join-Path $taskJava 'javac.exe') (@('--release','8','-classpath',$taskPlatform,'-d',(Join-Path $taskBuild 'classes'))+$taskSources)
 Invoke-BuildTool (Join-Path $taskJava 'jar.exe') @('--create','--file',(Join-Path $taskBuild 'classes.jar'),'-C',(Join-Path $taskBuild 'classes'),'.')
 $taskOldJava=$env:JAVA_HOME
 try{

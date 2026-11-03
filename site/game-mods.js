@@ -52,7 +52,7 @@
   function refresh(){
     const overlay=document.querySelector('[data-match-overlay]');
     globalThis.RallyAI?.refreshMatchInfo();globalThis.RallyCourtLabels?.update(mods.engine);
-    globalThis.RallySpin?.refresh();
+    globalThis.RallySpin?.refresh();globalThis.RallyLanUI?.refresh();
     let badge=document.getElementById('rally-blitz-badge');
     badge?.remove();
     const buttons=[...document.querySelectorAll('[data-shot]')].filter(b=>b.tagName==='BUTTON');

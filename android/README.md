@@ -1,6 +1,6 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.9.0 is the current installer.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.0.0 is the current installer.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
@@ -20,7 +20,21 @@ Version 1.2.3 groups the Blitz indicator and opponent names/titles in a compact 
 
 Run `build.ps1` using the installed Android SDK build tools 35.0.0 and JDK 21. It packages the current `../site` directory, compiles the Java WebView wrapper, and signs the installer with `rally-local.keystore`. Keep that keystore to install future updates without clearing progress. This is a personal development build with WebView debugging enabled for USB inspection.
 
-The app intercepts its HTTPS asset origin and serves every file from the APK. It requests vibration permission and has no internet permission. No Node server is included or needed on Android.
+The app intercepts its HTTPS asset origin and serves every file from the APK. It requests vibration and Android's INTERNET permission for native LAN sockets. LAN needs no internet connection; external WebView requests and the original online services remain blocked. No Node server is included or needed on Android.
+
+## LAN multiplayer (2.0.0)
+
+1. Install this same APK on every Android phone. Install over the existing app to preserve saves.
+2. Connect all phones to the same Wi-Fi, or enable a phone hotspot and connect the other phones to it. Mobile data is not needed.
+3. On one phone, open **LAN multiplayer → Host game**. Choose the court, singles/doubles, Traditional/Rally scoring, target and Classic/Blitz pace.
+4. On the other phones, open **LAN multiplayer → Join game**. Enter an address and six-digit room code shown by the host, then select **Ready**.
+5. The host assigns doubles seats and selects **Start LAN match**. Singles needs two phones; doubles accepts two to four and fills empty seats with AI.
+
+One phone owns the match simulation and score; other phones send their own controls. Curve Left/Right are serve-only, and each human keeps an independent spin selection. Any player pausing or backgrounding freezes everyone until the pauses are cleared. If a guest disconnects, the match is abandoned and remaining players return to the lobby. If the host leaves, the room ends. LAN matches do not award CPU Career medals or advance Ladders.
+
+If joining fails, check the address, port, six-digit code and game version. Guest/public Wi-Fi may isolate devices; try a hotspot. No router port forwarding, public server, account or PC is required. This release uses manual address entry and does not automatically discover rooms. The PC edition shows an Android-feature explanation for this menu.
+
+Validation covered two/four browser participants, native TCP authentication/version/capacity/framing, shared scores/results, both scoring/pace options, CPU seats, long host pause, disconnect paths, spin controls and saved data. One physical Android host was tested with three TCP-connected browser peers through USB forwarding, including actual Android background/resume. Two physical Android phones over Wi-Fi/hotspot remain to be verified; USB-forwarded tests are not Wi-Fi coverage.
 
 Version 1.2.5 replaces live HUD details with flat sideline court lettering: opponent names/titles on one side and pace, format and scoring on the other. Shared by all four venues.
 
