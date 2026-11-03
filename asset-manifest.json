@@ -61,13 +61,13 @@
   },
   {
     "path": "home-menu.css",
-    "bytes": 4919,
-    "sha256": "255a94b9c84580b77bd98de743056d85578185ce372a38fa1212f8cf54076d52"
+    "bytes": 5913,
+    "sha256": "558cda62441ce292ac08bc39a49eb099b95776fa9b69bb916fdd7132006267c8"
   },
   {
     "path": "home-menu.js",
-    "bytes": 3137,
-    "sha256": "368132dacb6e5e6a3fadcffee8a561d27b5c4a302df62c8ccf4c6b1066ff6617"
+    "bytes": 3289,
+    "sha256": "2d3064fa6af3713db246b1c996997954ae43010ed793d635929f73478c47cc6d"
   },
   {
     "path": "icon.svg",

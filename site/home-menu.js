@@ -13,7 +13,7 @@
  };
  function icon(title){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');svg.setAttribute('class','rally-home-icon');svg.innerHTML=icons[title];return svg;}
  function action(title,detail,callback,kind='mode'){
-  const b=make('button',null,'rally-home-action rally-home-'+kind);b.type='button';b.setAttribute('aria-label',title);const label=make('span',null,'rally-home-label'),copy=make('span',null,'rally-home-copy');copy.append(make('strong',title,'font-condensed'));if(detail)copy.append(make('span',detail,'rally-home-detail'));label.append(icon(title),copy);b.append(label);b.onclick=callback;return b;
+  const b=make('button',null,'rally-home-action rally-home-'+kind);b.type='button';b.setAttribute('aria-label',title);const label=make('span',null,'rally-home-label'),copy=make('span',null,'rally-home-copy');copy.append(make('strong',title,'font-condensed'));if(detail){const description=make('span',detail,'rally-home-detail');description.id='home-detail-'+title.toLowerCase().replaceAll(' ','-');b.setAttribute('aria-describedby',description.id);copy.append(description);}label.append(icon(title),copy);b.append(label);b.onclick=callback;return b;
  }
  function mount(host,callbacks){if(!host||host.childElementCount)return;host.className='rally-home-actions';
   host.append(action('Quick match','Choose your court and AI rival',callbacks.quick,'quick'));

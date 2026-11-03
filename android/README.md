@@ -1,6 +1,8 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.0.4 is the current installer.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.0.5 is the current installer.
+
+Version 2.0.5 polishes home-menu card alignment, text readability, compact-screen spacing and offline status placement. Descriptions are associated with buttons for screen readers; the title ball respects reduced-motion preferences.
 
 Version 2.0.4 aligns menu descriptions with their titles in a shared text column beside each icon.
 
