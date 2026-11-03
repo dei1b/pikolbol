@@ -2,7 +2,7 @@
 
 Double-click **Play Rally.cmd**, or use the **Rally Offline** shortcut on your Desktop. It starts a small server on this PC and opens the game in an Edge app window. Internet access is not needed, including the first launch. You can also visit http://127.0.0.1:8787 after launching.
 
-Play matches against the computer, practice, and enter tournaments. The original game menus, 3D stadium, characters, sounds, rules, and controls are preserved from the browser-delivered version of https://paddleup.ph/ captured on October 29, 2026. This is a locally adapted copy of the published game, not a newly authored game engine. Taplinc sponsor cards, links, credits, and court lettering have been removed in this local edition. Bundled notices remain with their respective authors.
+Quick matches against the computer, practice, and enter tournaments. The original game menus, 3D stadium, characters, sounds, rules, and controls are preserved from the browser-delivered version of https://paddleup.ph/ captured on October 29, 2026. This is a locally adapted copy of the published game, not a newly authored game engine. Taplinc sponsor cards, links, credits, and court lettering have been removed in this local edition. Bundled notices remain with their respective authors.
 
 ## Career, Rival Ladder and Blitz Rush
 
@@ -16,7 +16,7 @@ Android **2.0.0** also adds **LAN multiplayer**: one phone hosts and two to four
 
 ## Scenery
 
-Choose **Scenery** in **Play match**. Ladder and Rush provide their own court selection and offline previews:
+Choose **Scenery** in **Quick match**. Ladder and Rush provide their own court selection and offline previews:
 
 - **Championship stadium:** the original packed arena.
 - **Palm Beach:** a seaside hard court, palms, sand, and turquoise water.
@@ -29,13 +29,13 @@ Your choice is saved on this device and applies when starting the next match, to
 
 Rally doubles now rotates court positions when the receiving team earns a point, so every new service turn after a side-out begins from the right court. Traditional doubles also starts new service turns on the right; a second server within the same turn may serve from either side. This correction is included on PC and in Android 1.2.2.
 
-In **Play match → Match pace**, choose **Classic** or **Blitz**. Blitz runs the simulation 20% faster for both sides and shortens the point-reset wait from 2.2 to 1.05 simulation seconds. Traditional and Rally scoring and the target score remain independent choices. Practice and tournaments use their original pace. The match pace selection is saved for your next quick match.
+In **Quick match → Match pace**, choose **Classic** or **Blitz**. Blitz runs the simulation 20% faster for both sides and shortens the point-reset wait from 2.2 to 1.05 simulation seconds. Traditional and Rally scoring and the target score remain independent choices. Practice and tournaments use their original pace. The match pace selection is saved for your next quick match.
 
 In **Settings → Keyboard controls**, select an action and press a replacement key. Duplicate assignments are rejected; Escape cancels capture. Reset keyboard defaults restores the original mappings. The shot buttons display your saved keys. Under **Touch shot positions**, swap the four shots between their existing button positions, or restore the defaults. Keyboard and touch preferences are stored separately on each device.
 
 ## AI opponents
 
-Under **Play match → AI opponent**, select a named rival or random character personalities. The description changes with your choice. Easy, Normal, and Hard control reaction time and accuracy independently of personality. The opponent choice is saved, and a rematch retains that opponent. Both scoring options and Classic/Blitz work with all rivals.
+Under **Quick match → AI opponent**, select a named rival or random character personalities. The description changes with your choice. Easy, Normal, and Hard control reaction time and accuracy independently of personality. The opponent choice is saved, and a rematch retains that opponent. Both scoring options and Classic/Blitz work with all rivals.
 
 - **Bea — Kitchen queen:** soft dinks and drops, close positioning.
 - **Migo — Big hitter:** fast drives and deep serves, wider placement errors.

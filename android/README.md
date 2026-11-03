@@ -1,6 +1,6 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.0.1 is the current installer.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.0.2 is the current installer.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
@@ -81,3 +81,5 @@ Version 1.8.0 adds Flat / Topspin / Slice selection for paddle-contact serves, d
 Version 1.9.0 adds visible screwball-style Curve Left / Right choices for serves only, from the hitter's view. The choices disable during rallies and reset to Flat after serving; Topspin and Slice remain available in rallies. Spinning shots use shared 3D flight with velocity-dependent spin forces, air drag, spin decay and contact friction; the guide and AI predict the same trajectory. Standard serve checks showed about 30 cm lateral bow. This is a tuned gameplay approximation, not experimentally calibrated pickleball aerodynamics. Flat and scripted practice retain previous behavior. Existing selector, swipe, left-handed mode, keyboard cycling and saved mappings remain supported.
 
 Version 2.0.1 groups Settings into Controls, Keyboard, Audio, Display and Progress tabs. The category bar stays available while scrolling; pause-menu Settings hides Progress where reset is unavailable. Categories preserve native save/reset handlers, and the last category is remembered on each device. Removed the ElevenLabs description from Settings at the user's request.
+
+Version 2.0.2 focuses the main menu on Quick match, LAN, Rival Ladder, Blitz Rush and Tournament. Practice/Career remain available, Settings/How to play are quieter, and unavailable original online links are removed from home. The animated bouncing ball above Rally is preserved. Play match is renamed Quick match in the home and setup actions; tournament continuation is retained.

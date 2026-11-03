@@ -60,6 +60,16 @@
     "sha256": "1c5657d5ab6e1c0b7d958fee4115837eccb1b3d648737d512d49c1cc9620d96f"
   },
   {
+    "path": "home-menu.css",
+    "bytes": 3941,
+    "sha256": "a593fe82e7b6933e9ee47756f4c1450cd8f3bf3e681d44dd35423ee658211190"
+  },
+  {
+    "path": "home-menu.js",
+    "bytes": 1527,
+    "sha256": "99b9222e02cecf9e93410d4328a2bb76859e997e5d8b5245e32ddaadc6b4c1df"
+  },
+  {
     "path": "icon.svg",
     "bytes": 495,
     "sha256": "8ef71db9df716a4d67c97f79aee86121cdc05e07dfd721cafa098269e977d788"
@@ -81,8 +91,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 12221,
-    "sha256": "d549acbdcb7b0a5098a9258e611a1e61492fab10ea55f03778e00552f331d72e"
+    "bytes": 12303,
+    "sha256": "4edc465eeb9208e3f2d1df3dc2bbbc6dcee04413629f81a5815b010757f0d2fb"
   },
   {
     "path": "lan-protocol.js",
@@ -891,8 +901,8 @@
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 867850,
-    "sha256": "e79de4713c988ab3eafdee08959d3c1e2c635cdee409172a1d76500abc7f8169"
+    "bytes": 862674,
+    "sha256": "c3733357aa73a8c67fbefe7303887764bac77fee9db69068a933db2204c056d5"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",
