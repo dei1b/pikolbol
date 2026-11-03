@@ -56,8 +56,8 @@
   },
   {
     "path": "game-mods.js",
-    "bytes": 9470,
-    "sha256": "d7d887a84fafca9f5421380917f28f71d0177d52aaf35930549b9e71dc6eba36"
+    "bytes": 9444,
+    "sha256": "1c5657d5ab6e1c0b7d958fee4115837eccb1b3d648737d512d49c1cc9620d96f"
   },
   {
     "path": "icon.svg",
@@ -81,8 +81,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 12119,
-    "sha256": "f090d54b72d4d0d0e2f7a577728d395a1ea93c84d7b35bea3f507d36546647d7"
+    "bytes": 12221,
+    "sha256": "d549acbdcb7b0a5098a9258e611a1e61492fab10ea55f03778e00552f331d72e"
   },
   {
     "path": "lan-protocol.js",
@@ -855,6 +855,16 @@
     "sha256": "41a5896d699ba151fd358551a2bb61b49b88b6876d8e070c2b9e897182d7b265"
   },
   {
+    "path": "settings-categories.css",
+    "bytes": 1434,
+    "sha256": "b8c5e7db2da7bf95cdaf17cc1fa962aa8cdc48adb3bced82e68424abb03f0900"
+  },
+  {
+    "path": "settings-categories.js",
+    "bytes": 1214,
+    "sha256": "ff147ce14550b90c7d574bff0acf03921e57fd14050943392cec2f9fdae281a4"
+  },
+  {
     "path": "spin-physics.js",
     "bytes": 4107,
     "sha256": "2b56ee665f24958dadeec0bf0b5b525fad6de4d6ea4aea2fd27e10c542a0e20c"
@@ -881,8 +891,8 @@
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 866809,
-    "sha256": "e22d2173850a3d5b0279e9ef5533870789171d1b5a91a73b4751d1d92008fd7f"
+    "bytes": 867850,
+    "sha256": "e79de4713c988ab3eafdee08959d3c1e2c635cdee409172a1d76500abc7f8169"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",
