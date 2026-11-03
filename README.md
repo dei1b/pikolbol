@@ -58,4 +58,4 @@ Settings and progress are saved in the browser profile on Windows and in the app
 | [`android/`](android/) | Android WebView wrapper, LAN features, and APK build script. |
 | [`tools/`](tools/) | Asset preparation, model generation, and verification utilities. |
 
-The original game, court, character models, and audio come from the published PaddleUp browser edition. Rally Offline packages those assets with local changes, including the removal of sponsor placements. Bundled notices remain with their respective authors.
+The original game, court, character models, and audio come from the published PaddleUp browser edition. Rally Offline packages those assets with local changes. Bundled notices remain with their respective authors.
