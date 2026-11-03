@@ -23,6 +23,10 @@
 .rally-home-utility{grid-column:1/-1;display:flex;gap:12px;justify-content:center}
 .rally-home-utility-button{min-height:44px;padding:8px 18px;border-color:transparent;background:transparent;align-items:center;text-align:center}
 .rally-home-utility-button strong{font:700 13px/1.2 system-ui;text-transform:none;color:#d5e3d9}
+.rally-home-updates{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;column-gap:8px;margin-top:-8px;color:#d5e3d9;font:600 12px/1.4 system-ui}
+.rally-home-updates button{color:#d4f25a;font:700 13px/1.2 system-ui;text-decoration:underline;text-underline-offset:3px}
+.rally-home:has(.rally-home-updates){justify-content:safe center;align-content:safe center}
+@media(max-width:559px) and (max-height:700px){.rally-home:has(.rally-home-updates){justify-content:flex-start}}
 .rally-home-action:hover{background:#234c3c}.rally-home-quick:hover{background:#e0ff79}.rally-home-action:focus-visible{outline:3px solid white;outline-offset:3px}.rally-home-action:active{transform:translateY(1px)}
 @media(min-width:900px),(min-width:560px) and (max-height:560px){.rally-home{display:grid;grid-template-columns:minmax(160px,300px) minmax(300px,460px);justify-content:center;align-content:center;gap:36px}.rally-home>[data-home-brand]{width:auto;align-items:flex-start;text-align:left}.rally-home [data-home-brand]>h1{font-size:96px}.rally-home-menu{max-width:460px}}
 @media(max-height:560px){.rally-home{padding:14px 18px 26px;gap:24px}.rally-home-actions{gap:8px}.rally-home-action{min-height:64px;padding:10px 14px;gap:5px}.rally-home-action strong{font-size:23px}.rally-home-quick{min-height:68px}.rally-home-quick strong{font-size:30px}.rally-home-secondary,.rally-home-utility-button{min-height:44px;padding:8px 12px}.rally-home-secondary strong{font-size:19px}.rally-home-utility-button strong{font-size:13px}.rally-home [data-home-brand]>h1{font-size:80px}}

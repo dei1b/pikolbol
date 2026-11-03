@@ -26,15 +26,6 @@
     mountMode(host){if(!host||host.childElementCount)return;const descriptions={classic:'Classic: standard game speed and point resets. Choose Traditional or Rally scoring below.',blitz:'Blitz: 20% faster play and quicker point resets. Choose Traditional or Rally scoring below.'};const p=panel('Match pace',descriptions[mode]||descriptions.classic),description=p.querySelector('p');description.setAttribute('aria-live','polite');const opts=el('div',null,'rally-mod-options');
       for(const value of ['classic','blitz']){const b=el('button',value==='classic'?'Classic':'⚡ Blitz');b.type='button';b.setAttribute('aria-pressed',String(mode===value));b.onclick=()=>{mode=value;save('rally.offline.pace.v1',mode);description.textContent=descriptions[mode];for(const x of opts.children)x.setAttribute('aria-pressed',String(x===b));};opts.append(b);}p.append(opts);host.append(p);},
     mountControls(host,category='all'){if(!host||host.childElementCount)return;
-      if(category==='display' && globalThis.RallyAppUpdates){
-        const app=globalThis.RallyAppUpdates;
-        const updates=panel('App version','Installed version: '+app.version());
-        const check=el('button','Check for updates');
-        check.type='button';
-        check.onclick=()=>app.check();
-        updates.append(check);
-        host.append(updates);
-      }
       if(category==='all'||category==='controls')host.append(panel('Shot spin','Choose Flat, Topspin or Slice during rallies. Curve Left / Right are for serves only, from the hitter’s view, and reset to Flat after serving. Topspin dips and kicks forward; slice/chop floats and bounces low. Applies to serves, drives, drops and dinks. Lobs and smashes stay flat. Cycle spin using the binding in Keyboard.'));
       if(category==='all'||category==='keyboard'){
       const p=panel('Keyboard controls','Select an action, then press a key. Assignments are saved on this device. Esc cancels key capture.');p.classList.add('rally-keyboard-panel');const status=el('div',null,'rally-mod-status');status.setAttribute('role','status');

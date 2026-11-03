@@ -26,8 +26,8 @@
   },
   {
     "path": "career-ui.js",
-    "bytes": 6045,
-    "sha256": "8f11d569a9ea1c6cbedd424cd90177b7b7a60de17dfd4d1b48ce1db2badf544a"
+    "bytes": 6046,
+    "sha256": "ec0bc1593018d712240fef40599a7c37fc701367609d3093de292e2faf80901f"
   },
   {
     "path": "career.css",
@@ -56,18 +56,18 @@
   },
   {
     "path": "game-mods.js",
-    "bytes": 9823,
-    "sha256": "213b563213ba9b6230477d6e123b9d35953f65be06a5796dd09ee3930cee3daa"
+    "bytes": 9518,
+    "sha256": "4e498a75d4379b12cff70434fdb41c1a2344c9d2fcad834dcdd9db7a5567fad2"
   },
   {
     "path": "home-menu.css",
-    "bytes": 5913,
-    "sha256": "558cda62441ce292ac08bc39a49eb099b95776fa9b69bb916fdd7132006267c8"
+    "bytes": 6463,
+    "sha256": "bc2ea2039396562af6c7727839303e42997ff3129b467e8d0a66cc70f636365c"
   },
   {
     "path": "home-menu.js",
-    "bytes": 3289,
-    "sha256": "2d3064fa6af3713db246b1c996997954ae43010ed793d635929f73478c47cc6d"
+    "bytes": 3703,
+    "sha256": "25fa909782938f736466fed275c1ecf529e1e6a39ab6cb1e304799720d048396"
   },
   {
     "path": "icon.svg",
@@ -96,28 +96,28 @@
   },
   {
     "path": "lan-protocol.js",
-    "bytes": 4345,
-    "sha256": "170bdffff9f0999990797e92ca93ac5c38f36fbfbe86c4ad875d1e341fecf06e"
+    "bytes": 4356,
+    "sha256": "1201e7a6eddd53f5b8a770dd0eb8f58d075a297e7b0a6bef2e30a9c3d312603a"
   },
   {
     "path": "lan-qr.js",
-    "bytes": 3937,
-    "sha256": "175ed751661a6c75653912e9ae0cb834a8b00f54dc126469c8849439cb1fe8cb"
+    "bytes": 3950,
+    "sha256": "b5e3d59258e79e51016ce9ff3e515f6a482c716ea3b2245cccfcc61d74bd7e07"
   },
   {
     "path": "lan-ui.js",
-    "bytes": 6800,
-    "sha256": "aad65670c8b8db0a81ff440abda11f77c1c8ed71ef0d1de80f251ba1fbae33a2"
+    "bytes": 6825,
+    "sha256": "6c8600621dc95240f080dd45f56ca1362df68abbba44efe334ad5f30ed004b26"
   },
   {
     "path": "lan.css",
-    "bytes": 1285,
-    "sha256": "03b73cc6b53a890433b9aafff497b474799b64dfc6f6ed81c7369c9694589b59"
+    "bytes": 1293,
+    "sha256": "289dd00c4f3dd68e3c89a5c230f1d6be6a21eaec168d863f00211f22e0cadf74"
   },
   {
     "path": "lan.js",
-    "bytes": 14911,
-    "sha256": "8794aaac767fe66812ba567c3349f2ed720a8b22bf26db6b9c66de5817e61715"
+    "bytes": 14995,
+    "sha256": "eec16f01401857798562e4f0f8f444ccfaacfb09c400ecff623aa8c3ce109508"
   },
   {
     "path": "manifest.webmanifest",
@@ -871,13 +871,13 @@
   },
   {
     "path": "settings-categories.css",
-    "bytes": 1434,
-    "sha256": "b8c5e7db2da7bf95cdaf17cc1fa962aa8cdc48adb3bced82e68424abb03f0900"
+    "bytes": 1446,
+    "sha256": "9cec0dcaeb66251c77701ca73f7b10bde25c2fe913eb2f055ad953a7d73cca26"
   },
   {
     "path": "settings-categories.js",
-    "bytes": 1214,
-    "sha256": "ff147ce14550b90c7d574bff0acf03921e57fd14050943392cec2f9fdae281a4"
+    "bytes": 1221,
+    "sha256": "8e79db0a943668fa9b864f20b50aa0c4544c3ec0853159d2ce0beecf6cca0f32"
   },
   {
     "path": "spin-physics.js",
@@ -906,28 +906,28 @@
   },
   {
     "path": "vendor/jsqr-LICENSE.txt",
-    "bytes": 11358,
-    "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+    "bytes": 11560,
+    "sha256": "2e54cd84a645bea25943c75dd8ae67cb291e66a47a11578333c9b4b3b6b86c85"
   },
   {
     "path": "vendor/jsQR.js",
-    "bytes": 256885,
-    "sha256": "bc40c8a15196236b2314db0856f72ca0b49980cd5413b8c852a7349f5fee0859"
+    "bytes": 266986,
+    "sha256": "aec81b459d4e3856885fca04b497474227396ab793daedf402fd80f7b9fcc337"
   },
   {
     "path": "vendor/qrcode-generator-LICENSE.txt",
-    "bytes": 1071,
-    "sha256": "3a850fa5f08101db6f40676c2786e10bd2cd5fff7b12ffdf1e0c434d4e49d90c"
+    "bytes": 1092,
+    "sha256": "ba71bb22186b5dbdbcf6bb95ca1a4cc0736821efa1f059188891aa2d0fbd3f69"
   },
   {
     "path": "vendor/qrcode.js",
-    "bytes": 56694,
-    "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780"
+    "bytes": 58991,
+    "sha256": "4b6133cbb5a13ecdc26cfa897d0daf7bb9b08232032cdd381e82f2baf3653b5f"
   },
   {
     "path": "vendor/README.md",
-    "bytes": 426,
-    "sha256": "78c42863188d0a8ea3291f79dd4ceeffe39eb285054fa288f77f2ea26c9e6105"
+    "bytes": 432,
+    "sha256": "ca20734e5c06eae10c3fad0bd738a17b291b83d403ce2f0a71d0c7f032ec9885"
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
