@@ -6,7 +6,7 @@ Quick matches against the computer, practice, and enter tournaments. The origina
 
 ## Career, Rival Ladder and Blitz Rush
 
-Android **2.0.0** also adds **LAN multiplayer**: one phone hosts and two to four phones play singles/doubles over shared Wi-Fi or a hotspot, without a PC or internet. See [Android setup](android/README.md) for the host address/room-code flow and current device-test coverage. The PC launcher retains its offline CPU modes.
+Android adds **LAN multiplayer**: one phone hosts and two to four phones play singles/doubles over shared Wi-Fi or a hotspot, without a PC or internet. Version **2.1.0** adds a ready host QR code and in-app scan-to-join; manual address/room-code entry remains available. See [Android setup](android/README.md) for instructions and current device-test coverage. The PC launcher retains its offline CPU modes.
 
 **Career & rewards** tracks eight medals and unlocks six paddle finishes plus badges. Rewards are cosmetic. Completed CPU matches count with target 7 or higher, power-ups off and auto-swing off; movement assist is allowed. Practice, abandoned games and restarts do not earn rewards. Career progress saves locally on each device.
 

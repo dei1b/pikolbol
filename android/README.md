@@ -1,6 +1,6 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.0.5 is the current installer.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.1.0 is the current installer.
 
 Version 2.0.5 polishes home-menu card alignment, text readability, compact-screen spacing and offline status placement. Descriptions are associated with buttons for screen readers; the title ball respects reduced-motion preferences.
 
@@ -22,6 +22,8 @@ Version 1.2.2 fixes Rally doubles serving after a side-out: the receiving point 
 
 Version 1.2.3 groups the Blitz indicator and opponent names/titles in a compact match-details panel beside the scoreboard, or below it on narrow screens. The panel yields to announcements and controls when space is tight, and hides while paused.
 
+Version 2.1.0 adds offline LAN QR joining. Host game displays a QR code; joining phones choose Scan host QR and allow camera access to connect. Manual address/code entry remains available. Both phones must already share Wi-Fi or a hotspot. Hosts with multiple interfaces can select the QR host address. Camera frames stay on the joining phone; cancel, navigation, joining and backgrounding stop capture. Camera denial leaves manual entry usable.
+
 ## Rebuilding
 
 Run `build.ps1` using the installed Android SDK build tools 35.0.0 and JDK 21. It packages the current `../site` directory, compiles the Java WebView wrapper, and signs the installer with `rally-local.keystore`. Keep that keystore to install future updates without clearing progress. This is a personal development build with WebView debugging enabled for USB inspection.
@@ -38,7 +40,7 @@ The app intercepts its HTTPS asset origin and serves every file from the APK. It
 
 One phone owns the match simulation and score; other phones send their own controls. Curve Left/Right are serve-only, and each human keeps an independent spin selection. Any player pausing or backgrounding freezes everyone until the pauses are cleared. If a guest disconnects, the match is abandoned and remaining players return to the lobby. If the host leaves, the room ends. LAN matches do not award CPU Career medals or advance Ladders.
 
-If joining fails, check the address, port, six-digit code and game version. Guest/public Wi-Fi may isolate devices; try a hotspot. No router port forwarding, public server, account or PC is required. This release uses manual address entry and does not automatically discover rooms. The PC edition shows an Android-feature explanation for this menu.
+If joining fails, check the address, port, six-digit code and game version. Guest/public Wi-Fi may isolate devices; try a hotspot. No router port forwarding, public server, account or PC is required. This release supports QR or manual address entry and does not automatically discover rooms. The PC edition shows an Android-feature explanation for this menu.
 
 Validation covered two/four browser participants, native TCP authentication/version/capacity/framing, shared scores/results, both scoring/pace options, CPU seats, long host pause, disconnect paths, spin controls and saved data. One physical Android host was tested with three TCP-connected browser peers through USB forwarding, including actual Android background/resume. Two physical Android phones over Wi-Fi/hotspot remain to be verified; USB-forwarded tests are not Wi-Fi coverage.
 
