@@ -8,7 +8,7 @@ const mode=process.argv.includes('--curve')?'curve-left':'topspin';
 async function until(expression){for(let i=0;i<60;i++){if(await evaluate(expression))return;await sleep(250);}throw Error('Timed out '+expression);}
 try{
  await until('!!globalThis.RallySpin&&!!globalThis.RallyCareerUI?.actions');const before=await evaluate("localStorage.getItem('rally.offline.career.v1')");
- for(let i=0;i<2;i++){await evaluate("[...document.querySelectorAll('button')].find(b=>b.textContent.trim().toLowerCase()==='play match').click()");await sleep(300);}
+ for(let i=0;i<2;i++){await evaluate("[...document.querySelectorAll('button')].find(b=>(b.getAttribute('aria-label')??b.textContent).trim().toLowerCase()==='quick match').click()");await sleep(300);}
  await until("!!document.querySelector('.rally-spin-picker')");
  const point=await evaluate("(()=>{const r=document.querySelector('[data-spin="+mode+"]').getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2};})()");
  await call('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...point,radiusX:3,radiusY:3,force:1,id:1}]});await call('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});assert.equal(await evaluate('RallySpin.selected'),mode);

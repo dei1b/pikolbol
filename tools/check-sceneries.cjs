@@ -1,9 +1,9 @@
 const {chromium}=require('C:/Users/Dave/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'),assert=require('node:assert/strict'),fs=require('fs');
 (async()=>{const b=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});try{const p=await b.newPage({viewport:{width:1280,height:850}}),errors=[],failed=[],report=[];p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400&&!r.url().includes('/live/'))failed.push(r.url());});
  for(const scene of ['beach','rooftop','night','stadium']){
-  await p.goto('http://127.0.0.1:8787');await p.getByRole('button',{name:'Play match',exact:true}).click();const choice=p.getByLabel('Scenery',{exact:true});await choice.selectOption(scene);assert.match(await p.locator('.rally-scenery-description').innerText(),/Applied when/);
-  await p.reload();await p.getByRole('button',{name:'Play match',exact:true}).click();assert.equal(await choice.inputValue(),scene);
-  await p.getByRole('button',{name:'Play match',exact:true}).click();await p.waitForSelector('[data-controls]');await p.waitForTimeout(2200);
+  await p.goto('http://127.0.0.1:8787');await p.getByRole('button',{name:'Quick match',exact:true}).click();const choice=p.getByLabel('Scenery',{exact:true});await choice.selectOption(scene);assert.match(await p.locator('.rally-scenery-description').innerText(),/Applied when/);
+  await p.reload();await p.getByRole('button',{name:'Quick match',exact:true}).click();assert.equal(await choice.inputValue(),scene);
+  await p.getByRole('button',{name:'Quick match',exact:true}).click();await p.waitForSelector('[data-controls]');await p.waitForTimeout(2200);
   const info=await p.evaluate(()=>{const view=RallyScenery.view,v=RallyScenery.venue;return{id:v.id||'stadium',net:!!v.group.getObjectByName('net'),meshes:(()=>{let count=0;v.group.traverse(n=>{if(n.isMesh)count++;});return count;})(),scoring:RallyMods.engine.score.scoring,format:RallyMods.engine.config.format,finite:view.scene.children.every(n=>n.position.toArray().every(Number.isFinite)),phase:RallyMods.engine.phase};});
   assert.equal(info.id,scene);assert(info.net);assert(info.finite);await p.screenshot({path:'paddleup-offline/scenery-'+scene+'.png'});report.push(info);console.log('PASS',scene,info.meshes+' meshes');
  }

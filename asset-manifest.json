@@ -60,6 +60,16 @@
     "sha256": "1c5657d5ab6e1c0b7d958fee4115837eccb1b3d648737d512d49c1cc9620d96f"
   },
   {
+    "path": "home-menu.css",
+    "bytes": 5913,
+    "sha256": "558cda62441ce292ac08bc39a49eb099b95776fa9b69bb916fdd7132006267c8"
+  },
+  {
+    "path": "home-menu.js",
+    "bytes": 3289,
+    "sha256": "2d3064fa6af3713db246b1c996997954ae43010ed793d635929f73478c47cc6d"
+  },
+  {
     "path": "icon.svg",
     "bytes": 495,
     "sha256": "8ef71db9df716a4d67c97f79aee86121cdc05e07dfd721cafa098269e977d788"
@@ -81,8 +91,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 12221,
-    "sha256": "d549acbdcb7b0a5098a9258e611a1e61492fab10ea55f03778e00552f331d72e"
+    "bytes": 12417,
+    "sha256": "836b4153605f85c738294df12267db7b2a7f90374341b35357f75719c86ee4b4"
   },
   {
     "path": "lan-protocol.js",
@@ -90,14 +100,19 @@
     "sha256": "170bdffff9f0999990797e92ca93ac5c38f36fbfbe86c4ad875d1e341fecf06e"
   },
   {
+    "path": "lan-qr.js",
+    "bytes": 3937,
+    "sha256": "175ed751661a6c75653912e9ae0cb834a8b00f54dc126469c8849439cb1fe8cb"
+  },
+  {
     "path": "lan-ui.js",
-    "bytes": 5950,
-    "sha256": "905f055b287f23b2e9f62dda5d23fabd0c643711bf0f8cbad1b91deb539376e9"
+    "bytes": 6800,
+    "sha256": "aad65670c8b8db0a81ff440abda11f77c1c8ed71ef0d1de80f251ba1fbae33a2"
   },
   {
     "path": "lan.css",
-    "bytes": 836,
-    "sha256": "11e1b19beb3c1446375b38f285fb74432128a45b16dc072bb9d5070bb875e273"
+    "bytes": 1285,
+    "sha256": "03b73cc6b53a890433b9aafff497b474799b64dfc6f6ed81c7369c9694589b59"
   },
   {
     "path": "lan.js",
@@ -890,9 +905,34 @@
     "sha256": "218f0d5a8fdd3eb27077b470b4e2cb33d385c2387ff92fe712b668bccadc7e59"
   },
   {
+    "path": "vendor/jsqr-LICENSE.txt",
+    "bytes": 11358,
+    "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+  },
+  {
+    "path": "vendor/jsQR.js",
+    "bytes": 256885,
+    "sha256": "bc40c8a15196236b2314db0856f72ca0b49980cd5413b8c852a7349f5fee0859"
+  },
+  {
+    "path": "vendor/qrcode-generator-LICENSE.txt",
+    "bytes": 1071,
+    "sha256": "3a850fa5f08101db6f40676c2786e10bd2cd5fff7b12ffdf1e0c434d4e49d90c"
+  },
+  {
+    "path": "vendor/qrcode.js",
+    "bytes": 56694,
+    "sha256": "18ae399f81182bc9de916e9c77b195df20cc58d6f2d55a62b085a299f1bf1780"
+  },
+  {
+    "path": "vendor/README.md",
+    "bytes": 426,
+    "sha256": "78c42863188d0a8ea3291f79dd4ceeffe39eb285054fa288f77f2ea26c9e6105"
+  },
+  {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 867850,
-    "sha256": "e79de4713c988ab3eafdee08959d3c1e2c635cdee409172a1d76500abc7f8169"
+    "bytes": 862674,
+    "sha256": "c3733357aa73a8c67fbefe7303887764bac77fee9db69068a933db2204c056d5"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",

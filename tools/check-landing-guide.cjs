@@ -5,7 +5,7 @@ const observeOnly=process.argv.includes('--observe');
 (async()=>{const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});try{
  const page=await browser.newPage({viewport:{width:1200,height:850}}),errors=[],results=[];page.on('pageerror',e=>errors.push(e.message));
  for(const scenery of ['beach','rooftop','night','stadium']){
-  await page.goto('http://127.0.0.1:8787');await page.getByRole('button',{name:'Play match',exact:true}).click();await page.getByLabel('Scenery',{exact:true}).selectOption(scenery);await page.getByRole('button',{name:'Play match',exact:true}).click();await page.waitForSelector('[data-controls]');
+  await page.goto('http://127.0.0.1:8787');await page.getByRole('button',{name:'Quick match',exact:true}).click();await page.getByLabel('Scenery',{exact:true}).selectOption(scenery);await page.getByRole('button',{name:'Quick match',exact:true}).click();await page.waitForSelector('[data-controls]');
   await page.evaluate(()=>{const v=RallyScenery.view;v.frame=()=>{};v.camera.position.set(0,12,13);v.camera.lookAt(0,0,0);v.camera.updateMatrixWorld();v.camera.updateProjectionMatrix();v.ball.group.visible=true;v.ball.ball.visible=false;v.ball.shadow.visible=false;v.marker.visible=false;});
   for(const [name,x,z]of [['service box',1.3,4],['kitchen',1.3,1],['painted line',0,4]]){
    const point=await page.evaluate(({x,z})=>{const v=RallyScenery.view;v.ball.update({p:{x,y:1,z},v:{x:0,y:-1,z:0}},{x,z},'drive',v.camera.position,1/60);v.ball.ball.visible=false;v.ball.shadow.visible=false;v.ball.guide.visible=false;v.renderer.render(v.scene,v.camera);return v.project(x,.014,z);},{x,z});

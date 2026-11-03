@@ -13,6 +13,8 @@ import java.util.*;
 public class MainActivity extends Activity {
     private WebView game;
     private LanBridge lan;
+    private PermissionRequest cameraRequest;
+    private static final int CAMERA_PERMISSION=71;
     private static final String HOST = "appassets.androidplatform.net";
     @Override public void onCreate(Bundle saved) {
         super.onCreate(saved);
@@ -31,6 +33,14 @@ public class MainActivity extends Activity {
         settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
         WebView.setWebContentsDebuggingEnabled(true);
         game.setWebChromeClient(new WebChromeClient(){
+            @Override public void onPermissionRequest(PermissionRequest request){runOnUiThread(()->{
+                Uri origin=request.getOrigin();String[] resources=request.getResources();
+                if(!"https".equals(origin.getScheme())||!HOST.equals(origin.getHost())||resources.length!=1||!PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resources[0])){request.deny();return;}
+                if(cameraRequest!=null){request.deny();return;}
+                if(checkSelfPermission(android.Manifest.permission.CAMERA)==android.content.pm.PackageManager.PERMISSION_GRANTED){request.grant(new String[]{PermissionRequest.RESOURCE_VIDEO_CAPTURE});return;}
+                cameraRequest=request;requestPermissions(new String[]{android.Manifest.permission.CAMERA},CAMERA_PERMISSION);
+            });}
+            @Override public void onPermissionRequestCanceled(PermissionRequest request){runOnUiThread(()->{if(cameraRequest==request)cameraRequest=null;});}
             @Override public boolean onConsoleMessage(ConsoleMessage m){
                 android.util.Log.d("RallyWeb",m.messageLevel()+": "+m.message()+" ("+m.sourceId()+":"+m.lineNumber()+")");return true;
             }
@@ -72,13 +82,14 @@ public class MainActivity extends Activity {
         return "application/octet-stream";
     }
     private void fullscreen(){getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|View.SYSTEM_UI_FLAG_LAYOUT_STABLE);}
+    @Override public void onRequestPermissionsResult(int code,String[] permissions,int[] results){super.onRequestPermissionsResult(code,permissions,results);if(code==CAMERA_PERMISSION&&cameraRequest!=null){PermissionRequest request=cameraRequest;cameraRequest=null;if(results.length>0&&results[0]==android.content.pm.PackageManager.PERMISSION_GRANTED)request.grant(new String[]{PermissionRequest.RESOURCE_VIDEO_CAPTURE});else request.deny();}}
     @Override public void onWindowFocusChanged(boolean focus){super.onWindowFocusChanged(focus);if(focus)fullscreen();}
     private void pauseMatch(){game.evaluateJavascript("if(document.querySelector('[data-match-overlay][data-paused=\"false\"]'))window.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',code:'Escape'}))",null);}
-    @Override protected void onPause(){if(lan!=null)lan.background();pauseMatch();game.onPause();super.onPause();}
+    @Override protected void onPause(){if(lan!=null)lan.background();game.evaluateJavascript("window.RallyLanQR&&window.RallyLanQR.stop()",null);pauseMatch();game.onPause();super.onPause();}
     @Override protected void onResume(){super.onResume();if(game!=null)game.onResume();}
     @Override public void onBackPressed(){
         pauseMatch();
         new AlertDialog.Builder(this).setTitle("Close Rally?").setMessage("Your settings and tournament progress are saved on this phone.").setPositiveButton("Close",(d,w)->finish()).setNegativeButton("Keep playing",(d,w)->fullscreen()).show();
     }
-    @Override protected void onDestroy(){if(lan!=null)lan.stop();if(game!=null){game.removeJavascriptInterface("RallyLanNative");game.stopLoading();game.destroy();}super.onDestroy();}
+    @Override protected void onDestroy(){if(cameraRequest!=null){cameraRequest.deny();cameraRequest=null;}if(lan!=null)lan.stop();if(game!=null){game.removeJavascriptInterface("RallyLanNative");game.stopLoading();game.destroy();}super.onDestroy();}
 }

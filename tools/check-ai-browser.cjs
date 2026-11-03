@@ -1,11 +1,11 @@
 const {chromium}=require('C:/Users/Dave/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');const assert=require('node:assert/strict'),fs=require('node:fs');
 (async()=>{const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});try{
  const page=await browser.newPage({viewport:{width:1300,height:950}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto('http://127.0.0.1:8787');await page.getByRole('button',{name:'Play match',exact:true}).click();
+ await page.goto('http://127.0.0.1:8787');await page.getByRole('button',{name:'Quick match',exact:true}).click();
  const picker=page.getByLabel('AI opponent',{exact:true});assert.equal(await picker.locator('option').count(),11);
  await picker.selectOption('rafi');assert.match(await page.locator('.rally-ai-description').innerText(),/open corner/);await picker.selectOption('tala');assert.match(await page.locator('.rally-ai-description').innerText(),/lobs/);await picker.selectOption('rafi');
  await page.screenshot({path:'paddleup-offline/ai-selection.png',fullPage:true});
- await page.reload();await page.getByRole('button',{name:'Play match',exact:true}).click();assert.equal(await picker.inputValue(),'rafi');await page.getByRole('button',{name:'Play match',exact:true}).click();await page.waitForSelector('[data-controls]');
+ await page.reload();await page.getByRole('button',{name:'Quick match',exact:true}).click();assert.equal(await picker.inputValue(),'rafi');await page.getByRole('button',{name:'Quick match',exact:true}).click();await page.waitForSelector('[data-controls]');
  const result=await page.evaluate(()=>{const live=RallyMods.engine,C=live.constructor,results=[];const cfg={...live.config,seed:12345};
   for(const format of ['singles','doubles'])for(const scoring of ['traditional','rally'])for(const pace of [false,true]){
    for(const id of ['bea','migo','tala','paco','isay','jojo','rafi','nika','enzo','maya']){

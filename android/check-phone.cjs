@@ -6,10 +6,10 @@ const {chromium}=require('C:/Users/Dave/.cache/codex-runtimes/codex-primary-runt
  console.log('Phone page:',page.url());
  console.log('SCREEN',await page.locator('body').innerText());
  console.log('BUTTONS',await page.locator('button').allTextContents());
- const play=page.getByRole('button',{name:'Play match',exact:true});
+ const play=page.getByRole('button',{name:'Quick match',exact:true});
  if(await play.count())await play.click();
  console.log('AFTER CLICK',await page.locator('body').innerText());
- const nextPlay=page.getByRole('button',{name:'Play match',exact:true});
+ const nextPlay=page.getByRole('button',{name:'Quick match',exact:true});
  if(await nextPlay.count())await nextPlay.click();
  await page.waitForSelector('[data-controls]');
  await page.locator('[data-match-overlay]').click({position:{x:180,y:300}});

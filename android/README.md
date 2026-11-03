@@ -1,6 +1,12 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.0.1 is the current installer.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.1.0 is the current installer.
+
+Version 2.0.5 polishes home-menu card alignment, text readability, compact-screen spacing and offline status placement. Descriptions are associated with buttons for screen readers; the title ball respects reduced-motion preferences.
+
+Version 2.0.4 aligns menu descriptions with their titles in a shared text column beside each icon.
+
+Version 2.0.3 adds matching vector icons to all nine home-menu actions, keeps the animated ball above the title, and preserves Quick match as the primary action.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
@@ -15,6 +21,8 @@ Version 1.2.1 fixes the new courts covering the landing guide, player marker, an
 Version 1.2.2 fixes Rally doubles serving after a side-out: the receiving point rotates that team's court positions, and its new service turn starts from the right court with the correct receiver opposite. Traditional scoring and singles keep their existing serving sequence.
 
 Version 1.2.3 groups the Blitz indicator and opponent names/titles in a compact match-details panel beside the scoreboard, or below it on narrow screens. The panel yields to announcements and controls when space is tight, and hides while paused.
+
+Version 2.1.0 adds offline LAN QR joining. Host game displays a QR code; joining phones choose Scan host QR and allow camera access to connect. Manual address/code entry remains available. Both phones must already share Wi-Fi or a hotspot. Hosts with multiple interfaces can select the QR host address. Camera frames stay on the joining phone; cancel, navigation, joining and backgrounding stop capture. Camera denial leaves manual entry usable.
 
 ## Rebuilding
 
@@ -32,7 +40,7 @@ The app intercepts its HTTPS asset origin and serves every file from the APK. It
 
 One phone owns the match simulation and score; other phones send their own controls. Curve Left/Right are serve-only, and each human keeps an independent spin selection. Any player pausing or backgrounding freezes everyone until the pauses are cleared. If a guest disconnects, the match is abandoned and remaining players return to the lobby. If the host leaves, the room ends. LAN matches do not award CPU Career medals or advance Ladders.
 
-If joining fails, check the address, port, six-digit code and game version. Guest/public Wi-Fi may isolate devices; try a hotspot. No router port forwarding, public server, account or PC is required. This release uses manual address entry and does not automatically discover rooms. The PC edition shows an Android-feature explanation for this menu.
+If joining fails, check the address, port, six-digit code and game version. Guest/public Wi-Fi may isolate devices; try a hotspot. No router port forwarding, public server, account or PC is required. This release supports QR or manual address entry and does not automatically discover rooms. The PC edition shows an Android-feature explanation for this menu.
 
 Validation covered two/four browser participants, native TCP authentication/version/capacity/framing, shared scores/results, both scoring/pace options, CPU seats, long host pause, disconnect paths, spin controls and saved data. One physical Android host was tested with three TCP-connected browser peers through USB forwarding, including actual Android background/resume. Two physical Android phones over Wi-Fi/hotspot remain to be verified; USB-forwarded tests are not Wi-Fi coverage.
 
@@ -81,3 +89,5 @@ Version 1.8.0 adds Flat / Topspin / Slice selection for paddle-contact serves, d
 Version 1.9.0 adds visible screwball-style Curve Left / Right choices for serves only, from the hitter's view. The choices disable during rallies and reset to Flat after serving; Topspin and Slice remain available in rallies. Spinning shots use shared 3D flight with velocity-dependent spin forces, air drag, spin decay and contact friction; the guide and AI predict the same trajectory. Standard serve checks showed about 30 cm lateral bow. This is a tuned gameplay approximation, not experimentally calibrated pickleball aerodynamics. Flat and scripted practice retain previous behavior. Existing selector, swipe, left-handed mode, keyboard cycling and saved mappings remain supported.
 
 Version 2.0.1 groups Settings into Controls, Keyboard, Audio, Display and Progress tabs. The category bar stays available while scrolling; pause-menu Settings hides Progress where reset is unavailable. Categories preserve native save/reset handlers, and the last category is remembered on each device. Removed the ElevenLabs description from Settings at the user's request.
+
+Version 2.0.2 focuses the main menu on Quick match, LAN, Rival Ladder, Blitz Rush and Tournament. Practice/Career remain available, Settings/How to play are quieter, and unavailable original online links are removed from home. The animated bouncing ball above Rally is preserved. Play match is renamed Quick match in the home and setup actions; tournament continuation is retained.

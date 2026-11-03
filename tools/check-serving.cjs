@@ -7,8 +7,8 @@ const fs=require('node:fs');
  try {
   const page=await browser.newPage();
   await page.goto('http://127.0.0.1:8787');
-  await page.getByRole('button',{name:'Play match',exact:true}).click();
-  await page.getByRole('button',{name:'Play match',exact:true}).click();
+  await page.getByRole('button',{name:'Quick match',exact:true}).click();
+  await page.getByRole('button',{name:'Quick match',exact:true}).click();
   await page.waitForFunction(()=>!!globalThis.RallyMods?.engine);
   const result=await page.evaluate(()=>{
    const live=RallyMods.engine,C=live.constructor,failures=[],examples=[];

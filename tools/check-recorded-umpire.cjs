@@ -22,7 +22,7 @@ const assert=require('node:assert/strict');
   await p.evaluate(()=>{RallyUmpire.speak('98-99-1',.4);RallyUmpire.cancel();});await p.waitForTimeout(1200);
   const count=await p.evaluate(()=>umpirePlayed.length);assert(count<=5);
   await p.evaluate(()=>{window.liveUmpireCalls=[];const speak=RallyUmpire.speak;RallyUmpire.speak=(text,volume)=>{liveUmpireCalls.push(text);return speak(text,volume);};});
-  await p.getByRole('button',{name:'Play match',exact:true}).click();await p.getByRole('button',{name:'Play match',exact:true}).click();await p.waitForSelector('[data-controls]');await p.waitForTimeout(3500);
+  await p.getByRole('button',{name:'Quick match',exact:true}).click();await p.getByRole('button',{name:'Quick match',exact:true}).click();await p.waitForSelector('[data-controls]');await p.waitForTimeout(3500);
   const live=await p.evaluate(()=>liveUmpireCalls);
   assert(live.some(text=>/^\d+-\d+(?:-[12])?$/.test(text)),'Live match must send numeric score calls to recordings: '+JSON.stringify(live));
   assert.equal(await p.evaluate(()=>deviceCalls),0);assert.deepEqual(errors,[]);
