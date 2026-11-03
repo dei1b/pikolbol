@@ -27,7 +27,8 @@
     const badges=panel(null);badges.append(button('No badge',()=>{RallyCareer.clearBadge();openCareer();}));
     for(const id of s.unlocked.filter(i=>!i.startsWith('paddle-'))){const b=button((id===s.equipped.badge?'★ ':'')+itemName(id),()=>{const r=RallyCareer.equip('badge',id);if(r.saved)openCareer();else badges.append(el('p',r.error,'career-error'));});badges.append(b);}body.append(badges);
   }
-  function mountHome(host){if(!host||host.childElementCount)return;host.className='career-home';host.append(button('Career & rewards',openCareer));if(globalThis.RallyLadderUI)host.append(button('Rival Ladder',()=>RallyLadderUI.open()));if(globalThis.RallyRushUI)host.append(button('Blitz Rush',()=>RallyRushUI.open()));}
+  function mountHome(host){if(!host||host.childElementCount)return;host.className='career-home';host.append(button('Career & rewards',openCareer));if(globalThis.RallyLanUI)host.append(button('LAN multiplayer',()=>RallyLanUI.open()));
+    if(globalThis.RallyLadderUI)host.append(button('Rival Ladder',()=>RallyLadderUI.open()));if(globalThis.RallyRushUI)host.append(button('Blitz Rush',()=>RallyRushUI.open()));}
   function mountResults(host,award,record){
     if(!host||!record)return;host.replaceChildren();
     const p=panel('Career rewards');host.append(p);
@@ -40,6 +41,6 @@
     if(record.mode==='ladder')globalThis.RallyLadderUI?.mountResults(p,record);
     if(record.mode==='rush')globalThis.RallyRushUI?.mountResults(p,record);
   }
-  document.addEventListener('keydown',e=>{if(overlay&&e.code==='Escape'){e.preventDefault();e.stopImmediatePropagation();close();}},true);
+  document.addEventListener('keydown',e=>{if(overlay&&e.code==='Escape'){e.preventDefault();e.stopImmediatePropagation();if(globalThis.RallyLan?.session)RallyLan.stop(false);close();}},true);
   globalThis.RallyCareerUI={bind(a){actions=a;},get actions(){return actions;},openCareer,mountHome,mountResults,close,screen,el,button,panel,select};
 })();

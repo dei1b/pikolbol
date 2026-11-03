@@ -12,6 +12,7 @@ import java.util.*;
 
 public class MainActivity extends Activity {
     private WebView game;
+    private LanBridge lan;
     private static final String HOST = "appassets.androidplatform.net";
     @Override public void onCreate(Bundle saved) {
         super.onCreate(saved);
@@ -48,6 +49,8 @@ public class MainActivity extends Activity {
                 return !HOST.equals(request.getUrl().getHost());
             }
         });
+        lan=new LanBridge(game);
+        game.addJavascriptInterface(lan,"RallyLanNative");
         setContentView(game);fullscreen();
         game.loadUrl("https://"+HOST+"/");
     }
@@ -71,11 +74,11 @@ public class MainActivity extends Activity {
     private void fullscreen(){getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY|View.SYSTEM_UI_FLAG_LAYOUT_STABLE);}
     @Override public void onWindowFocusChanged(boolean focus){super.onWindowFocusChanged(focus);if(focus)fullscreen();}
     private void pauseMatch(){game.evaluateJavascript("if(document.querySelector('[data-match-overlay][data-paused=\"false\"]'))window.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',code:'Escape'}))",null);}
-    @Override protected void onPause(){pauseMatch();game.onPause();super.onPause();}
+    @Override protected void onPause(){if(lan!=null)lan.background();pauseMatch();game.onPause();super.onPause();}
     @Override protected void onResume(){super.onResume();if(game!=null)game.onResume();}
     @Override public void onBackPressed(){
         pauseMatch();
         new AlertDialog.Builder(this).setTitle("Close Rally?").setMessage("Your settings and tournament progress are saved on this phone.").setPositiveButton("Close",(d,w)->finish()).setNegativeButton("Keep playing",(d,w)->fullscreen()).show();
     }
-    @Override protected void onDestroy(){if(game!=null){game.stopLoading();game.destroy();}super.onDestroy();}
+    @Override protected void onDestroy(){if(lan!=null)lan.stop();if(game!=null){game.removeJavascriptInterface("RallyLanNative");game.stopLoading();game.destroy();}super.onDestroy();}
 }

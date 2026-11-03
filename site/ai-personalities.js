@@ -144,7 +144,7 @@
   function refreshMatchInfo(){
     const host=globalThis.RallyMods?.matchInfoHost(),engine=globalThis.RallyMods?.engine;
     let badge=document.getElementById('rally-ai-badge');
-    if(!host||!engine?._rallyAIReady){badge?.remove();return;}
+    if(!host||!engine?._rallyAIReady||engine.config.offlineMode==='lan'){badge?.remove();return;}
     const opponents=engine.players.filter(p=>p.team===1&&!p.human).map(p=>profiles[p.mind.personality]).filter(Boolean);
     if(!opponents.length){badge?.remove();return;}
     if(!badge){badge=document.createElement('div');badge.id='rally-ai-badge';badge.className='rally-ai-badge';host.append(badge);}

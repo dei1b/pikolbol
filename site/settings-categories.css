@@ -1,0 +1,12 @@
+.rally-settings-tabs{position:sticky;top:0;z-index:5;display:grid;grid-template-columns:repeat(var(--settings-tab-count,5),minmax(0,1fr));gap:4px;margin:0 0 20px;padding:5px;background:#10201b;border:1px solid #ffffff30;border-radius:12px}
+.rally-settings-tabs button{min-width:0;min-height:44px;padding:8px 4px;border:0;border-radius:8px;background:#ffffff0a;color:#dce8df;font:700 13px/1.2 system-ui;cursor:pointer}
+.rally-settings-tabs button[aria-selected=true]{background:#d4f25a;color:#10201b}
+.rally-settings-tabs button:hover:not([aria-selected=true]){background:#ffffff18}
+.rally-settings-tabs button:focus-visible{outline:2px solid white;outline-offset:-2px}
+.rally-settings-pane:focus-visible{outline:2px solid #d4f25a;outline-offset:3px}
+.rally-settings [data-remap-settings]:empty{display:none}
+.rally-settings .rally-keyboard-panel{display:grid;grid-template-columns:minmax(0,1fr);gap:4px 24px}
+.rally-settings .rally-keyboard-panel>h2,.rally-settings .rally-keyboard-panel>p,.rally-settings .rally-keyboard-panel>.rally-mod-status,.rally-settings .rally-keyboard-panel>button{grid-column:1/-1}
+.rally-settings .rally-keyboard-panel .rally-mod-row{margin:3px 0;min-width:0}
+@media(min-width:600px){.rally-settings .rally-keyboard-panel{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:380px){.rally-settings-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.rally-settings-tabs button{font-size:12px}}

@@ -21,9 +21,10 @@
   function update(engine){
     if(!active||!engine)return;
     const rivals=engine.players.filter(p=>p.team===1&&!p.human).map(p=>globalThis.RallyAI?.profiles[p.mind.personality]).filter(Boolean);
-    const names=rivals.map(p=>`${p.name} · ${p.title}`).join('   /   ');
+    const lan=engine.config.offlineMode==='lan',session=globalThis.RallyLan?.session;
+    const names=lan?(session?.members??[]).map(p=>p.name).join('   /   '):rivals.map(p=>`${p.name} · ${p.title}`).join('   /   ');
     const mode=engine.practice?'Practice':`${engine.config.offlineMode==='rush'?'Blitz Rush':engine.config.offlineMode==='rush'?'Blitz Rush':engine.config.offlineMode==='rush'?'Blitz Rush':engine.config.offlineMode==='rush'?'Blitz Rush':engine.blitz?'Blitz':'Classic'}   ·   ${engine.config.format==='doubles'?'Doubles':'Singles'}   ·   ${engine.config.scoring==='rally'?'Rally scoring':'Traditional scoring'}`;
-    const text=[names,mode],key=JSON.stringify(text);if(active.key===key)return;active.key=key;
+    const text=[names,lan?'LAN · '+mode:mode],key=JSON.stringify(text);if(active.key===key)return;active.key=key;
     active.labels.forEach(({canvas,texture,mesh},i)=>{
       const c=canvas.getContext('2d');c.clearRect(0,0,canvas.width,canvas.height);c.fillStyle=i===0?'#f5f7e9':'#d4f25a';c.textAlign='center';c.textBaseline='middle';
       c.font='800 72px sans-serif';const size=Math.min(72,72*1420/Math.max(1,c.measureText(text[i]).width));c.font=`800 ${size}px sans-serif`;

@@ -8,7 +8,7 @@
   function select(mode){selected=modes.includes(mode)?mode:'flat';paint();}
   function choose(e,p,type,quality){
     if(e.practice||!['serve','drive','drop','dink'].includes(type))return'flat';
-    if(p.human)return selected.startsWith('curve-')&&type!=='serve'?'flat':selected;
+    if(p.human){const choice=p.lanSpin??selected;return choice.startsWith('curve-')&&type!=='serve'?'flat':choice;}
     const mind=p.mind;if(!mind?.rnd||quality<.35||mind.rnd()>.12+.48*mind.tune.smart)return'flat';
     if(type==='serve'&&['rafi','maya','tala'].includes(mind.personality)&&mind.rnd()<.45)return mind.rnd()<.5?'curve-left':'curve-right';
     if(['bea','isay','nika','tala'].includes(mind.personality))return'slice';
@@ -30,7 +30,7 @@
       for(let t=0;t<time;t+=1/60){if(P.step(copy,Math.min(1/60,time-t),x=>netHeight(x)+.06).some(ev=>ev.kind==='net')){cleared=false;break;}}
       if(cleared)break;time*=1.08;
     }
-    if(p.human&&mode.startsWith('curve-'))select('flat');
+    if(p.human&&mode.startsWith('curve-')){if(p.lanSpin!==undefined)p.lanSpin='flat';if(!p.lanRemote)select('flat');}
   }
   function trail(style,spin,fire,kind){if(fire||!spin)return;if(kind?.startsWith('curve-')){style.color=kind==='curve-left'?'#c6adff':'#fface1';style.tail='#f5eaff';style.seconds=Math.max(style.seconds,.42);style.width*=1.05;return;}style.color=spin>0?'#ffb65c':'#80e6ed';style.tail=spin>0?'#ff713f':'#c7fff0';style.width*=spin>0?.9:1.15;}
   function paint(){if(!host)return;for(const b of host.querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.spin===selected));}
