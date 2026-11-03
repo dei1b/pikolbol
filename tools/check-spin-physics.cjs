@@ -1,8 +1,10 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
-const ctx={console};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(__dirname,'../site/spin.js'),'utf8'),ctx);const spin=ctx.RallySpin;
+const ctx={console};vm.createContext(ctx);vm.runInContext(fs.readFileSync(path.join(__dirname,'../site/spin-physics.js'),'utf8'),ctx);vm.runInContext(fs.readFileSync(path.join(__dirname,'../site/spin.js'),'utf8'),ctx);const spin=ctx.RallySpin;
 assert.equal(spin.gravity({}),9.81);assert(spin.gravity({spin:1})>9.81);assert(spin.gravity({spin:-1})<9.81);
 const flat={x:2,y:-3,z:8},top=spin.bounce({...flat,spin:1}),slice=spin.bounce({...flat,spin:-1});assert.equal(spin.bounce(flat).z,5.6);assert(top.z>5.6);assert(slice.y<1.92);assert(Math.abs(top.spin)<1);
 for(const direction of [-1,1]){const make=()=>({p:{x:0,y:.8,z:-5*direction},v:{x:1,y:4,z:12*direction},netted:false});const original=make(),e={practice:false,players:[]},human={human:true};spin.select('flat');spin.apply(e,human,original,'drive',1);assert(!('spin' in original.v));for(const mode of ['topspin','slice']){spin.select(mode);const b=make();spin.apply(e,human,b,'drive',1);assert.equal(Math.sign(b.v.spin),mode==='topspin'?1:-1);assert(Number.isFinite(b.v.y));assert.equal(Math.sign(b.v.z),direction);}}
 const ball={p:{x:0,y:1,z:4},v:{x:0,y:3,z:-8}},before=JSON.stringify(ball);spin.apply({practice:true},{human:true},ball,'drive',1);assert.equal(JSON.stringify(ball),before);
 const cpu={human:false,mind:{personality:'migo',tune:{smart:.9},rnd:()=>0}};assert.equal(spin.choose({practice:false},cpu,'drive',1),'topspin');assert.equal(spin.choose({practice:false},cpu,'smash',1),'flat');assert.equal(spin.choose({practice:false},cpu,'lob',1),'flat');
+spin.select('curve-left');assert.equal(spin.choose({practice:false},{human:true},'serve',1),'curve-left');for(const shot of ['drive','drop','dink'])assert.equal(spin.choose({practice:false},{human:true},shot,1),'flat','side curves are serve-only');
+const tricky={human:false,mind:{personality:'rafi',tune:{smart:.9},rnd:()=>0}};assert.equal(spin.choose({practice:false},tricky,'serve',1),'curve-left');assert.equal(spin.choose({practice:false},tricky,'drive',1),'topspin');
 console.log('PASS spin gravity, bounce, flat parity, mirrored launch, practice and AI restrictions');

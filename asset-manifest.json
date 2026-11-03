@@ -56,8 +56,8 @@
   },
   {
     "path": "game-mods.js",
-    "bytes": 9276,
-    "sha256": "288585a2f96e3fef3bef00037134a7288e4ecc23a32556970b1e45c089413a81"
+    "bytes": 9365,
+    "sha256": "5c030a07f4ee28c8e1fa9f3d097d5eea10427c26ec878f4966f84991e72cfefb"
   },
   {
     "path": "icon.svg",
@@ -81,8 +81,8 @@
   },
   {
     "path": "index.html",
-    "bytes": 11935,
-    "sha256": "785829447d5a55e23d909be53132beba95936221277b9348329d618c9023c565"
+    "bytes": 11975,
+    "sha256": "778553ad954a868e3ac845d161bc31eb9406fe916ae43e184e0f002cd0b00a13"
   },
   {
     "path": "manifest.webmanifest",
@@ -835,14 +835,19 @@
     "sha256": "c33633c6666f0a6566b4d017ff2be6e35fbda21107b16e24e1a610ec18388350"
   },
   {
+    "path": "spin-physics.js",
+    "bytes": 4078,
+    "sha256": "aa10acc66b400f86729401ca9f1ae99483459fbe69213358ddd41ab0a7ae2031"
+  },
+  {
     "path": "spin.css",
-    "bytes": 697,
-    "sha256": "2724b501d6be80356dd70edca9167826f608e1f56cf233f173294203573166ee"
+    "bytes": 760,
+    "sha256": "6cc880abe95fa9e9787b64fe4a42667075b8ad4c488a4ffe9ac2fc25e58ee5d8"
   },
   {
     "path": "spin.js",
-    "bytes": 4247,
-    "sha256": "2e96efa4f6a101845fdfd4b58c33d32be0f707cc6d28432ea7b585455f234d86"
+    "bytes": 6169,
+    "sha256": "16dec4c794904675beb7ed18fbe786ffcda650ee1fb24c81d6a9142c7e212447"
   },
   {
     "path": "umpire-cedar.js",
@@ -856,8 +861,8 @@
   },
   {
     "path": "_next/static/chunks/0axfra5kwz6z1.js",
-    "bytes": 865527,
-    "sha256": "e6963312c3abae55bcc1bd19f583b2d44e290570238596ff4f348e8d868452d9"
+    "bytes": 866068,
+    "sha256": "edd2c411b5a1ed14ce0241bf93e41674b2eaac82f2fce4b475543e1f30ab2557"
   },
   {
     "path": "_next/static/chunks/0cz1d0mv5g_q7.js",

@@ -1,6 +1,6 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.8.0 is the current installer.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 1.9.0 is the current installer.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
@@ -63,3 +63,5 @@ Version 1.6.4 adds the supplied Beach, Sunset Rooftop and Moonlit Grove ambience
 Version 1.7.0 adds position-aware rival tactics, open-space targeting and non-hitter doubles coverage. The ten Ladder stages have fixed interpolated opponent skill, with faster reactions, more reliable placement and fewer mistakes at later stages; the local AI partner stays consistent. Difficulty never changes based on score or win history. Existing ladder clears and rewards remain valid.
 
 Version 1.8.0 adds Flat / Topspin / Slice selection for paddle-contact serves, drives, drops and dinks. Topspin increases dip and forward bounce; slice/chop floats and stays lower. CPU rivals use spin according to personality and fixed skill. Shared physics keeps AI interception and the landing guide consistent. Select spin above the shot buttons or cycle with Q (remappable in Settings); existing key remaps are preserved. Flat remains the default, scripted practice stays unchanged, and sidespin is deferred.
+
+Version 1.9.0 adds visible screwball-style Curve Left / Right choices for serves only, from the hitter's view. The choices disable during rallies and reset to Flat after serving; Topspin and Slice remain available in rallies. Spinning shots use shared 3D flight with velocity-dependent spin forces, air drag, spin decay and contact friction; the guide and AI predict the same trajectory. Standard serve checks showed about 30 cm lateral bow. This is a tuned gameplay approximation, not experimentally calibrated pickleball aerodynamics. Flat and scripted practice retain previous behavior. Existing selector, swipe, left-handed mode, keyboard cycling and saved mappings remain supported.

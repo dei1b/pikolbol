@@ -2,5 +2,6 @@
 .rally-spin-picker[hidden]{display:none}
 .rally-spin-picker button{min-height:34px;min-width:49px;padding:4px 9px;border:0;border-radius:8px;background:transparent;color:#fff;font-family:inherit;font-size:12px;font-weight:700;line-height:1.15;cursor:pointer}
 .rally-spin-picker button[aria-pressed=true]{background:#d4f25a;color:#10201b}
+.rally-spin-picker button:disabled{opacity:.35;cursor:default}
 .rally-spin-picker button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 @media(max-height:450px){.rally-spin-picker button{min-height:32px;padding:3px 7px}}
