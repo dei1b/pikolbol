@@ -1,6 +1,8 @@
 # Rally Offline for Android
 
-The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.0.2 is the current installer.
+The signed installer is `Rally-Offline.apk`. It installs as **Rally Offline**. Version 2.0.3 is the current installer.
+
+Version 2.0.3 adds matching vector icons to all nine home-menu actions, keeps the animated ball above the title, and preserves Quick match as the primary action.
 
 Open the app from the phone's app drawer. It runs independently of the PC and internet. Touch controls, matches against the computer, practice, and tournaments use the same bundled game as the desktop edition. Sponsor removal is included. Progress is saved privately in the app and is separate from desktop progress. Uninstalling or clearing app data erases it.
 
