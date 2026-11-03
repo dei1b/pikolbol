@@ -1,72 +1,61 @@
 # Rally Offline
 
-Double-click **Play Rally.cmd**, or use the **Rally Offline** shortcut on your Desktop. It starts a small server on this PC and opens the game in an Edge app window. Internet access is not needed, including the first launch. You can also visit http://127.0.0.1:8787 after launching.
+Rally Offline is a local adaptation of the PaddleUp browser pickleball game for Windows and Android. Play singles or doubles against computer opponents, practice shots, and enter tournaments without an internet connection. On Android, two to four players can also share a match over Wi-Fi or a phone hotspot.
 
-Quick matches against the computer, practice, and enter tournaments. The original game menus, 3D stadium, characters, sounds, rules, and controls are preserved from the browser-delivered version of https://paddleup.ph/ captured on October 29, 2026. This is a locally adapted copy of the published game, not a newly authored game engine. Taplinc sponsor cards, links, credits, and court lettering have been removed in this local edition. Bundled notices remain with their respective authors.
+## Getting started
 
-## Career, Rival Ladder and Blitz Rush
+### Windows
 
-Android adds **LAN multiplayer**: one phone hosts and two to four phones play singles/doubles over shared Wi-Fi or a hotspot, without a PC or internet. Version **2.1.0** adds a ready host QR code and in-app scan-to-join; manual address/room-code entry remains available. See [Android setup](android/README.md) for instructions and current device-test coverage. The PC launcher retains its offline CPU modes.
+1. Keep the project folder together, including `site/` and `runtime/`.
+2. Double-click **Play Rally.cmd**. It starts the local server and opens the game in Microsoft Edge app mode, or in your default browser if Edge is unavailable.
+3. Choose **Quick match** to set up your first game.
 
-**Career & rewards** tracks eight medals and unlocks six paddle finishes plus badges. Rewards are cosmetic. Completed CPU matches count with target 7 or higher, power-ups off and auto-swing off; movement assist is allowed. Practice, abandoned games and restarts do not earn rewards. Career progress saves locally on each device.
+The launcher uses the bundled Node.js runtime and requires no package installation. While the server is running, you can also open `http://127.0.0.1:8787` in your browser. Close the game window when finished and run **Stop Rally.cmd** when you want to shut down the local server. If the server fails to start, check `server-error.log` in the project folder.
 
-**Rival Ladder** has separate singles and doubles tracks with ten opponents. Matches use Traditional scoring to 11, win by two. Select your character, court and Classic/Blitz pace for each stage. Wins unlock the next rival; losses never remove progress. Cleared stages remain replayable.
+### Android
 
-**Blitz Rush** is a three-minute Rally-scoring match at Blitz pace. Pause and background time do not count. The current rally finishes after expiry; a tie triggers one golden rally. A positioned server automatically makes a normal drive serve after five seconds. The scoreboard shows team points once, with a Rush timer or the ordinary pace/target/scoring format alongside.
+Install the signed `Rally-Offline.apk` on a device running Android 8.0 or later, then open **Rally Offline** from the app drawer. The APK is a build output and is excluded from Git. See the [Android guide](android/README.md) for build requirements, LAN setup, and device test coverage.
 
-## Scenery
+For local multiplayer, connect all phones to the same Wi-Fi network or hotspot. Open **LAN** on the host phone and create a room. Joining players can scan the host QR code or enter the address and room code manually.
 
-Choose **Scenery** in **Quick match**. Ladder and Rush provide their own court selection and offline previews:
+## Game modes
 
-- **Championship stadium:** the original packed arena.
-- **Palm Beach:** a seaside hard court, palms, sand, and turquoise water.
-- **Sunset Rooftop:** safety rails, a city skyline, and warm evening lighting.
-- **Moonlit Grove:** a blue court with green borders, warm floodlights, a full moon, woodland and distant mountains.
+| Mode | What to expect |
+| --- | --- |
+| **Quick match** | Configure singles or doubles, opponent, difficulty, court, scoring, target score, and Classic or Blitz pace. Blitz speeds up play and shortens the wait between points. |
+| **Rival Ladder** | Progress through ten opponents on separate singles and doubles tracks. Matches use Traditional scoring to 11, win by two. Wins unlock the next rival, and cleared stages can be replayed. |
+| **Blitz Rush** | Play three minutes of active match time at Blitz pace with Rally scoring. Finish the rally in progress when time expires. A tie goes to one deciding rally. |
+| **Tournament and Practice** | Play through a tournament bracket or work on individual shots in practice drills. |
+| **Career** | Earn medals, badges, and cosmetic paddle finishes. Completed CPU matches qualify with a target of at least 7, power-ups off, and auto-swing off. Movement assist is allowed. |
 
-Your choice is saved on this device and applies when starting the next match, tournament game, or practice drill. All courts use the same playing dimensions and rules. These sceneries are also bundled in the Android 1.2.0 APK; install that APK to update your phone.
+Quick match offers ten AI opponents with different tactics, from soft shots at the net to hard drives from the baseline. Difficulty controls reaction speed and accuracy separately from the opponent's playing style. Choose from Championship Stadium, Palm Beach, Sunset Rooftop, and Moonlit Grove in modes with court selection.
 
-## Match pace and controls
+## Controls
 
-Rally doubles now rotates court positions when the receiving team earns a point, so every new service turn after a side-out begins from the right court. Traditional doubles also starts new service turns on the right; a second server within the same turn may serve from either side. This correction is included on PC and in Android 1.2.2.
+| Action | Default keyboard control |
+| --- | --- |
+| Move and aim | WASD or arrow keys |
+| Dink, drop, drive or smash, lob | J, K, L, I |
+| Serve | Space |
+| Cycle spin | Q |
+| Sprint or dash | Shift |
+| Power or partner tag, where available | E |
+| Pause | Esc |
 
-In **Quick match → Match pace**, choose **Classic** or **Blitz**. Blitz runs the simulation 20% faster for both sides and shortens the point-reset wait from 2.2 to 1.05 simulation seconds. Traditional and Rally scoring and the target score remain independent choices. Practice and tournaments use their original pace. The match pace selection is saved for your next quick match.
+The game also supports mouse and on-screen controls. Use **Settings → Keyboard** to remap keys and **Settings → Controls** to rearrange touch shot buttons or enable movement assist. Flat, Topspin, and Slice are available for supported shots. Curve Left and Curve Right are serve options and reset to Flat after serving.
 
-In **Settings → Keyboard controls**, select an action and press a replacement key. Duplicate assignments are rejected; Escape cancels capture. Reset keyboard defaults restores the original mappings. The shot buttons display your saved keys. Under **Touch shot positions**, swap the four shots between their existing button positions, or restore the defaults. Keyboard and touch preferences are stored separately on each device.
+## Offline play and saved progress
 
-## AI opponents
+Settings and progress are saved in the browser profile on Windows and in the app's local storage on Android. They are separate from each other and from the original website. Clearing site or app data resets local progress. The original Park, online matchmaking, accounts, and global leaderboard require the upstream service and are unavailable in Rally Offline. Windows spoken score calls depend on the voices installed on the device.
 
-Under **Quick match → AI opponent**, select a named rival or random character personalities. The description changes with your choice. Easy, Normal, and Hard control reaction time and accuracy independently of personality. The opponent choice is saved, and a rematch retains that opponent. Both scoring options and Classic/Blitz work with all rivals.
+## Project layout
 
-- **Bea — Kitchen queen:** soft dinks and drops, close positioning.
-- **Migo — Big hitter:** fast drives and deep serves, wider placement errors.
-- **Tala — Lob artist:** high, deep lobs, particularly against opponents at the net.
-- **Paco — Speedster:** faster court coverage, less precise placement.
-- **Isay — Steady hands:** fewer timing/placement errors, slower drives.
-- **Jojo — Smash happy:** forward positioning and overhead attacks on high contacts.
-- **Rafi — Baseline sniper:** deep positioning and drives toward open corners.
-- **Nika — Counterpuncher:** deep defense and controlled returns into space.
-- **Enzo — Net rusher:** third-shot drops, forward movement and more volleys.
-- **Maya — Mix-up master:** varied shot selection, avoiding consecutive repeats when safe alternatives exist.
+| Path | Purpose |
+| --- | --- |
+| [`site/`](site/) | Shared game assets, offline adaptations, and gameplay and interface changes. |
+| [`server.mjs`](server.mjs) | Windows server that serves the game on the local loopback address. |
+| [`runtime/`](runtime/) | Bundled Windows Node.js runtime and license. |
+| [`android/`](android/) | Android WebView wrapper, LAN features, and APK build script. |
+| [`tools/`](tools/) | Asset preparation, model generation, and verification utilities. |
 
-The four new rivals now have distinct 3D character variants based on the original rigs and proportions: Rafi has a navy/cyan cap and sports glasses; Nika wears teal/coral with a headband and braid; Enzo has a clean face, a shaped baseball cap, a blue jersey with white chevrons and number 7, and dark shorts with white stripes; Maya has a purple/mint outfit, twin buns and glasses. They are also available in the character picker. CPU partners and tournament opponents follow their character styles; practice drills keep their teaching behavior. These changes are also bundled in the Android 1.2.0 APK. Install the updated APK over the existing phone app to use them.
-
-The editable glTF model collection is `site/rally/rival-characters.gltf`, with `rival-characters.bin` and the original colormap alongside it. `tools/build-rival-models.cjs` regenerates the four variants from the unchanged original models. The generated collection contains the original six plus the four new models; the original `characters.gltf` and `characters.bin` remain available as references.
-
-- WASD or arrow keys: move and aim
-- J: dink; K: drop; L: drive/smash; I: lob
-- Space: serve
-- Esc: pause
-- Shift: sprint; E: partner tag where supported
-
-Mouse and on-screen controls also work. Enable Movement assist in Settings if you want help getting to the ball. Settings and progress are stored in this browser on this PC; they are separate from the live website.
-
-The umpire voice uses voices available in Windows/Edge. Spoken calls may be silent if no usable offline voice is available; the score remains visible.
-
-Park, online matchmaking, accounts, and global leaderboard depend on the original server and are unavailable offline. Their menu entries explain this. Telemetry is suppressed and a local content policy blocks external resource connections. The local server never forwards requests to the website.
-
-Close the game window to leave. Double-click **Stop Rally.cmd** to stop the background server when desired. Launching again reuses the running server. Keep the whole folder together, especially `site` and `runtime`. The desktop shortcut must be updated if you move the folder.
-
-## Files
-
-`site/` contains the original browser files plus the documented local adaptation `offline.js`. `server.mjs` serves only local files on 127.0.0.1. `runtime/node.exe` is the bundled Node.js runtime so this copy can launch without downloads or an npm install. `tools/` contains capture and verification utilities; they are not required to play.
-
+The original game, court, character models, and audio come from the published PaddleUp browser edition. Rally Offline packages those assets with local changes, including the removal of sponsor placements. Bundled notices remain with their respective authors.
