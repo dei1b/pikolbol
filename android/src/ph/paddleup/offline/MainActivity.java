@@ -61,6 +61,11 @@ public class MainActivity extends Activity {
         });
         lan=new LanBridge(game);
         game.addJavascriptInterface(lan,"RallyLanNative");
+        try {
+            game.addJavascriptInterface(new AppUpdates(this), "RallyAppUpdates");
+        } catch (android.content.pm.PackageManager.NameNotFoundException error) {
+            android.util.Log.w("RallyWeb", "Could not read the installed package version", error);
+        }
         setContentView(game);fullscreen();
         game.loadUrl("https://"+HOST+"/");
     }

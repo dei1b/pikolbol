@@ -23,6 +23,15 @@
   host.append(action('Tournament',callbacks.runLabel??'Eight teams · Three rounds',callbacks.tournament));
   host.append(action('Practice',null,callbacks.practice,'secondary'),action('Career & rewards',null,()=>RallyCareerUI.openCareer(),'secondary'));
   const utility=make('div',null,'rally-home-utility');utility.append(action('How to play',null,callbacks.help,'utility-button'),action('Settings',null,callbacks.settings,'utility-button'));host.append(utility);
+  const app = globalThis.RallyAppUpdates;
+  if (app) {
+   const updates = make('div', null, 'rally-home-updates');
+   const check = make('button', 'Check for updates', 'rally-home-action rally-home-utility-button');
+   check.type = 'button';
+   check.onclick = () => app.check();
+   updates.append(make('span', 'Version ' + app.version()), check);
+   host.append(updates);
+  }
  }
  globalThis.RallyHome={mount};
 })();
